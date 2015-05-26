@@ -1,0 +1,50 @@
+[
+  {
+    "id":1,
+    "name": "Captain America",
+    "description": "Sénile et grabataire",
+    "status": "0",
+    "image": "captain-america.png",
+    "age": 90
+  },
+  {
+    "id":2,
+    "name": "Iron Man",
+    "description": "Riche et célèbre",
+    "status": "1",
+    "image": "iron-man.png",
+    "age": 35
+  },
+  {
+    "id":3,
+    "name": "Hawkeye",
+    "description": "Rêve secrétement de Widow",
+    "status": "2",
+    "image": "hawkeye.png",
+    "age": 40
+  },
+  {
+    "id":4,
+    "name": "Hulk",
+    "description": "Géant vert, vendeur de maïs",
+    "status": "0",
+    "image": "hulk.png",
+    "age": 39
+  },
+  {
+    "id":5,
+    "name": "La veuve noire",
+    "description": "Gorgeous",
+    "status": "1",
+    "image": "widow.png",
+    "age": 24
+  },
+  {
+    "id":6,
+    "name": "Thor",
+    "description": "Viking body buildé",
+    "status": "2",
+    "image": "thor.png",
+    "age": 46
+  }
+]

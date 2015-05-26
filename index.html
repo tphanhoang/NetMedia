@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <link rel="stylesheet" href="vendors/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="vendors/css/custom.css"/>
+    <!-- <link rel="icon" href=""> -->
+    <meta charset="UTF-8">
+    <title>NetMedia</title>
+</head>
+<script src="vendors/js/jquery-2.1.3.min.js"></script>
+<script src="vendors/js/bootstrap.min.js"></script>
+
+<body ng-app="netMediaApp">
+
+<header class="container page-header">
+     <h1>NetMedida</h1>
+    <h3>Better than Netflix Faster than PopCornTime</h3>
+</header>
+
+<section class="container">
+    <ng-view></ng-view>
+</section>
+
+<footer class="container text-center">
+    <hr/>
+    <span>Powered by ML - 2015</span>
+</footer>
+</body>
+
+<script src="vendors/js/angular.min.js"></script>
+<script src="vendors/js/angular-route.min.js"></script>
+<!-- <script src="scripts/core/filters/capitalize.js"></script> -->
+
+<script src="src/heroes/app.js"></script>
+
+<script src="src/heroes/controllers/heroCtrl.js"></script>
+<script src="src/heroes/controllers/heroesCtrl.js"></script>
+
+<script src="src/heroes/directives/heroBlock.js"></script>
+<script src="src/heroes/directives/changeStatus.js"></script>
+
+<script src="src/heroes/services/hero.js"></script>
+<script src="src/heroes/services/urlConfig.js"></script>
+
+</html>

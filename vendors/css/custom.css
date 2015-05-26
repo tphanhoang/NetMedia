@@ -1,0 +1,30 @@
+.title--inline {
+    display: inline-block;
+}
+
+.thumbnail--inline{
+    display: inline-block;
+}
+
+.bloc-hero{
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 10px;
+}
+
+.bloc-hero h3{
+    margin:0;
+}
+
+a{
+    cursor: pointer;
+}
+
+.dropdown-menu li.disable{
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.btn-back{
+    margin-bottom: 10px;
+}
