@@ -1,6 +1,5 @@
 <div class="panel panel-primary">
 
-
     <div class="panel-heading">
         <h3 class="panel-title panel-title title--inline">Fiche Info</h3>
     </div>
@@ -9,8 +8,8 @@
         <div>
             <img class="thumbnail thumbnail--inline" ng-src="images/{{movie.image}}" width="100px" height="100px"/>
             <span class="bloc-hero" ng-switch on="movie.status">
-                <h3>{{movie.name}}</h3>
-                <h4>{{movie.age}}</h4>
+                <h3>{{movie.title}}</h3>
+                <h4>{{movie.release_date}}</h4>
                 <p>{{movie.description}}</p>
                 <span ng-switch-when="0" class="label label-success">Disponible</span>
                 <span ng-switch-when="1" class="label label-warning">Occupé(e)</span>

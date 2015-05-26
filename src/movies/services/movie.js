@@ -28,15 +28,18 @@
         }
 
         function _getMovie(id) {
-            if(localStorage.getItem('movies') !== null) {
-                var heroes = JSON.parse(localStorage.getItem('movies'));
-                return _loopMovies(movies, id);
-            }
+            // if(localStorage.getItem('movies') !== null) {
+            //     var heroes = JSON.parse(localStorage.getItem('movies'));
+            //     return _loopMovies(movies, id);
+            // }
 
             var defer = $q.defer();
-            $http.get(urlConfig.MOVIES).then(function(movies) {
-                localStorage.setItem('movies', JSON.stringify(movies.data));
-                var movie = _loopMovies(movies.data, id);
+            //$http.get(urlConfig.MOVIES).then(function(movies) {
+            $http.get("http://api.themoviedb.org/3/movie/popular?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+                //localStorage.setItem('movies', JSON.stringify(movies.data));
+                //var movie = _loopMovies(response.data, id);
+                defer.resolve(response.data);
+                //console.log(movie);
                 if(movie !== false) {
                     defer.resolve(movie);
                 } else {
@@ -49,16 +52,18 @@
             return defer.promise;
         }
 
-        function _loopMovies(movies, id) {
-            var result = false;
+        $movies = resp
 
-            movies.forEach(function(movie) {
-                if(movie.id === parseInt(id)) {
-                    result = movie;
-                }
-            });
+        // function _loopMovies(movies, id) {
+        //     var result = false;
 
-            return result;
-        }
+        //     movies.forEach(function(movie) {
+        //         if(movie.id === parseInt(id)) {
+        //             result = movie;
+        //         }
+        //     });
+
+        //     return result;
+        // }
     }
 }());
