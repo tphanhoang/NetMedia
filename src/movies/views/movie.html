@@ -7,11 +7,11 @@
 
     <div class="panel-body panel-body">
         <div>
-            <img class="thumbnail thumbnail--inline" ng-src="images/{{hero.image}}" width="100px" height="100px"/>
-            <span class="bloc-hero" ng-switch on="hero.status">
-                <h3>{{hero.name}}</h3>
-                <h4>{{hero.age}}</h4>
-                <p>{{hero.description}}</p>
+            <img class="thumbnail thumbnail--inline" ng-src="images/{{movie.image}}" width="100px" height="100px"/>
+            <span class="bloc-hero" ng-switch on="movie.status">
+                <h3>{{movie.name}}</h3>
+                <h4>{{movie.age}}</h4>
+                <p>{{movie.description}}</p>
                 <span ng-switch-when="0" class="label label-success">Disponible</span>
                 <span ng-switch-when="1" class="label label-warning">Occupé(e)</span>
                 <span ng-switch-when="2" class="label label-danger">Blessé(e)</span>
@@ -22,9 +22,9 @@
                     Modifier Statut <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu" change-status>
-                    <li ng-click="updateStatus(0)" ng-class="{disabled: hero.status == 0}"><a>Disponible</a></li>
-                    <li ng-click="updateStatus(1)" ng-class="{disabled: hero.status == 1}"><a>Occupé(e)</a></li>
-                    <li ng-click="updateStatus(2)" ng-class="{disabled: hero.status == 2}"><a>Blessé(e)</a></li>
+                    <li ng-click="updateStatus(0)" ng-class="{disabled: movie.status == 0}"><a>Disponible</a></li>
+                    <li ng-click="updateStatus(1)" ng-class="{disabled: movie.status == 1}"><a>Occupé(e)</a></li>
+                    <li ng-click="updateStatus(2)" ng-class="{disabled: movie.status == 2}"><a>Blessé(e)</a></li>
                 </ul>
             </div>
 

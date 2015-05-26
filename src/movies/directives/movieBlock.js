@@ -1,14 +1,14 @@
 (function() {
   'use strict';
-  angular.module('netMediaApp').directive('heroBlock', heroBlock);
+  angular.module('netMediaApp').directive('movieBlock', movieBlock);
 
-  function heroBlock() {
+  function movieBlock() {
     return {
-      templateUrl: 'src/heroes/directives/hero-block.html',
+      templateUrl: 'src/movies/directives/movie-block.html',
       restrict: 'EA',
-      controller: heroBlockCtrl,
+      controller: movieBlockCtrl,
       scope: {
-        hero: '='
+        movie: '='
       }
     };
 
@@ -30,9 +30,9 @@
       // })
     }
 
-    function heroBlockCtrl($scope, $location) {
-      $scope.showHero = function(id) {
-        $location.path('/hero/' + id);
+    function movieBlockCtrl($scope, $location) {
+      $scope.showMovie = function(id) {
+        $location.path('/movie/' + id);
       };
     }
   }

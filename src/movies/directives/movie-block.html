@@ -1,16 +1,16 @@
 <div class="col-sm-6 col-md-4">
-    <div class="pull-right" ng-switch on="hero.status">
+    <div class="pull-right" ng-switch on="movie.status">
         <span ng-switch-when="0" class="label label-success">Disponible</span>
         <span ng-switch-when="1" class="label label-warning">Occupé(e)</span>
         <span ng-switch-when="2" class="label label-danger">Blessé(e)</span>
     </div>
     <div class="thumbnail">
-        <img ng-src="images/{{hero.image}}" class="image-thumbnail">
+        <img ng-src="images/{{movie.image}}" class="image-thumbnail">
         <div class="caption">
-            <h3>{{hero.title}}</h3>
-            <h4>{{hero.release_date}}</h4>
-            <p>{{hero.vote_average}}</p>
-            <button class="btn btn-primary" ng-click="showHero(hero.id)">Modifier</button>
+            <h3>{{movie.title}}</h3>
+            <h4>{{movie.release_date}}</h4>
+            <p>{{movie.vote_average}}</p>
+            <button class="btn btn-primary" ng-click="showMovie(movie.id)">Modifier</button>
 
         </div>
     </div>

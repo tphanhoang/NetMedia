@@ -7,14 +7,14 @@
                 if(angular.element(element.children()[i]).hasClass('disabled')) {
                     return;
                 }
-                scope.hero.status = parseInt(i);
-                var local = JSON.parse(localStorage.getItem('heroes'));
+                scope.movie.status = parseInt(i);
+                var local = JSON.parse(localStorage.getItem('movies'));
                 local.forEach(function(el, i) {
-                    if(el.id === scope.hero.id) {
-                        el.status = scope.hero.status;
+                    if(el.id === scope.movie.id) {
+                        el.status = scope.movie.status;
                     }
                 });
-                localStorage.setItem('heroes', JSON.stringify(local));
+                localStorage.setItem('movies', JSON.stringify(local));
                 scope.alert = 'success';
                 $timeout(function () {
                     scope.alert = '';
