@@ -6,11 +6,11 @@
 
     <div class="panel-body panel-body">
         <div>
-            <img class="thumbnail thumbnail--inline" ng-src="images/{{movie.image}}" width="100px" height="100px"/>
+            <!-- <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" width="100px" height="100px"/> -->
             <span class="bloc-hero" ng-switch on="movie.status">
                 <h3>{{movie.title}}</h3>
                 <h4>{{movie.release_date}}</h4>
-                <p>{{movie.description}}</p>
+                <p>{{movie.overview}}</p>
                 <span ng-switch-when="0" class="label label-success">Disponible</span>
                 <span ng-switch-when="1" class="label label-warning">Occupé(e)</span>
                 <span ng-switch-when="2" class="label label-danger">Blessé(e)</span>
@@ -32,5 +32,266 @@
         <div ng-show="alert == 'success'" class="alert alert-success"><strong>Statut modifié!</strong></div>
         <div ng-show="alert == 'error'" class="alert alert-danger"><strong>Echec !</strong></div>
     </div>
-
 </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id] (TPH)</h3>
+        </div>
+
+        <ul>
+                  
+            <li><label>adult : </label> {{movie.adult}}</li>
+            <li><label>backdrop_path : </label> {{movie.backdrop_path}}</li>
+            <li><label>belongs_to_collection : </label> 
+                <ul>
+                    <li><label> id :</label> {{movie.belongs_to_collection.id}}</li>
+                    <li><label> name :</label> {{movie.belongs_to_collection.name}}</li>
+                    <li><label> poster_path :</label> {{movie.belongs_to_collection.poster_path}}</li>
+                    <li><label> backdrop_path :</label> {{movie.belongs_to_collection.backdrop_path}}</li>
+                </ul>
+            </li>
+            <li><label>budget : </label> {{movie.budget}}</li>
+            <li><label>genres : </label> 
+                 <ul ng-repeat="(key, genre) in movie.genres">
+                    <li><label>array :</label> {{key}}<ul>
+                        <li><label>id :</label> {{genre.id}}</li>
+                        <li><label>name :</label> {{genre.name}}</li></ul></li>
+                </ul>
+            </li>
+            <li><label>homepage : </label> {{movie.homepage}}</li>
+            <li><label>id : </label> {{movie.id}}</li>
+            <li><label>imdb_id : </label> {{movie.imdb_id}}</li>
+            <li><label>original_language : </label> {{movie.original_language}}</li>
+            <li><label>original_title : </label> {{movie.original_title}}</li>
+            <li><label>overview : </label> {{movie.overview}}</li>
+            <li><label>popularity : </label> {{movie.popularity}}</li>
+            <li><label>poster_path : </label> {{movie.poster_path}}</li>
+            <li><label>production_companies : </label>                 
+                 <ul ng-repeat="(key, production_company) in movie.production_companies">
+                    <li><label>array :</label> {{key}}<ul>
+                        <li><label>id :</label> {{production_company.id}}</li>
+                        <li><label>name :</label> {{production_company.name}}</li></ul></li>
+                </ul>
+            </li>
+            <li><label>production_countries : </label>
+                 <ul ng-repeat="(key, production_country) in movie.production_countries">
+                    <li><label>array :</label> {{key}}<ul>
+                        <li><label>id :</label> {{production_country.id}}</li>
+                        <li><label>name :</label> {{production_country.name}}</li></ul></li>
+                </ul>
+            </li>
+            <li><label>release_date : </label> {{movie.release_date}}</li>
+            <li><label>revenue : </label> {{movie.revenue}}</li>
+            <li><label>runtime : </label> {{movie.runtime}}</li>
+            <li><label>spoken_languages : </label>
+                 <ul ng-repeat="(key, spoken_language) in movie.spoken_languages">
+                    <li><label>array :</label> {{key}}<ul>
+                        <li><label>iso_639_1 :</label> {{spoken_language.iso_639_1}}</li>
+                        <li><label>name :</label> {{spoken_language.name}}</li></ul></li>
+                </ul>
+            </li>
+            <li><label>status : </label> {{movie.status}}</li>
+            <li><label>tagline : </label> {{movie.tagline}}</li>
+            <li><label>title : </label> {{movie.title}}</li>
+            <li><label>video : </label> {{movie.video}}</li>
+            <li><label>vote_average : </label> {{movie.vote_average}}</li>
+            <li><label>vote_count : </label> {{movie.vote_count}}</li>
+
+        </ul>
+
+         <div class="panel-heading">
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/credits] (TPH)</h3>
+        </div>
+        <ul>
+            <li><label>id :</label> {{credits.id}}</li>
+            <li><label>cast :</label> 
+                <ul ng-repeat="(key, role) in credits.cast">
+                    <li><label>array :</label> {{key}}<ul>
+                        <li><label>cast_id :</label> {{role.cast_id}}</li>
+                        <li><label>character :</label> {{role.character}}</li>
+                        <li><label>credit_id :</label> {{role.credit_id}}</li>
+                        <li><label>id :</label> {{role.id}}</li>
+                        <li><label>name :</label> {{role.name}}</li></ul></li>
+                </ul>
+            </li>
+
+            <li><label>crew :</label> <ul ng-repeat="(key, crew) in credits.crew">
+                    <li><label>array :</label> {{key}}<ul>
+                        <li><label>credit_id :</label> {{crew.credit_id}}</li>
+                        <li><label>department :</label> {{crew.department}}</li>
+                        <li><label>id :</label> {{crew.id}}</li>
+                        <li><label>job :</label> {{crew.job}}</li>
+                        <li><label>name :</label> {{crew.name}}</li>
+                        <li><label>profile_path :</label> {{crew.profile_path}}</li></ul></li>
+                </ul></li>
+        </ul>
+
+         <div class="panel-heading">
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/alternative_titles] (TPH)</h3>
+        </div>
+         <ul>
+            <li><label>id :</label> {{alternative_titles.id}}</li>
+            <li><label>titles :</label>
+                <ul ng-repeat="(key, title) in alternative_titles.titles">
+                    <li><label>tt :</label> {{key}}<ul>
+                        <li><label>AU :</label> {{title.iso_3166_1}}</li>
+                        <li><label>file_path :</label> {{title.title}}</li></ul></li>
+                </ul>
+            </li>
+        </ul>
+        
+
+
+         <div class="panel-heading">
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/images] (TPH)</h3>
+        </div>
+         <ul>
+            <li><label>id :</label> {{images.id}}</li>
+                <ul ng-repeat="(key, backdrop) in images.backdrops">
+                    <li><label>array :</label> {{key}}<ul>
+                        <li><label>aspect_ratio :</label> {{backdrop.aspect_ratio}}</li>
+                        <li><label>file_path :</label> {{backdrop.file_path}}</li>
+                        <li><label>height :</label> {{backdrop.height}}</li>
+                        <li><label>width :</label> {{backdrop.width}}</li>
+                        <li><label>iso_639_1 :</label> {{backdrop.iso_639_1}}</li>
+                        <li><label>vote_average :</label> {{backdrop.vote_average}}</li>
+                        <li><label>vote_count :</label> {{backdrop.vote_count}}</li></ul></li>
+                </ul>
+            </li>
+        </ul>
+
+         <div class="panel-heading">
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/keywords] (TPH)</h3>
+        </div>
+         <ul>
+            <li><label>id :</label> {{keywords.id}}</li>
+                <ul ng-repeat="(key, keyword) in keywords.keywords">
+                    <li><label>array :</label> {{key}}<ul>
+                        <li><label>id :</label> {{keyword.id}}</li>
+                        <li><label>name :</label> {{keyword.name}}</li></ul></li>
+                </ul>
+            </li>
+        </ul>
+
+         <div class="panel-heading">
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/releases] (TPH)</h3>
+        </div>
+        <ul>
+            <li><label>id :</label> {{releases.id}}</li>
+                <ul ng-repeat="(key, country) in releases.countries">
+                    <li><label>array :</label> {{key}}<ul>
+                        <li><label>certification :</label> {{country.certification}}</li>
+                        <li><label>iso_3166_1 :</label> {{country.iso_3166_1}}</li>
+                        <li><label>primary :</label> {{country.primary}}</li>
+                        <li><label>release_date :</label> {{country.release_date}}</li></ul></li>
+                </ul>
+            </li>
+        </ul>
+
+         <div class="panel-heading">
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/videos] (TPH)</h3>
+        </div>
+        <ul>
+            <li><label>id :</label> {{videos.id}}</li>
+                <ul ng-repeat="(key, result) in videos.results">
+                    <li><label>array :</label> {{key}}<ul>
+                        <li><label>id :</label> {{result.id}}</li>
+                        <li><label>iso_639_1 :</label> {{result.iso_3166_1}}</li>
+                        <li><label>key :</label> {{result.key}}</li>
+                        <li><label>name :</label> {{result.name}}</li>
+                        <li><label>site :</label> {{result.site}}</li>
+                        <li><label>size :</label> {{result.size}}</li>
+                        <li><label>type :</label> {{result.type}}</li></ul></li>
+                </ul>
+            </li>
+        </ul>
+        
+         <div class="panel-heading">
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/translations] (TPH)</h3>
+        </div>
+        
+        <ul>
+            <li><label>id :</label> {{translations.id}}</li>
+                <ul ng-repeat="(key, translation) in translations.translations">
+                    <li><label>array :</label> {{key}}<ul>
+                        <li><label>iso_639_1 :</label> {{translation.iso_639_1}}</li>
+                        <li><label>english_name :</label> {{translation.english_name}}</li>
+                        <li><label>name :</label> {{translation.name}}</li></ul></li>
+                </ul></li>
+            
+        </ul>
+
+         <div class="panel-heading">
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/similar] (TPH)</h3>
+        </div>
+    
+        
+        <ul>
+            <li><label>page :</label> {{similar.page}}</li>
+                <ul ng-repeat="(key, result) in similar.results">
+                    <li><label>array :</label> {{key}}<ul>
+                        <li><label>adult</label> :{{result.adult}}</li>
+                        <li><label>backdrop_path</label> :{{result.backdrop_path}}</li>
+                        <li><label>genre_ids</label> :{{result.genre_ids}}</li>
+                        <li><label>id</label> :{{result.id}}</li>
+                        <li><label>original_language</label> :{{result.original_language}}</li>
+                        <li><label>original_title</label> :{{result.original_title}}</li>
+                        <li><label>overview</label> :{{result.overview}}</li>
+                        <li><label>release_date</label> :{{result.release_date}}</li>
+                        <li><label>poster_path</label> :{{result.poster_path}}</li>
+                        <li><label>popularity</label> :{{result.popularity}}</li>
+                        <li><label>title</label> :{{result.title}}</li>
+                        <li><label>video</label> :{{result.video}}</li>
+                        <li><label>vote_average</label> :{{result.vote_average}}</li>
+                        <li><label>vote_count</label> :{{result.vote_count}}</li></ul></li>
+                </ul></li>
+            
+            <li><label>total_pages :</label> {{similar.total_pages}}</li>
+            <li><label>total_results :</label> {{similar.total_results}}</li>
+        </ul>
+
+
+         <div class="panel-heading">
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/reviews] (TPH)</h3>
+        </div>
+        
+        
+        <ul>
+            <li><label>id :</label> {{translations.id}}</li>
+                <ul ng-repeat="(key, result) in reviews.results">
+                    <li><label>array :</label> {{key}}<ul>
+                        <li><label>id :</label> {{result.id}}</li>
+                        <li><label>author :</label> {{result.author}}</li>
+                        <li><label>content :</label> {{result.content}}</li></ul></li>
+                </ul></li>
+            
+            <li><label>total_pages :</label> {{reviews.total_pages}}</li>
+            <li><label>total_results :</label> {{reviews.total_results}}</li>
+        </ul>
+
+         <div class="panel-heading">
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/lists] (TPH)</h3>
+        </div>
+
+        
+        <ul>
+            <li><label>id :</label> {{lists.id}}</li>
+                <ul ng-repeat="(key, result) in lists.results">
+                    <li><label>array :</label> {{key}}<ul>
+                        <li><label>description :</label> {{result.description}}</li>
+                        <li><label>favorite_count :</label> {{result.favorite_count}}</li>
+                        <li><label>id :</label> {{result.id}}</li>
+                        <li><label>item_count :</label> {{result.item_count}}</li>
+                        <li><label>iso_639_1 :</label> {{result.iso_639_1}}</li>
+                        <li><label>name :</label> {{result.name}}</li>
+                        <li><label>poster_path :</label> {{result.poster_path}}</li></ul></li>
+                </ul></li>
+            
+        </ul>
+
+         <div class="panel-heading">
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/changes] (TPH)</h3>
+        </div>
+        {{changes}}
+    </div>

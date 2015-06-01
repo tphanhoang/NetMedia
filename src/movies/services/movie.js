@@ -6,7 +6,20 @@
     function MovieFactory(urlConfig, $http, $q) {
         return {
             getMovies: _getMovies,
-            getMovie: _getMovie
+            getMovie: _getMovie,
+            getMovieCredits : _getMovieCredits,
+            getMovieAccount_states : _getMovieAccount_states,
+            getMovieAlternative_titles : _getMovieAlternative_titles,
+            getMovieImages : _getMovieImages,
+            getMovieKeywords : _getMovieKeywords,
+            getMovieReleases : _getMovieReleases,
+            getMovieVideos : _getMovieVideos,
+            getMovieTranslations : _getMovieTranslations,
+            getMovieSimilar : _getMovieSimilar,
+            getMovieReviews : _getMovieReviews,
+            getMovieLists : _getMovieLists,
+            getMovieChanges : _getMovieChanges,
+            getMovieRating : _getMovieRating
         };
 
         function _getMovies() {
@@ -34,12 +47,10 @@
             // }
 
             var defer = $q.defer();
-            //$http.get(urlConfig.MOVIES).then(function(movies) {
-            $http.get("http://api.themoviedb.org/3/movie/popular?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
-                //localStorage.setItem('movies', JSON.stringify(movies.data));
-                //var movie = _loopMovies(response.data, id);
-                defer.resolve(response.data);
-                //console.log(movie);
+        
+            $http.get("http://api.themoviedb.org/3/movie/"+id+"?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+
+                var movie = defer.resolve(response.data);
                 if(movie !== false) {
                     defer.resolve(movie);
                 } else {
@@ -49,21 +60,240 @@
                 defer.reject(err);
             });
 
+            
+            
             return defer.promise;
         }
 
-        $movies = resp
 
-        // function _loopMovies(movies, id) {
-        //     var result = false;
+        function _getMovieCredits(id) {
 
-        //     movies.forEach(function(movie) {
-        //         if(movie.id === parseInt(id)) {
-        //             result = movie;
-        //         }
-        //     });
 
-        //     return result;
-        // }
+            var defer = $q.defer();
+ $http.get("http://api.themoviedb.org/3/movie/"+id+"/credits?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+
+                var movie =  defer.resolve(response.data);
+                if(movie !== false) {
+                    defer.resolve(movie);
+                } else {
+                    defer.reject('Expected Movie does not exists!');
+                }
+            }, function(err) {
+                defer.reject(err);
+            });
+
+
+
+
+            return defer.promise;
+        }
+
+        function _getMovieAccount_states(id) {
+
+
+            var defer = $q.defer();
+            $http.get("http://api.themoviedb.org/3/movie/"+id+"/account_states?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+                var movie =  defer.resolve(response.data);
+                if(movie !== false) {
+                    defer.resolve(movie);
+                } else {
+                    defer.reject('Expected Movie does not exists!');
+                }
+            }, function(err) {
+                defer.reject(err);
+            });
+            return defer.promise;
+        }
+
+        function _getMovieAlternative_titles(id) {
+
+
+            var defer = $q.defer();
+            $http.get("http://api.themoviedb.org/3/movie/"+id+"/alternative_titles?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+                var movie =  defer.resolve(response.data);
+                if(movie !== false) {
+                    defer.resolve(movie);
+                } else {
+                    defer.reject('Expected Movie does not exists!');
+                }
+            }, function(err) {
+                defer.reject(err);
+            });
+            return defer.promise;
+        }
+
+        function _getMovieImages(id) {
+
+
+            var defer = $q.defer();
+            $http.get("http://api.themoviedb.org/3/movie/"+id+"/images?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+                var movie =  defer.resolve(response.data);
+                if(movie !== false) {
+                    defer.resolve(movie);
+                } else {
+                    defer.reject('Expected Movie does not exists!');
+                }
+            }, function(err) {
+                defer.reject(err);
+            });
+            return defer.promise;
+        }
+
+        function _getMovieKeywords(id) {
+
+
+            var defer = $q.defer();
+            $http.get("http://api.themoviedb.org/3/movie/"+id+"/keywords?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+                var movie =  defer.resolve(response.data);
+                if(movie !== false) {
+                    defer.resolve(movie);
+                } else {
+                    defer.reject('Expected Movie does not exists!');
+                }
+            }, function(err) {
+                defer.reject(err);
+            });
+            return defer.promise;
+        }
+
+        function _getMovieReleases(id) {
+
+
+            var defer = $q.defer();
+            $http.get("http://api.themoviedb.org/3/movie/"+id+"/releases?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+                var movie =  defer.resolve(response.data);
+                if(movie !== false) {
+                    defer.resolve(movie);
+                } else {
+                    defer.reject('Expected Movie does not exists!');
+                }
+            }, function(err) {
+                defer.reject(err);
+            });
+            return defer.promise;
+        }
+
+        function _getMovieVideos(id) {
+
+
+            var defer = $q.defer();
+            $http.get("http://api.themoviedb.org/3/movie/"+id+"/videos?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+                var movie =  defer.resolve(response.data);
+                if(movie !== false) {
+                    defer.resolve(movie);
+                } else {
+                    defer.reject('Expected Movie does not exists!');
+                }
+            }, function(err) {
+                defer.reject(err);
+            });
+            return defer.promise;
+        }
+
+        function _getMovieTranslations(id) {
+
+
+            var defer = $q.defer();
+            $http.get("http://api.themoviedb.org/3/movie/"+id+"/translations?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+                var movie =  defer.resolve(response.data);
+                if(movie !== false) {
+                    defer.resolve(movie);
+                } else {
+                    defer.reject('Expected Movie does not exists!');
+                }
+            }, function(err) {
+                defer.reject(err);
+            });
+            return defer.promise;
+        }
+
+        function _getMovieSimilar(id) {
+
+
+            var defer = $q.defer();
+            $http.get("http://api.themoviedb.org/3/movie/"+id+"/similar?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+                var movie =  defer.resolve(response.data);
+                if(movie !== false) {
+                    defer.resolve(movie);
+                } else {
+                    defer.reject('Expected Movie does not exists!');
+                }
+            }, function(err) {
+                defer.reject(err);
+            });
+            return defer.promise;
+        }
+
+        function _getMovieReviews(id) {
+
+
+            var defer = $q.defer();
+            $http.get("http://api.themoviedb.org/3/movie/"+id+"/reviews?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+                var movie =  defer.resolve(response.data);
+                if(movie !== false) {
+                    defer.resolve(movie);
+                } else {
+                    defer.reject('Expected Movie does not exists!');
+                }
+            }, function(err) {
+                defer.reject(err);
+            });
+            return defer.promise;
+        }
+
+        function _getMovieLists(id) {
+
+
+            var defer = $q.defer();
+            $http.get("http://api.themoviedb.org/3/movie/"+id+"/lists?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+                var movie =  defer.resolve(response.data);
+                if(movie !== false) {
+                    defer.resolve(movie);
+                } else {
+                    defer.reject('Expected Movie does not exists!');
+                }
+            }, function(err) {
+                defer.reject(err);
+            });
+            return defer.promise;
+        }
+
+        function _getMovieChanges(id) {
+
+
+            var defer = $q.defer();
+            $http.get("http://api.themoviedb.org/3/movie/"+id+"/changes?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+                var movie =  defer.resolve(response.data);
+                if(movie !== false) {
+                    defer.resolve(movie);
+                } else {
+                    defer.reject('Expected Movie does not exists!');
+                }
+            }, function(err) {
+                defer.reject(err);
+            });
+            return defer.promise;
+        }
+
+        function _getMovieRating(id) {
+
+
+            var defer = $q.defer();
+            $http.get("http://api.themoviedb.org/3/movie/"+id+"/rating?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+                var movie =  defer.resolve(response.data);
+                if(movie !== false) {
+                    defer.resolve(movie);
+                } else {
+                    defer.reject('Expected Movie does not exists!');
+                }
+            }, function(err) {
+                defer.reject(err);
+            });
+            return defer.promise;
+        }
+
+        
+
+
     }
 }());
