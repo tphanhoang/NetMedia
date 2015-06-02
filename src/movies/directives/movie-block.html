@@ -5,11 +5,23 @@
         <span ng-switch-when="2" class="label label-danger">Blessé(e)</span>
     </div>
     <div class="thumbnail">
-        <!-- <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="image-thumbnail">  -->
+        <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="image-thumbnail"> 
+        <hr>
+        <img src="http://image.tmdb.org/t/p/w500{{movie.backdrop_path}}" class="image-thumbnail"> 
         <div class="caption">
-            <h3>{{movie}}</h3>
-            <h4>{{movie.release_date}}</h4>
-            <p>{{movie.vote_average}}</p>
+            <p>adult : {{movie.adult}}</p>
+            <h3>title : {{movie.title}}</h3>
+            <p>original_title : {{movie.original_title}}</p>
+            <p>id : {{movie.id}}</p>
+            <p>genre_ids : <ul><li ng-repeat="(key, genre) in movie.genre_ids">{{genre}}</li></ul></p>
+            <p>vote_average : {{movie.vote_average}}</p>
+            <p>original_language : {{movie.original_language}}</p>
+            <p>release_date : {{movie.release_date}}</p>
+            <p>overview : {{movie.overview}}</p>
+            <p>popularity : {{movie.popularity}}</p>
+            <p>video : {{movie.video}}</p>
+            <p>vote_average : {{movie.vote_average}}</p>
+            <p>vote_count : {{movie.vote_count}}</p>
             <button class="btn btn-primary" ng-click="showMovie(movie.id)">Regarder</button>
         </div>
     </div>

@@ -13,7 +13,7 @@
 		$scope.reviews = Reviews;
 		$scope.lists = Lists;
 		$scope.changes = Changes;
-        $scope.movie.id = $routeParams
+        $scope.movie.id = $routeParams;
         $scope.alert = '';
         $scope.back = function() {
             $location.path('/movies');

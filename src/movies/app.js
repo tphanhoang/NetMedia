@@ -15,6 +15,15 @@
                         }
                     }
                 })
+                .when('/series', {
+                    templateUrl: 'src/movies/views/series.html',
+                    controller: 'SeriesCtrl',
+                    resolve: {
+                        Series: function(SerieFactory) {
+                            return SerieFactory.getSeries();
+                        }
+                    }
+                })
                 .when('/movie/:id', {
                     templateUrl: 'src/movies/views/movie.html',
                     controller: 'MovieCtrl',
@@ -58,6 +67,14 @@
 
                     }
                 })
+                 .when('/serie/:id', {
+                    templateUrl: 'src/movies/views/serie.html',
+                    controller: 'SerieCtrl',
+                    resolve: {
+                        Serie: function($route, SerieFactory) {
+                            return SerieFactory.getSerie($route.current.params.id);
+                        }
+                }})
                 .otherwise('/movies');
         });
 }());

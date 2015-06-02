@@ -1,0 +1,41 @@
+<div class="panel panel-primary">
+
+<div class="panel-heading">
+    <h3 class="panel-title panel-title title--inline">Liste des Films Populaires | <a href="#/films">Films</a> | <a href="#/series">Series</a> </h3>
+   
+    </div>
+
+    <div class="panel-body">
+
+      <div class="col-sm-6 col-md-4" ng-repeat="serie in series.results" >
+    <div class="pull-right" ng-switch on="movie.status">
+        <span ng-switch-when="0" class="label label-success">Disponible</span>
+        <span ng-switch-when="1" class="label label-warning">Occupé(e)</span>
+        <span ng-switch-when="2" class="label label-danger">Blessé(e)</span>
+    </div>
+    <div class="thumbnail">
+        <img src="http://image.tmdb.org/t/p/w500{{serie.poster_path}}" class="image-thumbnail">   
+<hr>
+        <img src="http://image.tmdb.org/t/p/w500{{serie.backdrop_path}}" class="image-thumbnail">  
+        <div class="caption">
+           
+            <h3>name : {{serie.name}}</h3>
+            <p>original_name : {{serie.original_name}}</p>
+            <p>id : {{serie.id}}</p>
+            <p>origin_country : {{movie.origin_country}}</p>
+            <p>original_language : {{serie.original_language}}</p>
+            <p>first_air_date : {{serie.first_air_date}}</p>
+            <p>origin_country : {{serie.origin_country}}</p>
+            <p>popularity : {{serie.popularity}}</p>
+            <p>video : {{serie.video}}</p>
+            <p>vote_average : {{serie.vote_average}}</p>
+            <p>vote_count : {{serie.vote_count}}</p>
+            <button class="btn btn-primary" ng-click="showSerie(serie.id)">Regarder</button>
+        </div>
+    </div>
+</div>
+
+
+    </div>
+
+</div>
