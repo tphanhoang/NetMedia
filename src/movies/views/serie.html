@@ -6,6 +6,7 @@
 
     <div class="panel-body panel-body">
         <div>
+
             <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{serie.poster_path}}" /> 
             <hr>
             <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{serie.backdrop_path}}" /> 
@@ -13,7 +14,11 @@
                 <h3>{{serie.id}}</h3>
                 <h4>{{serie.name}}</h4>
                 <p>{{serie.overview}}</p>
-               
+                <p> saisons : 
+                 <span ng-repeat="(key, season) in serie.seasons">
+                    {{season.season_number}}
+                </span>
+            </li>
             </span>
 
             <div class="btn-group pull-right">
@@ -42,7 +47,9 @@
         <ul>
            
             <li><label>name : </label> {{serie.name}}</li>
-            <li><label>backdrop_path : </label> {{serie.backdrop_path}}</li>
+            <li><label>backdrop_path : </label> 
+
+            <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{serie.backdrop_path}}" /> </li>
             <li><label>created_by : </label> 
                  <ul ng-repeat="(key, creat) in serie.created_by">
                     <li><label>array :</label> {{key}}<ul>
@@ -72,7 +79,8 @@
             <li><label>original_title : </label> {{serie.original_title}}</li>
             <li><label>overview : </label> {{serie.overview}}</li>
             <li><label>popularity : </label> {{serie.popularity}}</li>
-            <li><label>poster_path : </label> {{serie.poster_path}}</li>
+            <li><label>poster_path : </label> 
+            <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{serie.poster_path}}" /></li>
             <li><label>networks : </label>                 
                  <ul ng-repeat="(key, network) in serie.networks">
                     <li><label>array :</label> {{key}}<ul>
@@ -88,10 +96,10 @@
             <li><label>seasons : </label>
                  <ul ng-repeat="(key, season) in serie.seasons">
                     <li><label>array :</label> {{key}}<ul>
-                        <li><label>id :</label> {{season.air_date}}</li>
-                        <li><label>name :</label> {{season.episode_count}}</li>
+                        <li><label>air_date :</label> {{season.air_date}}</li>
+                        <li><label>episode_count :</label> {{season.episode_count}}</li>
                         <li><label>name :</label> {{season.id}}</li>
-                        <li><label>name :</label> {{season.poster_path}}</li>
+                        <li><label>img :</label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{season.poster_path}}" /></li>
                         <li><label>name :</label> {{season.season_number}}</li></ul></li>
                 </ul>
             </li>
@@ -115,7 +123,9 @@
                 <ul ng-repeat="(key, result) in similar.results">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>id :</label> {{result.id}}</li>
-                        <li><label>backdrop_path :</label> {{result.backdrop_path}}</li>
+                        <li><label>backdrop_path :</label> 
+                        <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{result.backdrop_path}}" />
+                        </li>
                         <li><label>first_air_date :</label> {{result.first_air_date}}</li>
                         <li><label>origin_country :</label> {{result.origin_country}}</li>
                         <li><label>name :</label> {{result.name}}</li>
@@ -216,7 +226,8 @@
                 <ul ng-repeat="(key, backdrop) in images.backdrops">
                     <li><label>Backdrop (array) :</label> {{key}}<ul>
                         <li><label>aspect_ratio :</label> {{backdrop.aspect_ratio}}</li>
-                        <li><label>file_path :</label> {{backdrop.file_path}}</li>
+                        <li><label>file_path :</label> 
+                        <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{backdrop.file_path}}" /></li>
                         <li><label>height :</label> {{backdrop.height}}</li>
                         <li><label>width :</label> {{backdrop.width}}</li>
                         <li><label>iso_639_1 :</label> {{backdrop.iso_639_1}}</li>
@@ -227,7 +238,7 @@
                     <li><label>Poster (array) :</label> {{key}}<ul>
                     
                         <li><label>aspect_ratio :</label> {{poster.aspect_ratio}}</li>
-                        <li><label>file_path :</label> {{poster.file_path}}</li>
+                        <li><label>file_path :</label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{poster.file_path}}" /> </li>
                         <li><label>height :</label> {{poster.height}}</li>
                         <li><label>width :</label> {{poster.width}}</li>
                         <li><label>iso_639_1 :</label> {{poster.iso_639_1}}</li><li><label>id :</label> {{poster.id}}</li>
@@ -272,7 +283,7 @@
                 
                 <li><label>iso_639_1 :</label> {{result.iso_639_1}}</li>
                 <li><label>id :</label> {{result.id}}</li>
-                <li><label>key :</label> {{result.key}}</li>
+                <li><label>key :</label> {{embed}}</li>
                 <li><label>name :</label> {{result.name}}</li>
                 <li><label>site :</label> {{result.site}}</li>
                 <li><label>size :</label> {{result.size}}</li>

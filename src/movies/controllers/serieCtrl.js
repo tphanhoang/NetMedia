@@ -17,5 +17,7 @@
         $scope.back = function() {
             $location.path('/series');
         };
+
+        $scope.embed = "<iframe width='560' height='315' src='http//www.youtube.com/watch?v={{result.key}}'' frameborder='0' allowfullscreen></iframe></li>";
     });
 }());

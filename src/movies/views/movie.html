@@ -6,7 +6,7 @@
 
     <div class="panel-body panel-body">
         <div>
-            <!-- <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" width="100px" height="100px"/> -->
+            <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"/>
             <span class="bloc-hero" ng-switch on="movie.status">
                 <h3>{{movie.title}}</h3>
                 <h4>{{movie.release_date}}</h4>
@@ -42,13 +42,14 @@
         <ul>
                   
             <li><label>adult : </label> {{movie.adult}}</li>
-            <li><label>backdrop_path : </label> {{movie.backdrop_path}}</li>
+            <li><label>backdrop_path : </label> 
+            <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{movie.backdrop_path}}"/></li>
             <li><label>belongs_to_collection : </label> 
                 <ul>
                     <li><label> id :</label> {{movie.belongs_to_collection.id}}</li>
                     <li><label> name :</label> {{movie.belongs_to_collection.name}}</li>
-                    <li><label> poster_path :</label> {{movie.belongs_to_collection.poster_path}}</li>
-                    <li><label> backdrop_path :</label> {{movie.belongs_to_collection.backdrop_path}}</li>
+                    <li><label> poster_path :</label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{movie.belongs_to_collection.poster_path}}"/></li></li>
+                    <li><label> backdrop_path :</label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{movie.belongs_to_collection.backdrop_path}}"/></li>
                 </ul>
             </li>
             <li><label>budget : </label> {{movie.budget}}</li>
@@ -66,7 +67,7 @@
             <li><label>original_title : </label> {{movie.original_title}}</li>
             <li><label>overview : </label> {{movie.overview}}</li>
             <li><label>popularity : </label> {{movie.popularity}}</li>
-            <li><label>poster_path : </label> {{movie.poster_path}}</li>
+            <li><label>poster_path : </label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"/></li>
             <li><label>production_companies : </label>                 
                  <ul ng-repeat="(key, production_company) in movie.production_companies">
                     <li><label>array :</label> {{key}}<ul>
@@ -123,7 +124,7 @@
                         <li><label>id :</label> {{crew.id}}</li>
                         <li><label>job :</label> {{crew.job}}</li>
                         <li><label>name :</label> {{crew.name}}</li>
-                        <li><label>profile_path :</label> {{crew.profile_path}}</li></ul></li>
+                        <li><label>profile_path :</label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{crew.profile_path}}"/></li></ul></li>
                 </ul></li>
         </ul>
 
@@ -136,7 +137,7 @@
                 <ul ng-repeat="(key, title) in alternative_titles.titles">
                     <li><label>tt :</label> {{key}}<ul>
                         <li><label>AU :</label> {{title.iso_3166_1}}</li>
-                        <li><label>file_path :</label> {{title.title}}</li></ul></li>
+                        <li><label>title :</label> {{title.title}}</li></ul></li>
                 </ul>
             </li>
         </ul>
@@ -151,7 +152,7 @@
                 <ul ng-repeat="(key, backdrop) in images.backdrops">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>aspect_ratio :</label> {{backdrop.aspect_ratio}}</li>
-                        <li><label>file_path :</label> {{backdrop.file_path}}</li>
+                        <li><label>file_path :</label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{backdrop.file_path}}"/></li>
                         <li><label>height :</label> {{backdrop.height}}</li>
                         <li><label>width :</label> {{backdrop.width}}</li>
                         <li><label>iso_639_1 :</label> {{backdrop.iso_639_1}}</li>
@@ -232,14 +233,14 @@
                 <ul ng-repeat="(key, result) in similar.results">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>adult</label> :{{result.adult}}</li>
-                        <li><label>backdrop_path</label> :{{result.backdrop_path}}</li>
+                        <li><label>backdrop_path</label> :<img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{result.backdrop_path}}"/></li>
                         <li><label>genre_ids</label> :{{result.genre_ids}}</li>
                         <li><label>id</label> :{{result.id}}</li>
                         <li><label>original_language</label> :{{result.original_language}}</li>
                         <li><label>original_title</label> :{{result.original_title}}</li>
                         <li><label>overview</label> :{{result.overview}}</li>
                         <li><label>release_date</label> :{{result.release_date}}</li>
-                        <li><label>poster_path</label> :{{result.poster_path}}</li>
+                        <li><label>poster_path</label> :<img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{result.poster_path}}"/></li>
                         <li><label>popularity</label> :{{result.popularity}}</li>
                         <li><label>title</label> :{{result.title}}</li>
                         <li><label>video</label> :{{result.video}}</li>
@@ -285,7 +286,7 @@
                         <li><label>item_count :</label> {{result.item_count}}</li>
                         <li><label>iso_639_1 :</label> {{result.iso_639_1}}</li>
                         <li><label>name :</label> {{result.name}}</li>
-                        <li><label>poster_path :</label> {{result.poster_path}}</li></ul></li>
+                        <li><label>poster_path :</label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{result.poster_path}}"/></li></ul></li>
                 </ul></li>
             
         </ul>

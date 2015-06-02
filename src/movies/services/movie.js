@@ -19,8 +19,46 @@
             getMovieReviews : _getMovieReviews,
             getMovieLists : _getMovieLists,
             getMovieChanges : _getMovieChanges,
-            getMovieRating : _getMovieRating
+            getMovieRating : _getMovieRating,
+            getMoviesSearch : _getMoviesSearch,
+            getListGenreMovies : _getListGenreMovies,
+            getMoviesGenre : _getMoviesGenre
         };
+
+
+        
+        function _getMoviesGenre(id){
+
+            var defer = $q.defer();
+        
+            $http.get("http://api.themoviedb.org/3/genre/"+id+"/movies?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+
+                var movie = defer.resolve(response.data);
+                if(movie !== false) {
+                    defer.resolve(movie);
+                } else {
+                    defer.reject('Expected Movie does not exists!');
+                }
+            }, function(err) {
+                defer.reject(err);
+            });
+
+            return defer.promise;
+        }
+
+        function _getListGenreMovies() {
+
+            var defer = $q.defer();
+                $http.get("http://api.themoviedb.org/3/genre/movie/list?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+                    defer.resolve(response.data);
+                    console.log(response.data);
+            }, function(err) {
+                defer.reject(err);
+            });
+
+            return defer.promise;
+        }
+
 
         function _getMovies() {
             //if(localStorage.getItem('heroes') !== null) {
@@ -293,6 +331,20 @@
         }
 
         
+ function _getMoviesSearch(search){
+    var defer = $q.defer();
+            $http.get("http://api.themoviedb.org/3/search/movie?api_key=cc9227d0368f24d2cbcd299743b4075c&query="+search).then(function(response) {
+                var movie =  defer.resolve(response.data);
+                if(movie !== false) {
+                    defer.resolve(movie);
+                } else {
+                    defer.reject('Expected Movie does not exists!');
+                }
+            }, function(err) {
+                defer.reject(err);
+            });
+            return defer.promise;
+        }       
 
 
     }

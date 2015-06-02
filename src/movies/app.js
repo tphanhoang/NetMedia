@@ -12,6 +12,18 @@
                     resolve: {
                         Movies: function(MovieFactory) {
                             return MovieFactory.getMovies();
+                        },
+                        ListGenreMovies: function(MovieFactory) {
+                            return MovieFactory.getListGenreMovies();
+                        }
+                    }
+                }) 
+                .when('/series/r/:search', {
+                    templateUrl: 'src/movies/views/series.html',
+                    controller: 'SeriesSearchCtrl',
+                    resolve: {
+                        SeriesSearch: function($route, SerieFactory) {
+                            return SerieFactory.getSeriesSearch($route.current.params.search);
                         }
                     }
                 })
@@ -21,9 +33,13 @@
                     resolve: {
                         Series: function(SerieFactory) {
                             return SerieFactory.getSeries();
+                        },
+                        ListGenreSeries: function(SerieFactory) {
+                            return SerieFactory.getListGenreSeries();
                         }
                     }
                 })
+
                 .when('/movie/:id', {
                     templateUrl: 'src/movies/views/movie.html',
                     controller: 'MovieCtrl',
@@ -65,6 +81,39 @@
                             return MovieFactory.getMovieChanges($route.current.params.id);
                         }
 
+                    }
+                }) 
+                .when('/movies/r/:search', {
+                    templateUrl: 'src/movies/views/movies.html',
+                    controller: 'MoviesSearchCtrl',
+                    resolve: {
+                        MoviesSearch: function($route, MovieFactory) {
+                            return MovieFactory.getMoviesSearch($route.current.params.search);
+                        }
+                    }
+                })
+                .when('/movies/genre/:id', {
+                    templateUrl: 'src/movies/views/movies.html',
+                    controller: 'MoviesGenreCtrl',
+                    resolve: {
+                        Movies: function($route, MovieFactory) {
+                            return MovieFactory.getMoviesGenre($route.current.params.id);
+                        },
+                        ListGenreMovies: function(MovieFactory) {
+                            return MovieFactory.getListGenreMovies();
+                        }
+                    }
+                })
+                .when('/series/genre/:id', {
+                    templateUrl: 'src/movies/views/series.html',
+                    controller: 'SeriesGenreCtrl',
+                    resolve: {
+                        Movies: function($route, SerieFactory) {
+                            return SerieFactory.getSeriesGenre($route.current.params.id);
+                        },
+                        ListGenreSeries: function(SerieFactory) {
+                            return SerieFactory.getListGenreMovies();
+                        }
                     }
                 })
                  .when('/serie/:id', {
