@@ -1,72 +1,74 @@
 module.exports = function(grunt) {
 
-  // Je préfère définir mes imports tout en haut
-  grunt.loadNpmTasks('grunt-contrib-sass')
-  grunt.loadNpmTasks('grunt-contrib-concat')
-  grunt.loadNpmTasks('grunt-contrib-watch')
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-
-  var jsSrc = ['src/core/filters/capitalize.js', 'src/header/header.js']
-  var jsDist = 'dist/built.js'
-
-  // Configuration de Grunt
   grunt.initConfig({
-    sass: {
-      dist: {
-        options: {
-          style: 'expanded'
-        },
-        files: [{
-          "expand": true,
-          "cwd": "vendors/css/",
-          "src": ["*.scss"],
-          "dest": "dist/",
-          "ext": ".css"
-        }]
-      },
-      dev: {} // À vous de le faire ! vous verrez que certaines options Sass sont plus intéressantes en mode dev que d'autres.
-    },
+    pkg: grunt.file.readJSON('package.json'),
     concat: {
       options: {
         separator: ';'
       },
-      compile: { // On renomme vu qu'on n'a pas de mode dev/dist. Dist étant une autre tâche : uglify
-        src: jsSrc, // Vu qu'on doit l'utiliser deux fois, autant en faire une variable.
-        dest: jsDist // Il existe des hacks plus intéressants mais ce n'est pas le sujet du post.
+      dist: {
+        src: ['vendors/**/*.js'],
+        dest: 'dist/<%= pkg.name %>.js'
       }
     },
+    sass: {
+     dist: {
+       options: {
+         style: 'expanded'
+       },
+       files: [{
+         "expand": true,
+         "cwd": "vendors/css/",
+         "src": ["*.scss"],
+         "dest": "dist/",
+         "ext": ".css"
+       }]
+     },
+     dev: {} // À vous de le faire ! vous verrez que certaines options Sass sont plus intéressantes en mode dev que d'autres.
+   },
     uglify: {
-      my_target: {
+      options: {
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+      },
+      dist: {
         files: {
-          'dest/output.min.js': ['src/input1.js', 'src/input2.js']
+          'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
         }
       }
-    }
-      compile: {
-        src: jsSrc,
-        dest: jsDist
+    },
+    jshint: {
+      files: ['Gruntfile.js', 'vendors/**/*.js'],
+      options: {
+        // options here to override JSHint defaults
+        globals: {
+          jQuery: true,
+          console: true,
+          module: true,
+          document: true
+        }
       }
     },
     watch: {
-      scripts: {
-        files: '**/*.js',
-        tasks: ['scripts:dev']
-      },
-      styles: {
-        files: '**/*.scss',
-        tasks: ['styles:dev']
-      }
-    }
-  })
+      files: ['<%= jshint.files %>'],
+      tasks: ['jshint', 'qunit']
+    },
+    styles: {
+  files: '**/*.scss',
+  tasks: ['styles:dev']
+}
+  });
 
-  grunt.registerTask('default', ['dev', 'watch'])
-  grunt.registerTask('dev', ['styles:dev', 'scripts:dev'])
-  grunt.registerTask('dist', ['styles:dist', 'scripts:dist'])
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-qunit');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-sass')
 
-  // J'aime bien avoir des noms génériques
-  grunt.registerTask('scripts:dev', ['concat:compile'])
-  grunt.registerTask('scripts:dist', ['uglify:compile'])
 
+  grunt.registerTask('test', ['jshint', 'qunit']);
   grunt.registerTask('styles:dev', ['sass:dev'])
   grunt.registerTask('styles:dist', ['sass:dist'])
-}
+  grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
+
+};
