@@ -1,0 +1,28 @@
+body{
+	background-color:$background-color;
+	margin:0px;
+}
+
+.panel-body{
+	margin-top:20px;
+	margin-left:20px;
+}
+
+.movie-block{
+  float: left;
+  margin: 5px;
+  padding: 5px;
+  width: 185px;
+  height: auto;
+  }
+
+
+.image-thumbnail{
+	width:100%;
+}
+
+.image-thumbnail:hover{
+	outline: 3px solid white;
+	cursor:pointer;
+	opacity:0.7;
+}

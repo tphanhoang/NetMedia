@@ -1,4 +1,4 @@
-<div class="col-sm-6 col-md-4">
+<div class="movie-block">
     <div class="pull-right" ng-switch on="movie.status">
         <span ng-switch-when="0" class="label label-success">Disponible</span>
         <span ng-switch-when="1" class="label label-warning">Occupé(e)</span>
@@ -7,10 +7,9 @@
     <div class="thumbnail">
         <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="image-thumbnail"> 
         <div class="caption">
-            <h3>{{movie.title}}</h3>
-            <h4>{{movie.release_date}}</h4>
-            <p>{{movie.vote_average}}</p>
-            <button class="btn btn-primary" ng-click="showMovie(movie.id)">Regarder</button>
+            <h1 class="title-home">{{movie.title | limitTo: 15}}</h1>
+            <span class="infos">{{movie.release_date}}</span>
+            <!-- <button class="btn btn-primary" ng-click="showMovie(movie.id)">Regarder</button> -->
         </div>
     </div>
 </div>

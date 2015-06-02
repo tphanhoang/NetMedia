@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 <head lang="en">
-    <link rel="stylesheet" href="vendors/css/bootstrap.min.css"/>
+    <!-- <link rel="stylesheet" href="vendors/css/bootstrap.min.css"/> -->
     <link rel="stylesheet" href="vendors/css/custom.css"/>
     <!-- <link rel="icon" href=""> -->
+    <link rel="stylesheet" href="dist/css/main.css"/>
     <meta charset="UTF-8">
     <title>NetMedia</title>
 </head>
@@ -13,17 +14,19 @@
 <body ng-app="netMediaApp">
 
 <header class="container page-header">
-     <h1>NetMedida !</h1>
-    <h3>Better than Netflix Faster than PopCornTime</h3>
+    <img src="images/logo-netmedia-ok.png" class="logo-accueil"/>
+    <div class="menu-navigation">
+        <a class="" href="">DÉCOUVRIR</a>
+        <a class="selected" href="">FILMS</a>
+        <a class="" href="">SÉRIES</a>
+    </div>
 </header>
-
 <section class="container">
     <ng-view></ng-view>
 </section>
 
 <footer class="container text-center">
-    <hr/>
-    <span>Powered by ML - 2015</span>
+
 </footer>
 </body>
 
