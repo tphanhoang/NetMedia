@@ -18,11 +18,11 @@ module.exports = function(grunt) {
     },
     target: {
       files: {
-        'output.css': ['test.css']
+        'test.css': ['test.css']
       }
     }
   },
-      sass: {
+    sass: {
      dist: {
        options: {
          style: 'expanded'
@@ -71,7 +71,7 @@ cssmin: {
   target: {
     files: [{
       expand: true,
-      cwd: 'dist',
+      cwd: 'dist/css',
       src: ['*.css', '!*.min.css'],
       dest: 'dist/css',
       ext: '.min.css'
@@ -87,6 +87,7 @@ cssmin: {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-sass')
   grunt.loadNpmTasks('grunt-contrib-cssmin')
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
 
   grunt.registerTask('test', ['jshint', 'qunit']);
