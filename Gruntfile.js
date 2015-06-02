@@ -44,6 +44,34 @@ module.exports = function(grunt) {
         }]
       }
     },
+    svgmin: {
+    dist: {
+      files: [{
+        expand: true,
+        cwd: 'vendors/svg',
+        src: '{,*/}*  .svg',
+        dest: 'dist/svg'
+      }]
+    }
+  },
+  cdn: {
+            options: {
+                /** @required - root URL of your CDN (may contains sub-paths as shown below) */
+                cdn: 'http://cdn.cloudfront.net/container/',
+                /** @optional  - if provided both absolute and relative paths will be converted */
+                flatten: false,
+                /** @optional  - if provided will be added to the default supporting types */
+                supportedTypes: { 'phtml': 'html' }
+            },
+            dist: {
+                /** @required  - gets sources here, may be same as dest  */
+                cwd: './dist/',
+                /** @required  - puts results here with respect to relative paths  */
+                dest: './dist/',
+                /** @required  - files to process */
+                src: ['index.html', '*.css', '{,*/}*.html', '{,**/}*.html'],
+            }
+        },
     sass: {
      dist: {
        options: {
@@ -138,7 +166,11 @@ cssmin: {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-svgmin');
+  grunt.loadNpmTasks('grunt-cdn');
 
+
+  grunt.registerTask('default', ['svgmin']);
   grunt.registerTask('default', ['imagemin']);
   grunt.registerTask('default', ['htmlmin']);
   grunt.registerTask('test', ['jshint', 'qunit']);
