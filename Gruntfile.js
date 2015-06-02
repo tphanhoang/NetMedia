@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+  var mozjpeg = require('imagemin-mozjpeg');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -22,6 +23,27 @@ module.exports = function(grunt) {
       }
     }
   },
+  htmlmin: {                                     // Task
+    dist: {                                      // Target
+      options: {                                 // Target options
+        removeComments: true,
+        collapseWhitespace: true
+      },
+      files: {                                   // Dictionary of files
+        'dist/index.html': 'index.html'    // 'destination': 'source
+        }
+      }
+    },
+    imagemin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'vendors/img',
+          src: '{,*/}*.{png,jpg,jpeg,gif}',
+          dest: 'dist/img'
+        }]
+      }
+    },
     sass: {
      dist: {
        options: {
@@ -59,6 +81,31 @@ module.exports = function(grunt) {
         }
       }
     },
+    autoprefixer: {
+      options: {
+        browsers: ['last 1 version']
+      },
+      server: {
+        options: {
+          map: true,
+        },
+        files: [{
+          expand: true,
+          cwd: '.vendors/css/',
+          src: '{,*/}*.css',
+          dest: '.dist/css/'
+        }]
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '.vendors/css/',
+          src: '{,*/}*.css',
+          dest: '.dist/css/'
+        }]
+      }
+    },
+
     watch: {
       files: ['<%= jshint.files %>'],
       tasks: ['jshint', 'qunit']
@@ -88,8 +135,12 @@ cssmin: {
   grunt.loadNpmTasks('grunt-contrib-sass')
   grunt.loadNpmTasks('grunt-contrib-cssmin')
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-
+  grunt.registerTask('default', ['imagemin']);
+  grunt.registerTask('default', ['htmlmin']);
   grunt.registerTask('test', ['jshint', 'qunit']);
   grunt.registerTask('styles:dev', ['sass:dev'])
   grunt.registerTask('styles:dist', ['sass:dist'])
