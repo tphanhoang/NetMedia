@@ -73,6 +73,36 @@
                     resolve: {
                         Serie: function($route, SerieFactory) {
                             return SerieFactory.getSerie($route.current.params.id);
+                        },
+                        Similar: function($route, SerieFactory) {
+                            return SerieFactory.getSerieSimilar($route.current.params.id);
+                        },
+                        Alternative_titles: function($route, SerieFactory) {
+                            return SerieFactory.getSerieAlternative_titles($route.current.params.id);
+                        },
+                        Changes: function($route, SerieFactory) {
+                            return SerieFactory.getSerieChanges($route.current.params.id);
+                        },
+                        Content_ratings: function($route, SerieFactory) {
+                            return SerieFactory.getSerieContent_ratings($route.current.params.id);
+                        },
+                        Credits: function($route, SerieFactory) {
+                            return SerieFactory.getSerieCredits($route.current.params.id);
+                        },
+                        External_ids: function($route, SerieFactory) {
+                            return SerieFactory.getSerieExternal_ids($route.current.params.id);
+                        },
+                        Images: function($route, SerieFactory) {
+                            return SerieFactory.getSerieImages($route.current.params.id);
+                        },
+                        Keywords: function($route, SerieFactory) {
+                            return SerieFactory.getSerieKeywords($route.current.params.id);
+                        },
+                        Translations: function($route, SerieFactory) {
+                            return SerieFactory.getSerieTranslations($route.current.params.id);
+                        },
+                        Videos: function($route, SerieFactory) {
+                            return SerieFactory.getSerieVideos($route.current.params.id);
                         }
                 }})
                 .otherwise('/movies');
