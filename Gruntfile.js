@@ -11,7 +11,18 @@ module.exports = function(grunt) {
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
-    sass: {
+      cssmin: {
+    options: {
+      shorthandCompacting: false,
+      roundingPrecision: -1
+    },
+    target: {
+      files: {
+        'output.css': ['test.css']
+      }
+    }
+  },
+      sass: {
      dist: {
        options: {
          style: 'expanded'
@@ -55,6 +66,17 @@ module.exports = function(grunt) {
     styles: {
   files: '**/*.scss',
   tasks: ['styles:dev']
+},
+cssmin: {
+  target: {
+    files: [{
+      expand: true,
+      cwd: 'dist',
+      src: ['*.css', '!*.min.css'],
+      dest: 'dist/css',
+      ext: '.min.css'
+    }]
+  }
 }
   });
 
@@ -64,6 +86,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-sass')
+  grunt.loadNpmTasks('grunt-contrib-cssmin')
 
 
   grunt.registerTask('test', ['jshint', 'qunit']);
