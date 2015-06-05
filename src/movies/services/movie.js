@@ -60,14 +60,11 @@
         }
 
 
-        function _getMovies() {
-            //if(localStorage.getItem('heroes') !== null) {
-               // return JSON.parse(localStorage.getItem('heroes'));
-            //}
-
+        function _getMovies(page) {
+            
             var defer = $q.defer();
-            // $http.get(urlConfig.HEROES).then(function(heroes) {
-                $http.get("http://api.themoviedb.org/3/movie/popular?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+           
+                $http.get("http://api.themoviedb.org/3/movie/popular?api_key=cc9227d0368f24d2cbcd299743b4075c&page="+page).then(function(response) {
                     //localStorage.setItem('heroes', JSON.stringify(heroes.data));
                     defer.resolve(response.data);
                     console.log(response.data);

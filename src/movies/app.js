@@ -11,7 +11,7 @@
                     controller: 'MoviesCtrl',
                     resolve: {
                         Movies: function(MovieFactory) {
-                            return MovieFactory.getMovies();
+                            return MovieFactory.getMovies(1);
                         },
                         ListGenreMovies: function(MovieFactory) {
                             return MovieFactory.getListGenreMovies();

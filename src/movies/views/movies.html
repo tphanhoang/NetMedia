@@ -1,10 +1,16 @@
 <div class="panel panel-primary">
 
     <form >
-        <select>
-        <option  ng-repeat="(key, genre) in listGenre.genres" value="{{genre.id}}">{{genre.name}}</option>
+        <select
+            ng-change="genre(value)"
+            ng-model="value"
+            ng-options="genre.id as genre.name for genre in listGenre.genres"
+        >
+        <option value="">Triez par genre</option>
         </select>
     </form>
+
+
 
     <div class="panel-heading">
     <h3 class="panel-title panel-title title--inline">Liste des Films Populaires | <a href="#/films">Films</a> | <a href="#/series">Series</a> </h3>
@@ -33,7 +39,9 @@
     <div class="panel-body">
 
         <movie-block ng-repeat="movie in movies.results | orderBy: query.order" movie="movie"></movie-block>
+        <movie-block  ng-repeat="movie.results in movies.more | orderBy: query.order" movie="movie"></movie-block>
 
     </div>
 
+<button class="btn btn-primary" ng-click="showMoreMovies(page)">Regarder</button>
 </div>
