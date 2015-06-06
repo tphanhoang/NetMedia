@@ -119,8 +119,8 @@
         </div>
 
         <ul>
-            <li><label>page :</label> {{similar.page}}</li>
-                <ul ng-repeat="(key, result) in similar.results">
+            <li><label>page :</label> {{serie.similar.page}}</li>
+                <ul ng-repeat="(key, result) in serie.similar.results">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>id :</label> {{result.id}}</li>
                         <li><label>backdrop_path :</label> 
@@ -144,8 +144,8 @@
 
 
         <ul>
-            <li><label>id :</label> {{alternative_titles.id}}</li>
-                <ul ng-repeat="(key, result) in alternative_titles.results">
+            <li><label>id :</label> {{serie.alternative_titles.id}}</li>
+                <ul ng-repeat="(key, result) in serie.alternative_titles.results">
                     <li><label>cast (array) :</label> {{key}}<ul>
                         <li><label>title :</label> {{result.title}}</li>
                         <li><label>iso_3166_1 :</label> {{result.iso_3166_1}}</li>                    
@@ -153,15 +153,13 @@
                 </ul>
             </li>
         </ul>
-    </ul>
          <div class="panel-heading">
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [serie/id/changes] (TPH)</h3>
         </div>
 
-        {{changes}}
         <ul>
-            <li><label>id :</label> {{changes.id}}</li>
-                <ul ng-repeat="(key, result) in changes.results">
+            <li><label>id :</label> {{serie.changes.id}}</li>
+                <ul ng-repeat="(key, result) in serie.changes.results">
                     <li><label>cast (array) :</label> {{key}}<ul>
                         <li><label>iso_3166_1 :</label> {{result.iso_3166_1}}</li>
                         <li><label>rating :</label> {{result.rating}}</li>                    
@@ -171,12 +169,12 @@
         </ul>
 
          <div class="panel-heading">
-            <h3 class="panel-title panel-title title--inline">Infos de l'Api [serie/id/content_ratings] (TPH)</h3>
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [serie/id/serie.content_ratings] (TPH)</h3>
         </div>
 
 <ul>
-            <li><label>id :</label> {{content_ratings.id}}</li>
-                <ul ng-repeat="(key, result) in content_ratings.results">
+            <li><label>id :</label> {{serie.content_ratings.id}}</li>
+                <ul ng-repeat="(key, result) in serie.content_ratings.results">
                     <li><label>cast (array) :</label> {{key}}<ul>
                         <li><label>iso_3166_1 :</label> {{result.iso_3166_1}}</li>
                         <li><label>rating :</label> {{result.rating}}</li>
@@ -190,8 +188,8 @@
 
 
         <ul>
-            <li><label>id :</label> {{credits.id}}</li>
-                <ul ng-repeat="(key, result) in credits.cast">
+            <li><label>id :</label> {{serie.credits.id}}</li>
+                <ul ng-repeat="(key, result) in serie.credits.cast">
                     <li><label>cast (array) :</label> {{key}}<ul>
                         <li><label>id :</label> {{result.id}}</li>
                         <li><label>character :</label> {{result.character}}</li>
@@ -209,12 +207,12 @@
 
 
         <ul>
-            <li><label>id :</label> {{external_ids.id}}</li>
-            <li><label>imdb_id :</label> {{external_ids.imdb_id}}</li>
-            <li><label>freebase_mid :</label> {{external_ids.freebase_mid}}</li>
-            <li><label>freebase_id :</label> {{external_ids.freebase_id}}</li>
-            <li><label>tvdb_id :</label> {{external_ids.tvdb_id}}</li>
-            <li><label>tvrage_id :</label> {{external_ids.tvrage_id}}</li>
+            <li><label>id :</label> {{serie.external_ids.id}}</li>
+            <li><label>imdb_id :</label> {{serie.external_ids.imdb_id}}</li>
+            <li><label>freebase_mid :</label> {{serie.external_ids.freebase_mid}}</li>
+            <li><label>freebase_id :</label> {{serie.external_ids.freebase_id}}</li>
+            <li><label>tvdb_id :</label> {{serie.external_ids.tvdb_id}}</li>
+            <li><label>tvrage_id :</label> {{serie.external_ids.tvrage_id}}</li>
         </ul>
          <div class="panel-heading">
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [serie/id/images] (TPH)</h3>
@@ -222,8 +220,8 @@
 
  
      <ul>
-            <li><label>id :</label> {{images.id}}</li><li>
-                <ul ng-repeat="(key, backdrop) in images.backdrops">
+            <li><label>id :</label> {{serie.images.id}}</li><li>
+                <ul ng-repeat="(key, backdrop) in serie.images.backdrops">
                     <li><label>Backdrop (array) :</label> {{key}}<ul>
                         <li><label>aspect_ratio :</label> {{backdrop.aspect_ratio}}</li>
                         <li><label>file_path :</label> 
@@ -234,7 +232,7 @@
                         <li><label>vote_average :</label> {{backdrop.vote_average}}</li>
                         <li><label>vote_count :</label> {{backdrop.vote_count}}</li></ul></li>
                         </ul></li><li>
-                <ul ng-repeat="(key, poster) in images.posters">
+                <ul ng-repeat="(key, poster) in serie.images.posters">
                     <li><label>Poster (array) :</label> {{key}}<ul>
                     
                         <li><label>aspect_ratio :</label> {{poster.aspect_ratio}}</li>
@@ -253,8 +251,8 @@
 
 
         <ul>
-            <li><label>id :</label> {{keywords.id}}</li>
-            <li><ul ng-repeat="(key, result) in keywords.results">
+            <li><label>id :</label> {{serie.keywords.id}}</li>
+            <li><ul ng-repeat="(key, result) in serie.keywords.results">
                 <li><label>id :</label> {{result.id}}</li>
             <li><label>name :</label> {{result.name}}</li>
                 </ul></li>
@@ -265,8 +263,8 @@
         </div>
 
         <ul>
-            <li><label>id :</label> {{translations.id}}</li>
-            <li><ul ng-repeat="(key, translation) in translations.translations">
+            <li><label>id :</label> {{serie.translations.id}}</li>
+            <li><ul ng-repeat="(key, translation) in serie.translations.translations">
                 <li><label>iso_639_1 :</label> {{translation.iso_639_1}}</li>
                 
             <li><label>name :</label> {{translation.name}}</li>
@@ -278,12 +276,12 @@
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [serie/id/videos] (TPH)</h3>
         </div>
         <ul>
-            <li><label>id :</label> {{videos.id}}</li>
-            <li> array : <ul ng-repeat="(key, result) in videos.results">
+            <li><label>id :</label> {{serie.videos.id}}</li>
+            <li> array : <ul ng-repeat="(key, result) in serie.videos.results">
                 
                 <li><label>iso_639_1 :</label> {{result.iso_639_1}}</li>
                 <li><label>id :</label> {{result.id}}</li>
-                <li><label>key :</label> {{embed}}</li>
+                <li><label>key :</label> </li>
                 <li><label>name :</label> {{result.name}}</li>
                 <li><label>site :</label> {{result.site}}</li>
                 <li><label>size :</label> {{result.size}}</li>
@@ -295,5 +293,5 @@
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [serie/id/back] (TPH)</h3>
         </div>
 
-        {{back}}
+        {{serie.back}}
     </div>

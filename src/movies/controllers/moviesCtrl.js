@@ -7,19 +7,8 @@
     .controller('MoviesSearchCtrl', MoviesSearchCtrl);
     
 
-   function MovieCtrl($scope, $location, $routeParams, Movie, Credits, Alternative_titles, Images, Keywords, Releases, Videos, Translations, Similar, Reviews, Lists, Changes) {
+   function MovieCtrl($scope, $location, $routeParams, Movie) {
         $scope.movie = Movie;
-        $scope.credits = Credits;
-        $scope.alternative_titles = Alternative_titles;
-        $scope.images = Images;
-        $scope.keywords = Keywords;
-        $scope.releases = Releases;
-        $scope.videos = Videos;
-        $scope.translations = Translations;
-        $scope.similar = Similar;
-        $scope.reviews = Reviews;
-        $scope.lists = Lists;
-        $scope.changes = Changes;
         $scope.movie.id = $routeParams;
         $scope.alert = '';
         $scope.back = function() {
@@ -29,6 +18,9 @@
 
     function MoviesCtrl($scope, $location, Movies, ListGenreMovies, MovieFactory) {
         $scope.listGenre = ListGenreMovies;
+        
+        $scope.genreList = {};
+        ListGenreMovies.genres.forEach(function(y){$scope.genreList[y.id]=y.name});
         $scope.movies = Movies;    
         $scope.moviesList = Movies; 
         $scope.query = {};
@@ -57,11 +49,14 @@
         $scope.changeOrder = function(filter) {
             $scope.query.order = filter;
         };
+        $scope.showMovie = function(id) {
+        $location.path('/movie/' + id);
+      }
    }   
    
    function MoviesGenreCtrl($scope, $location, $routeParams, ListGenreMovies, Movies) {
         $scope.listGenre = ListGenreMovies;
-        $scope.series = Series;
+        $scope.movies = Movies;
         $scope.id = $routeParams;
    }
 

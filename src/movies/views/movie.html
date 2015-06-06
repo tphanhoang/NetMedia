@@ -105,9 +105,9 @@
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/credits] (TPH)</h3>
         </div>
         <ul>
-            <li><label>id :</label> {{credits.id}}</li>
+            <li><label>id :</label> {{movie.credits.id}}</li>
             <li><label>cast :</label> 
-                <ul ng-repeat="(key, role) in credits.cast">
+                <ul ng-repeat="(key, role) in movie.credits.cast">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>cast_id :</label> {{role.cast_id}}</li>
                         <li><label>character :</label> {{role.character}}</li>
@@ -117,7 +117,7 @@
                 </ul>
             </li>
 
-            <li><label>crew :</label> <ul ng-repeat="(key, crew) in credits.crew">
+            <li><label>crew :</label> <ul ng-repeat="(key, crew) in movie.credits.crew">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>credit_id :</label> {{crew.credit_id}}</li>
                         <li><label>department :</label> {{crew.department}}</li>
@@ -132,9 +132,9 @@
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/alternative_titles] (TPH)</h3>
         </div>
          <ul>
-            <li><label>id :</label> {{alternative_titles.id}}</li>
+            <li><label>id :</label> {{movie.alternative_titles.id}}</li>
             <li><label>titles :</label>
-                <ul ng-repeat="(key, title) in alternative_titles.titles">
+                <ul ng-repeat="(key, title) in movie.alternative_titles.titles">
                     <li><label>tt :</label> {{key}}<ul>
                         <li><label>AU :</label> {{title.iso_3166_1}}</li>
                         <li><label>title :</label> {{title.title}}</li></ul></li>
@@ -148,8 +148,8 @@
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/images] (TPH)</h3>
         </div>
          <ul>
-            <li><label>id :</label> {{images.id}}</li>
-                <ul ng-repeat="(key, backdrop) in images.backdrops">
+            <li><label>id :</label> {{movie.images.id}}</li>
+                <ul ng-repeat="(key, backdrop) in movie.images.backdrops">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>aspect_ratio :</label> {{backdrop.aspect_ratio}}</li>
                         <li><label>file_path :</label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{backdrop.file_path}}"/></li>
@@ -166,8 +166,8 @@
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/keywords] (TPH)</h3>
         </div>
          <ul>
-            <li><label>id :</label> {{keywords.id}}</li>
-                <ul ng-repeat="(key, keyword) in keywords.keywords">
+            <li><label>id :</label> {{movie.keywords.id}}</li>
+                <ul ng-repeat="(key, keyword) in movie.keywords.keywords">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>id :</label> {{keyword.id}}</li>
                         <li><label>name :</label> {{keyword.name}}</li></ul></li>
@@ -179,8 +179,8 @@
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/releases] (TPH)</h3>
         </div>
         <ul>
-            <li><label>id :</label> {{releases.id}}</li>
-                <ul ng-repeat="(key, country) in releases.countries">
+            <li><label>id :</label> {{movie.releases.id}}</li>
+                <ul ng-repeat="(key, country) in movie.releases.countries">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>certification :</label> {{country.certification}}</li>
                         <li><label>iso_3166_1 :</label> {{country.iso_3166_1}}</li>
@@ -194,8 +194,8 @@
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/videos] (TPH)</h3>
         </div>
         <ul>
-            <li><label>id :</label> {{videos.id}}</li>
-                <ul ng-repeat="(key, result) in videos.results">
+            <li><label>id :</label> {{movie.videos.id}}</li>
+                <ul ng-repeat="(key, result) in movie.videos.results">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>id :</label> {{result.id}}</li>
                         <li><label>iso_639_1 :</label> {{result.iso_3166_1}}</li>
@@ -213,8 +213,8 @@
         </div>
         
         <ul>
-            <li><label>id :</label> {{translations.id}}</li>
-                <ul ng-repeat="(key, translation) in translations.translations">
+            <li><label>id :</label> {{movie.translations.id}}</li>
+                <ul ng-repeat="(key, translation) in movie.translations.translations">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>iso_639_1 :</label> {{translation.iso_639_1}}</li>
                         <li><label>english_name :</label> {{translation.english_name}}</li>
@@ -229,8 +229,8 @@
     
         
         <ul>
-            <li><label>page :</label> {{similar.page}}</li>
-                <ul ng-repeat="(key, result) in similar.results">
+            <li><label>page :</label> {{movie.similar.page}}</li>
+                <ul ng-repeat="(key, result) in movie.similar.results">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>adult</label> :{{result.adult}}</li>
                         <li><label>backdrop_path</label> :<img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{result.backdrop_path}}"/></li>
@@ -248,8 +248,8 @@
                         <li><label>vote_count</label> :{{result.vote_count}}</li></ul></li>
                 </ul></li>
             
-            <li><label>total_pages :</label> {{similar.total_pages}}</li>
-            <li><label>total_results :</label> {{similar.total_results}}</li>
+            <li><label>total_pages :</label> {{movie.similar.total_pages}}</li>
+            <li><label>total_results :</label> {{movie.similar.total_results}}</li>
         </ul>
 
 
@@ -259,16 +259,16 @@
         
         
         <ul>
-            <li><label>id :</label> {{translations.id}}</li>
-                <ul ng-repeat="(key, result) in reviews.results">
+            <li><label>id :</label> {{movie.translations.id}}</li>
+                <ul ng-repeat="(key, result) in movie.reviews.results">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>id :</label> {{result.id}}</li>
                         <li><label>author :</label> {{result.author}}</li>
                         <li><label>content :</label> {{result.content}}</li></ul></li>
                 </ul></li>
             
-            <li><label>total_pages :</label> {{reviews.total_pages}}</li>
-            <li><label>total_results :</label> {{reviews.total_results}}</li>
+            <li><label>total_pages :</label> {{movie.reviews.total_pages}}</li>
+            <li><label>total_results :</label> {{movie.reviews.total_results}}</li>
         </ul>
 
          <div class="panel-heading">
@@ -277,8 +277,8 @@
 
         
         <ul>
-            <li><label>id :</label> {{lists.id}}</li>
-                <ul ng-repeat="(key, result) in lists.results">
+            <li><label>id :</label> {{movie.lists.id}}</li>
+                <ul ng-repeat="(key, result) in movie.lists.results">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>description :</label> {{result.description}}</li>
                         <li><label>favorite_count :</label> {{result.favorite_count}}</li>
@@ -294,5 +294,5 @@
          <div class="panel-heading">
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/changes] (TPH)</h3>
         </div>
-        {{changes}}
+        {{movie.changes}}
     </div>
