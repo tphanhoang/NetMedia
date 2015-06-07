@@ -1,0 +1,131 @@
+<button class="btn-back btn btn-primary" ng-click="back()">Retour à la saison</button>
+
+<button class="btn-back btn btn-primary" ng-click="backSerie()">Retour à la série</button>
+
+<div class="panel panel-primary">
+
+    <div class="panel-heading">
+    	<h3 class="panel-title panel-title title--inline">Episode {{serieEpisode.episode_number}} : {{serieEpisode.name}} - Saison : {{season_id}} </h3>
+    </div>	
+
+
+	<li><label>air_date :</label> {{serieEpisode.air_date}}</li>
+
+	<li><label>episode_number :</label> {{serieEpisode.episode_number}}</li>
+	<li><label>guest_stars :</label> 
+		<ul>
+		<li ng-repeat="(key, star) in serieEpisode.guest_stars"> <label>name :</label>  {{star.name}}
+			<ul>
+			<li><label>id :</label> {{star.id}}</li>
+			<li><label>credit_id :</label> {{star.credit_id}}</li>
+			<li><label>character :</label> {{star.character}}</li>
+			<li><label>order :</label> {{star.order}}</li>
+			<li><label>profile_path :</label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w185{{star.profile_path}}"></li>
+			</ul>
+		</li>
+		</ul></li>
+	<li><label>name :</label> {{serieEpisode.name}}</li>
+	<li><label>overview :</label> {{serieEpisode.overview}}</li>
+	<li><label>id :</label> {{serieEpisode.id}}</li>
+	<li><label>production_code :</label> {{serieEpisode.production_code}}</li>
+	<li><label>season_number :</label> {{serieEpisode.season_number}}</li>
+	<li><label>still_path :</label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{serieEpisode.still_path}}"/></li>
+	<li><label>vote_average :</label> {{serieEpisode.vote_average}}</li>
+	<li><label>vote_count :</label> {{serieEpisode.vote_count}}</li>
+
+
+
+	<li><label>crew</label> : 
+		<ul>
+		<li ng-repeat="(key, crew) in serieEpisode.crew"> <label>name :</label>  {{crew.name}}
+			<ul>
+			<li><label>id :</label> {{crew.id}}</li>
+			<li><label>credit_id :</label> {{crew.credit_id}}</li>
+			<li><label>department :</label> {{crew.department}}</li>
+			<li><label>job :</label> {{crew.job}}</li>
+			<li><label>profile_path :</label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w185{{crew.profile_path}}"></li>
+			</ul>
+		</li>
+		</ul>
+	</li>
+
+	<li><label>cast</label> : 
+		<ul> 
+		<li ng-repeat="(key, cast) in serieEpisode.credits.cast"> <label>name :</label> {{cast.name}}
+			<ul>
+			<li><label>character :</label> {{cast.character}}</li>
+			<li><label>credit_id :</label> {{cast.credit_id}}</li>
+			<li><label>id :</label> {{cast.id}}</li>
+			<li><label>profile_path :</label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w185{{cast.profile_path}}"></li>
+			<li><label>order :</label> {{cast.order}}</li>
+			</ul>
+		</li>
+	</ul>
+	</li>
+
+	<li><label>crew</label> :  
+		<ul>
+		<li ng-repeat="(key, crew) in serieEpisode.credits.crew"><label>name</label> : {{crew.name}}
+			<ul>
+			<li><label>id :</label> {{crew.id}}</li>
+			<li><label>credit_id :</label> {{crew.credit_id}}</li>
+			<li><label>department :</label> {{crew.department}}</li>
+			<li><label>job :</label> {{crew.job}}</li>
+			<li><label>profile_path :</label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w185{{crew.profile_path}}"></li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+
+	<li><label>external_ids</label> :  
+		<ul>
+		<li >
+			<ul>
+			<li><label>imdb_id :</label> {{serieEpisode.external_ids.imdb_id}}</li>
+			<li><label>freebase_mid :</label> {{ids.freebase_mid}}</li>
+			<li><label>freebase_id :</label> {{serieEpisode.external_ids.freebase_id}}</li>
+			<li><label>tvdb_id :</label> {{serieEpisode.external_ids.tvdb_id}}</li>
+			<li><label>tvrage_id :</label> {{serieEpisode.external_ids.tvrage_id}}</li>
+		</ul>
+	</li>
+	</ul>
+	</li>
+
+
+	<li><label>stills</label> :  
+		<ul>
+		<li ng-repeat="(key, still) in serieEpisode.images.stills">
+			<ul>
+			<li><label>aspect_ratio :</label> {{still.aspect_ratio}}</li>
+			<li><label>file_path :</label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{still.file_path}}"/></li>
+			<li><label>height :</label> {{still.height}}</li>
+			<li><label>id :</label> {{still.id}}</li>
+			<li><label>iso_639_1 :</label> {{still.iso_639_1}}</li>
+			<li><label>vote_average :</label> {{still.vote_average}}</li>
+			<li><label>vote_count :</label> {{still.vote_count}}</li>
+			<li><label>width :</label> {{still.width}}</li>
+		</ul></li></ul></li>
+
+         <div class="panel-heading">
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [serie/id/videos] (TPH)</h3>
+        </div>
+        <ul>
+            <li><label>id :</label> {{serie.videos.id}}</li>
+            <li> array : <ul ng-repeat="(key, result) in serieEpisode.videos.results">
+                
+                <li><label>iso_639_1 :</label> {{result.iso_639_1}}</li>
+                <li><label>id :</label> {{result.id}}</li>
+                <li><label>key :</label> <youtube code='result.key'>{{result.key}} </youtube></li>
+                <li><label>name :</label> {{result.name}}</li>
+                <li><label>site :</label> {{result.site}}</li>
+                <li><label>size :</label> {{result.size}}</li>
+                <li><label>type :</label> {{result.type}}</li>
+            </ul></li>
+        </ul>
+
+
+
+	</ul>
+	</div>
+
+

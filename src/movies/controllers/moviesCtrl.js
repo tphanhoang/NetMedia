@@ -7,25 +7,26 @@
     .controller('MoviesSearchCtrl', MoviesSearchCtrl);
     
 
-   function MovieCtrl($scope, $location, $routeParams, Movie) {
+    function MovieCtrl($scope, $location, $routeParams, Movie) {
+        
         $scope.movie = Movie;
         $scope.movie.id = $routeParams;
-        $scope.alert = '';
+        
         $scope.back = function() {
             $location.path('/movies');
-        };
+        }
     }
 
     function MoviesCtrl($scope, $location, Movies, ListGenreMovies, MovieFactory) {
         $scope.listGenre = ListGenreMovies;
         
         $scope.genreList = {};
-        ListGenreMovies.genres.forEach(function(y){$scope.genreList[y.id]=y.name});
+
         $scope.movies = Movies;    
-        $scope.moviesList = Movies; 
         $scope.query = {};
         $scope.page = 2;
         $scope.movies.more=[];
+
         $scope.showMoreMovies = function(page){
             MovieFactory.getMovies(page).then(function(result){
                 $scope.movies.more[page] = result;
@@ -46,19 +47,23 @@
                 $scope.movies = $scope.moviesList;
             }                
         }
-        $scope.changeOrder = function(filter) {
+        $scope.changeOrder = function(filter){
             $scope.query.order = filter;
-        };
-        $scope.showMovie = function(id) {
-        $location.path('/movie/' + id);
-      }
-   }   
+        }
+        $scope.showMovie = function(id){
+            $location.path('/movie/' + id);
+        }
+
+        ListGenreMovies.genres.forEach(function(y){
+            $scope.genreList[y.id]=y.name
+        });
+    }   
    
    function MoviesGenreCtrl($scope, $location, $routeParams, ListGenreMovies, Movies) {
-        $scope.listGenre = ListGenreMovies;
         $scope.movies = Movies;
+        $scope.listGenre = ListGenreMovies;
         $scope.id = $routeParams;
-   }
+    }
 
    function MoviesSearchCtrl($scope, $location, $routeParams, MoviesSearch){
         $scope.movies = MoviesSearch;

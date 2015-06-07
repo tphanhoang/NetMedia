@@ -1,47 +1,14 @@
-<div class="panel panel-primary">
+<button class="btn-back btn btn-primary" ng-click="back()">Retour à la liste</button>
+<hr>
+Saisons : <button ng-repeat="(key, season) in serie.seasons"  ng-click="showSeason(serie_id,season.season_number)"  class="btn btn-primary">{{season.season_number}}</button>
+<hr>
 
-    <div class="panel-heading">
-        <h3 class="panel-title panel-title title--inline">Fiche Info</h3>
-    </div>
 
-    <div class="panel-body panel-body">
-        <div>
-
-            <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{serie.poster_path}}" /> 
-            <hr>
-            <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{serie.backdrop_path}}" /> 
-            <span class="bloc-hero" ng-switch on="serie.status">
-                <h3>{{serie.id}}</h3>
-                <h4>{{serie.name}}</h4>
-                <p>{{serie.overview}}</p>
-                <p> saisons : 
-                 <span ng-repeat="(key, season) in serie.seasons">
-                    {{season.season_number}}
-                </span>
-            </li>
-            </span>
-
-            <div class="btn-group pull-right">
-                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
-                    Modifier Statut <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu" change-status>
-                    <li ng-click="updateStatus(0)" ng-class="{disabled: serie.status == 0}"><a>Disponible</a></li>
-                    <li ng-click="updateStatus(1)" ng-class="{disabled: serie.status == 1}"><a>Occupé(e)</a></li>
-                    <li ng-click="updateStatus(2)" ng-class="{disabled: serie.status == 2}"><a>Blessé(e)</a></li>
-                </ul>
-            </div>
-
-        </div>
-        <button class="btn-back btn btn-primary" ng-click="back()">Retour à la liste</button>
-        <div ng-show="alert == 'success'" class="alert alert-success"><strong>Statut modifié!</strong></div>
-        <div ng-show="alert == 'error'" class="alert alert-danger"><strong>Echec !</strong></div>
-    </div>
-</div>
+   
 
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h3 class="panel-title panel-title title--inline">Infos de l'Api [serie/id] (TPH)</h3>
+            <h3 class="panel-title panel-title title--inline"> Serie : {{serie.name}}</h3>
         </div>
 
         <ul>

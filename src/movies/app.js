@@ -33,9 +33,6 @@
                     resolve: {
                         Series: function(SerieFactory) {
                             return SerieFactory.getSeries();
-                        },
-                        ListGenreSeries: function(SerieFactory) {
-                            return SerieFactory.getListGenreSeries();
                         }
                     }
                 })
@@ -83,14 +80,33 @@
                         }
                     }
                 })
-                 .when('/serie/:id', {
+                .when('/serie/:id', {
                     templateUrl: 'src/movies/views/serie.html',
                     controller: 'SerieCtrl',
                     resolve: {
                         Serie: function($route, SerieFactory) {
                             return SerieFactory.getSerie($route.current.params.id);
                         }
-                }})
+                    }
+                })
+                .when('/serie/:id/:season_id', {
+                    templateUrl: 'src/movies/views/season.html',
+                    controller: 'SerieSeasonCtrl',
+                    resolve: {
+                        SerieSeason: function($route, SerieFactory) {
+                            return SerieFactory.getSerieSeason($route.current.params.id, $route.current.params.season_id);
+                        }
+                    }
+                })
+                .when('/serie/:id/:season_id/:episode_id', {
+                    templateUrl: 'src/movies/views/episode.html',
+                    controller: 'SerieEpisodeCtrl',
+                    resolve: {
+                        SerieEpisode: function($route, SerieFactory) {
+                            return SerieFactory.getSerieEpisode($route.current.params.id, $route.current.params.season_id,$route.current.params.episode_id);
+                        }
+                    }
+                })
                 .otherwise('/movies');
         });
 }());
