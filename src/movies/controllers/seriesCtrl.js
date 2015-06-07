@@ -49,9 +49,10 @@
         };
     }
     
-    function SeriesCtrl($scope, $location, Series) {
+    function SeriesCtrl($scope, $location, Series, SerieFactory) {
 
         $scope.series = Series;
+        $scope.seriesDefault = Series;
         $scope.query = {};
 
         $scope.changeOrder = function($scope,filter) {
@@ -59,6 +60,18 @@
         }
     	$scope.showSerie = function(id) {
             $location.path('/serie/' + id);
+        }
+        $scope.search = function(value){
+            if(value!='' ){
+                SerieFactory.getSeriesSearch(value).then(function(result){                    
+                    $scope.series = result;                    
+                }, function (result){
+                alert("Erreur : ça a planté ! pas de bras | pas data");
+            })
+            }
+            else{
+                $scope.series = $scope.seriesDefault;
+            }  
         }
 
 

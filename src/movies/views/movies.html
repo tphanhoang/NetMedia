@@ -1,18 +1,24 @@
 <div class="panel panel-primary">
 
 
-    <form >
-        <select
-            ng-change="genre(value)"
-            ng-model="value"
-            ng-options="genre.id as genre.name for genre in listGenre.genres"
-        >
-        <option value="">Triez par genre</option>
+    <form style="width:450px;margin:5px;padding:15px;border:solid 1px black;background-color:#68228B">
+        <label style="color:white">Tri par genre : </label>
+        <select class="form-control" 
+                ng-change="genre(value)"
+                ng-model="value"
+                ng-options="genre.id as genre.name for genre in listGenre.genres"
+            >
+            <option value="">Triez par genre</option>
         </select>
+        <hr>
+        <label style="color:white">Recherche : </label>
+        <input  class="btn" style="width:100%"
+                ng-change="search(searchValue)"
+                ng-model="searchValue">
     </form>
 
 
-
+        
     <div class="panel-heading">
     <h3 class="panel-title panel-title title--inline">Liste des Films Populaires | <a href="#/films">Films</a> | <a href="#/series">Series</a> </h3>
         <span class="dropdown pull-right">
@@ -38,6 +44,8 @@
     </div>
 
     <div class="panel-body">
+
+        <div ng-if="movies.total_results==0"> Aucun film n'a été trouvé lors de votre recherche</div>
 
         <div ng-repeat="movie in movies.results | orderBy: query.order" movie="movie" >
             <div class="col-sm-6 col-md-4">

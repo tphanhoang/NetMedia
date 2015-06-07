@@ -22,7 +22,8 @@
         
         $scope.genreList = {};
 
-        $scope.movies = Movies;    
+        $scope.movies = Movies;
+        $scope.moviesDefault = Movies;    
         $scope.query = {};
         $scope.page = 2;
         $scope.movies.more=[];
@@ -35,16 +36,27 @@
             });
             $scope.page ++;
         }
+        $scope.search = function(value){
+            if(value!='' ){
+                MovieFactory.getMoviesSearch(value).then(function(result){                    
+                    $scope.movies = result;                    
+                }, function (result){
+                alert("Erreur : ça a planté ! pas de bras | pas data");
+            })
+            }
+            else{
+                $scope.movies = $scope.moviesDefault;
+            }  
+        }
         $scope.genre = function(value){
-            
             if(value!=null){
-            MovieFactory.getMoviesGenre(value).then(function(result){
-                $scope.movies = result;
-            }, function (result){
+                MovieFactory.getMoviesGenre(value).then(function(result){
+                    $scope.movies = result;
+                }, function (result){
                 alert("Erreur : ça a planté ! pas de bras | pas data");
             })}
             else{
-                $scope.movies = $scope.moviesList;
+                $scope.movies = $scope.moviesDefault;
             }                
         }
         $scope.changeOrder = function(filter){
