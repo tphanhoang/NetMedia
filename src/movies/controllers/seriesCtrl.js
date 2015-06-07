@@ -54,6 +54,8 @@
         $scope.series = Series;
         $scope.seriesDefault = Series;
         $scope.query = {};
+        $scope.series.more=[];
+        $scope.page = 2;
 
         $scope.changeOrder = function($scope,filter) {
             $scope.query.order = filter;
@@ -72,6 +74,14 @@
             else{
                 $scope.series = $scope.seriesDefault;
             }  
+        }        
+        $scope.showMoreSeries = function(page){
+            SerieFactory.getSeries(page).then(function(result){
+                $scope.series.more[page-1] = result.results;
+            }, function (result){
+                alert("Erreur : ça a planté ! pas de bras | pas data");
+            });
+            $scope.page ++;
         }
 
 

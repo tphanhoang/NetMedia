@@ -30,7 +30,7 @@
 
         $scope.showMoreMovies = function(page){
             MovieFactory.getMovies(page).then(function(result){
-                $scope.movies.more[page] = result;
+                $scope.movies.more[page-2] = result.results;
             }, function (result){
                 alert("Erreur : ça a planté ! pas de bras | pas data");
             });

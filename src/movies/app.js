@@ -32,7 +32,7 @@
                     controller: 'SeriesCtrl',
                     resolve: {
                         Series: function(SerieFactory) {
-                            return SerieFactory.getSeries();
+                            return SerieFactory.getSeries(1);
                         }
                     }
                 })
