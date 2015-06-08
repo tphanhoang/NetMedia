@@ -133,11 +133,6 @@ module.exports = function(grunt) {
         }]
       }
     },
-
-    watch: {
-      files: ['<%= jshint.files %>'],
-      tasks: ['jshint', 'qunit']
-    },
     styles: {
   files: '**/*.scss',
   tasks: ['styles:dev']
@@ -152,7 +147,22 @@ cssmin: {
       ext: '.min.css'
     }]
   }
-}
+},
+
+
+    watch: {
+
+    sass: {
+                files: 'vendors/css/*.scss',
+                tasks: ['sass:dist'],
+                options: {
+					spawn: false,
+					livereload: true,
+				}
+            }
+
+          }
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -170,12 +180,11 @@ cssmin: {
   grunt.loadNpmTasks('grunt-cdn');
 
 
-  grunt.registerTask('default', ['svgmin']);
-  grunt.registerTask('default', ['imagemin']);
-  grunt.registerTask('default', ['htmlmin']);
+  grunt.registerTask('default', ['svgmin','imagemin', 'htmlmin']);
+
   grunt.registerTask('test', ['jshint', 'qunit']);
-  grunt.registerTask('styles:dev', ['sass:dev'])
   grunt.registerTask('styles:dist', ['sass:dist'])
-  grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
+  // grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
+  // grunt.registerTask('default',['watch']);
 
 };
