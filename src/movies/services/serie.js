@@ -52,9 +52,9 @@
         return defer.promise;
     } 
 
-    function _getSeriesSearch(search){
+    function _getSeriesSearch(search,page){
         var defer = $q.defer();
-        $http.get("http://api.themoviedb.org/3/search/tv?api_key=cc9227d0368f24d2cbcd299743b4075c&query="+search).then(function(response) {
+        $http.get("http://api.themoviedb.org/3/search/tv?api_key=cc9227d0368f24d2cbcd299743b4075c&query="+search+"&page="+page).then(function(response) {
             var movie =  defer.resolve(response.data);
             if(movie !== false) {
                 defer.resolve(movie);

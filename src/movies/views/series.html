@@ -1,10 +1,10 @@
 <div class="panel panel-primary">
-
+{{series.total_pages}}
 
     <form style="width:450px;margin:5px;padding:15px;border:solid 1px black;background-color:#68228B">
         <label style="color:white">Recherche : </label>
         <input  class="btn" style="width:100%"
-                ng-change="search(searchValue)"
+                ng-change="search(searchValue,1)"
                 ng-model="searchValue">
     </form>
 <div class="panel-heading">
@@ -74,8 +74,11 @@
 
 </div>
 
-<button class="btn btn-primary" ng-click="showMoreSeries(page)"> Voir plus de séries ! </button>
-{{page}}
+         <div class="panel-heading">
+            <p style="margin:auto;width:140px" >
+                <button ng-if="series.total_pages>=page"  class="btn btn-primary" ng-click="showMoreSeries(page)"> Voir plus de séries ! </button>
+            </p>
+        </div>
 
     </div>
 

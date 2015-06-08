@@ -63,25 +63,45 @@
     	$scope.showSerie = function(id) {
             $location.path('/serie/' + id);
         }
-        $scope.search = function(value){
+        $scope.search = function(value,page){
             if(value!='' ){
-                SerieFactory.getSeriesSearch(value).then(function(result){                    
-                    $scope.series = result;                    
+                SerieFactory.getSeriesSearch(value,page).then(function(result){ 
+                    $scope.page = 2;
+                    $scope.series = result;
+                    $scope.series.more=[];                                       
+                    $scope.searchTest = true;                    
+                    $scope.SearchTestValue = value;
                 }, function (result){
                 alert("Erreur : ça a planté ! pas de bras | pas data");
             })
             }
-            else{
+            else{            
                 $scope.series = $scope.seriesDefault;
+                $scope.searchTest = false;
+                $scope.page = 2;
+                $scope.series.more=[];      
             }  
         }        
         $scope.showMoreSeries = function(page){
+            if($scope.searchTest){
+
+                SerieFactory.getSeriesSearch($scope.SearchTestValue, page).then(function(result){
+                    $scope.series.more[page-1] = result.results;
+                }, function (result){
+                    alert("Erreur : ça a planté ! pas de bras | pas data");
+                });
+
+                Series.page  = page<Series.total_pages? $scope.page ++ : $scope.page;
+            }
+            else{
             SerieFactory.getSeries(page).then(function(result){
                 $scope.series.more[page-1] = result.results;
             }, function (result){
                 alert("Erreur : ça a planté ! pas de bras | pas data");
             });
-            $scope.page ++;
+
+            Series.page  = page<Series.total_pages? $scope.page ++ : $scope.page;
+            }
         }
 
 
