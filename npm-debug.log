@@ -1,26 +1,149 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'start' ]
-2 info using npm@1.4.28
-3 info using node@v0.10.32
-4 verbose run-script [ 'prestart', 'start', 'poststart' ]
-5 info prestart avengers@1.0.0
-6 info start avengers@1.0.0
-7 verbose unsafe-perm in lifecycle true
-8 info avengers@1.0.0 Failed to exec start script
-9 error avengers@1.0.0 start: `ws`
-9 error Exit status 127
-10 error Failed at the avengers@1.0.0 start script.
-10 error This is most likely a problem with the avengers package,
-10 error not with npm itself.
-10 error Tell the author that this fails on your system:
-10 error     ws
-10 error You can get their info via:
-10 error     npm owner ls avengers
-10 error There is likely additional logging output above.
-11 error System Darwin 14.3.0
-12 error command "node" "/usr/local/bin/npm" "start"
-13 error cwd /Users/maximeleuger/Desktop/Dossier Max/SupdeWeb/Angularjs/Avengers/avengers-valpinkman
-14 error node -v v0.10.32
-15 error npm -v 1.4.28
-16 error code ELIFECYCLE
-17 verbose exit [ 1, true ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'grunt-cli' ]
+2 info using npm@2.10.1
+3 info using node@v0.12.4
+4 verbose install initial load of /Users/kevinsachs/.node/lib/package.json
+5 verbose readDependencies loading dependencies from /Users/kevinsachs/.node/lib/package.json
+6 silly cache add args [ 'grunt-cli', null ]
+7 verbose cache add spec grunt-cli
+8 silly cache add parsed spec { raw: 'grunt-cli',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'grunt-cli',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 silly addNamed grunt-cli@*
+10 verbose addNamed "*" is a valid semver range for grunt-cli
+11 silly addNameRange { name: 'grunt-cli', range: '*', hasData: false }
+12 silly mapToRegistry name grunt-cli
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/grunt-cli
+16 verbose addNameRange registry:https://registry.npmjs.org/grunt-cli not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/grunt-cli
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 19:03:47
+20 verbose request id 24bd0598fa6a4a92
+21 verbose etag "AVX8LI2KQ3ZSHJEU6HBO1SZR3"
+22 http request GET https://registry.npmjs.org/grunt-cli
+23 http 304 https://registry.npmjs.org/grunt-cli
+24 silly get cb [ 304,
+24 silly get   { date: 'Tue, 02 Jun 2015 17:03:47 GMT',
+24 silly get     via: '1.1 varnish',
+24 silly get     'cache-control': 'max-age=60',
+24 silly get     etag: '"AVX8LI2KQ3ZSHJEU6HBO1SZR3"',
+24 silly get     age: '43',
+24 silly get     connection: 'keep-alive',
+24 silly get     'x-served-by': 'cache-lcy1134-LCY',
+24 silly get     'x-cache': 'HIT',
+24 silly get     'x-cache-hits': '1',
+24 silly get     'x-timer': 'S1433264627.627838,VS0,VE0',
+24 silly get     vary: 'Accept' } ]
+25 verbose etag https://registry.npmjs.org/grunt-cli from cache
+26 verbose get saving grunt-cli to /Users/kevinsachs/.npm/registry.npmjs.org/grunt-cli/.cache.json
+27 silly addNameRange number 2 { name: 'grunt-cli', range: '*', hasData: true }
+28 silly addNameRange versions [ 'grunt-cli',
+28 silly addNameRange   [ '0.1.0',
+28 silly addNameRange     '0.1.1',
+28 silly addNameRange     '0.1.2',
+28 silly addNameRange     '0.1.3',
+28 silly addNameRange     '0.1.4',
+28 silly addNameRange     '0.1.5',
+28 silly addNameRange     '0.1.6',
+28 silly addNameRange     '0.1.7',
+28 silly addNameRange     '0.1.8',
+28 silly addNameRange     '0.1.9',
+28 silly addNameRange     '0.1.10',
+28 silly addNameRange     '0.1.11',
+28 silly addNameRange     '0.1.12',
+28 silly addNameRange     '0.1.13' ] ]
+29 silly addNamed grunt-cli@0.1.13
+30 verbose addNamed "0.1.13" is a plain semver version for grunt-cli
+31 silly cache afterAdd grunt-cli@0.1.13
+32 verbose afterAdd /Users/kevinsachs/.npm/grunt-cli/0.1.13/package/package.json not in flight; writing
+33 verbose afterAdd /Users/kevinsachs/.npm/grunt-cli/0.1.13/package/package.json written
+34 silly install resolved [ { name: 'grunt-cli',
+34 silly install resolved     description: 'The grunt command line interface.',
+34 silly install resolved     version: '0.1.13',
+34 silly install resolved     author: { name: 'Grunt Team' },
+34 silly install resolved     homepage: 'http://gruntjs.com/',
+34 silly install resolved     repository: { type: 'git', url: 'git://github.com/gruntjs/grunt-cli.git' },
+34 silly install resolved     bugs: { url: 'http://github.com/gruntjs/grunt-cli/issues' },
+34 silly install resolved     licenses: [ [Object] ],
+34 silly install resolved     bin: { grunt: 'bin/grunt' },
+34 silly install resolved     engines: { node: '>= 0.8.0' },
+34 silly install resolved     scripts: { test: 'node bin/grunt test' },
+34 silly install resolved     preferGlobal: true,
+34 silly install resolved     dependencies: { nopt: '~1.0.10', 'findup-sync': '~0.1.0', resolve: '~0.3.1' },
+34 silly install resolved     devDependencies: { grunt: '~0.4.0', 'grunt-contrib-jshint': '~0.2.0' },
+34 silly install resolved     contributors: [ [Object], [Object], [Object], [Object] ],
+34 silly install resolved     _id: 'grunt-cli@0.1.13',
+34 silly install resolved     dist:
+34 silly install resolved      { shasum: 'e9ebc4047631f5012d922770c39378133cad10f4',
+34 silly install resolved        tarball: 'http://registry.npmjs.org/grunt-cli/-/grunt-cli-0.1.13.tgz' },
+34 silly install resolved     _from: 'grunt-cli@*',
+34 silly install resolved     _npmVersion: '1.3.24',
+34 silly install resolved     _npmUser: { name: 'tkellen', email: 'tyler@sleekcode.net' },
+34 silly install resolved     maintainers: [ [Object] ],
+34 silly install resolved     directories: {},
+34 silly install resolved     _shasum: 'e9ebc4047631f5012d922770c39378133cad10f4',
+34 silly install resolved     _resolved: 'https://registry.npmjs.org/grunt-cli/-/grunt-cli-0.1.13.tgz',
+34 silly install resolved     readme: 'ERROR: No README data found!' } ]
+35 info install grunt-cli@0.1.13 into /Users/kevinsachs/.node/lib
+36 info installOne grunt-cli@0.1.13
+37 verbose installOne of grunt-cli to /Users/kevinsachs/.node/lib not in flight; installing
+38 verbose lock using /Users/kevinsachs/.npm/_locks/grunt-cli-84293ee3db9203af.lock for /Users/kevinsachs/.node/lib/node_modules/grunt-cli
+39 silly install write writing grunt-cli 0.1.13 to /Users/kevinsachs/.node/lib/node_modules/grunt-cli
+40 verbose unbuild lib/node_modules/grunt-cli
+41 info preuninstall grunt-cli@0.1.13
+42 info uninstall grunt-cli@0.1.13
+43 verbose unbuild rmStuff grunt-cli@0.1.13 from /Users/kevinsachs/.node/lib/node_modules
+44 silly gentlyRm /Users/kevinsachs/.node/bin/grunt is being gently removed
+45 silly gentlyRm verifying /Users/kevinsachs/.node is an npm working directory
+46 silly gentlyRm containing path /Users/kevinsachs/.node is under npm's control, in /Users/kevinsachs/.node
+47 silly gentlyRm deletion target /Users/kevinsachs/.node/bin/grunt is under /Users/kevinsachs/.node
+48 verbose gentlyRm vacuuming from /Users/kevinsachs/.node/bin/grunt up to /Users/kevinsachs/.node
+49 silly vacuum-fs removing /Users/kevinsachs/.node/bin/grunt
+50 silly vacuum-fs quitting because other entries in /Users/kevinsachs/.node/bin
+51 info postuninstall grunt-cli@0.1.13
+52 silly gentlyRm /Users/kevinsachs/.node/lib/node_modules/grunt-cli is being purged from base /Users/kevinsachs/.node
+53 verbose gentlyRm don't care about contents; nuking /Users/kevinsachs/.node/lib/node_modules/grunt-cli
+54 silly vacuum-fs purging /Users/kevinsachs/.node/lib/node_modules/grunt-cli
+55 verbose unlock done using /Users/kevinsachs/.npm/_locks/grunt-cli-84293ee3db9203af.lock for /Users/kevinsachs/.node/lib/node_modules/grunt-cli
+56 verbose stack Error: EACCES, unlink '/Users/kevinsachs/.node/lib/node_modules/grunt-cli/.npmignore'
+56 verbose stack     at Error (native)
+57 verbose cwd /Users/kevinsachs/NetMedia
+58 error Darwin 14.3.0
+59 error argv "node" "/usr/local/bin/npm" "install" "-g" "grunt-cli"
+60 error node v0.12.4
+61 error npm  v2.10.1
+62 error path /Users/kevinsachs/.node/lib/node_modules/grunt-cli/.npmignore
+63 error code EACCES
+64 error errno -13
+65 error Error: EACCES, unlink '/Users/kevinsachs/.node/lib/node_modules/grunt-cli/.npmignore'
+65 error     at Error (native)
+65 error  { [Error: EACCES, unlink '/Users/kevinsachs/.node/lib/node_modules/grunt-cli/.npmignore']
+65 error   errno: -13,
+65 error   code: 'EACCES',
+65 error   path: '/Users/kevinsachs/.node/lib/node_modules/grunt-cli/.npmignore' }
+66 error Please try running this command again as root/Administrator.
+67 verbose exit [ -13, true ]
+68 verbose unbuild lib/node_modules/grunt-cli
+69 info preuninstall grunt-cli@0.1.13
+70 info uninstall grunt-cli@0.1.13
+71 verbose unbuild rmStuff grunt-cli@0.1.13 from /Users/kevinsachs/.node/lib/node_modules
+72 silly gentlyRm /Users/kevinsachs/.node/bin/grunt is being gently removed
+73 silly gentlyRm verifying /Users/kevinsachs/.node is an npm working directory
+74 silly gentlyRm containing path /Users/kevinsachs/.node is under npm's control, in /Users/kevinsachs/.node
+75 silly gentlyRm deletion target /Users/kevinsachs/.node/bin/grunt is under /Users/kevinsachs/.node
+76 verbose gentlyRm vacuuming from /Users/kevinsachs/.node/bin/grunt up to /Users/kevinsachs/.node
+77 info postuninstall grunt-cli@0.1.13
+78 silly gentlyRm /Users/kevinsachs/.node/lib/node_modules/grunt-cli is being purged from base /Users/kevinsachs/.node
+79 verbose gentlyRm don't care about contents; nuking /Users/kevinsachs/.node/lib/node_modules/grunt-cli
+80 silly vacuum-fs purging /Users/kevinsachs/.node/lib/node_modules/grunt-cli
+81 error error rolling back Error: EACCES, unlink '/Users/kevinsachs/.node/lib/node_modules/grunt-cli/.travis.yml'
+81 error error rolling back     at Error (native)
+81 error error rolling back  { [Error: EACCES, unlink '/Users/kevinsachs/.node/lib/node_modules/grunt-cli/.travis.yml']
+81 error error rolling back   errno: -13,
+81 error error rolling back   code: 'EACCES',
+81 error error rolling back   path: '/Users/kevinsachs/.node/lib/node_modules/grunt-cli/.travis.yml' }
