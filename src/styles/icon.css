@@ -1,0 +1,20 @@
+.favoriteAdd:before {
+  content: "";
+  display: block;
+  background: url("../img/icon/fav.svg") no-repeat;
+  width: 25px;
+  height: 25px;
+  float: left;
+  margin: 0 10px 0 0; }
+
+.reloadMovie:before {
+  content: "";
+  display: block;
+  background: url("../img/icon/reload.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin: 0 10px 0 0;
+  margin-left: 10px; }
+
+/*# sourceMappingURL=icon.css.map */

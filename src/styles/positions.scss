@@ -1,0 +1,174 @@
+
+
+.container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.headerContent {
+    position: relative;
+    height: 433px;
+    overflow:  hidden;
+}
+
+.gradient {
+    position : absolute;
+    height : 408px;
+    top: 10;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.backdropImg {
+    background-position : center top;
+    background-size : cover;
+    position : absolute;
+    height : 400px;
+    -webkit-filter : blur(5px);
+    top: 10;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.infoPoster {
+    position:relative;
+    width:auto;
+}
+.posterContent {
+    position: relative;
+    margin-top: -245px;
+    margin-left: 92px;
+    z-index: 2;
+    max-width: 265px;
+}
+
+.posterImg {
+    max-width:100%;
+}
+
+.contentTvMovieInfo {
+    position:absolute;
+    top: 0;
+    left: 400px;
+    z-index: 2;
+    width:auto;
+}
+
+.titleTvMovie {
+    position: relative;
+    margin: 20px;
+    margin-left:0px;
+    z-index: 2;
+}
+
+.detailTvMovie {
+    position: relative;
+    margin: 20px;
+    margin-left:0px;
+    z-index: 2;
+}
+
+.detailTvMovie  li {
+    display: inline;
+    float:left;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.popularityStar {
+    position: relative;
+    text-align: left;
+    width:50px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.castings {
+    position : relative;
+    margin-top: 80px;
+}
+
+.castBy {
+    float: left;
+    margin-right: 15px;
+}
+
+.castByActor {
+    position: absolute;
+    left : 110px;
+    width: 850px;
+}
+
+.castByResult {
+    position: relative;
+    margin-left : 90px;
+}
+
+.userActionMovie {
+    position:absolute;
+    top: 590px  ;
+    left:400px;
+    z-index: 2;
+    width:auto;
+}
+
+.favoriteAdd {
+    position:relative;
+    display: inline-block;
+}
+
+.reloadMovie {
+    display:inline-block;
+}
+
+.contentTvMovie {
+    width: 100%;
+    position: relative;
+    padding-left: 95px;
+    padding-right:95px;
+}
+.synopsisFont {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.resumeTvMovie {
+    margin-bottom:20px;
+}
+
+.seasonFont {
+    margin-top:5px;
+    margin-left: 20px;
+    width:auto;
+    display:inline;
+}
+
+.seasonNumberFont{
+    position:relative;
+    height:35px;
+    line-height:35px;
+    text-align:center;
+    background-color: $primaryColor;
+    margin: 10px 10px;
+    background:none;
+    border:none;
+    padding-bottom:20px !important;
+    width:20px;
+}
+
+.seasonNumberFont:hover{
+    background-color: #2d2d2d;
+}
+
+.separatorSeason {
+    margin: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: $secondaryColor;
+    border-color: $secondaryColor;
+    height:2,5px;
+
+}
