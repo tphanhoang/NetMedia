@@ -6,17 +6,52 @@
     function MovieFactory(urlConfig, $http, $q) {
         return {
             getMovies: _getMovies,
-            getMovie: _getMovie
+            getMovie: _getMovie,
+            getMoviesSearch : _getMoviesSearch,
+            getListGenreMovies : _getListGenreMovies,
+            getMoviesGenre : _getMoviesGenre
         };
 
-        function _getMovies() {
-            //if(localStorage.getItem('heroes') !== null) {
-               // return JSON.parse(localStorage.getItem('heroes'));
-            //}
+
+        
+        function _getMoviesGenre(id){
 
             var defer = $q.defer();
-            // $http.get(urlConfig.HEROES).then(function(heroes) {
-                $http.get("http://api.themoviedb.org/3/movie/popular?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+        
+            $http.get("http://api.themoviedb.org/3/genre/"+id+"/movies?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+
+                var movie = defer.resolve(response.data);
+                if(movie !== false) {
+                    defer.resolve(movie);
+                } else {
+                    defer.reject('Expected Movie does not exists!');
+                }
+            }, function(err) {
+                defer.reject(err);
+            });
+
+            return defer.promise;
+        }
+
+        function _getListGenreMovies() {
+
+            var defer = $q.defer();
+                $http.get("http://api.themoviedb.org/3/genre/movie/list?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
+                    defer.resolve(response.data);
+                    console.log(response.data);
+            }, function(err) {
+                defer.reject(err);
+            });
+
+            return defer.promise;
+        }
+
+
+        function _getMovies(category, page) {
+            
+            var defer = $q.defer();
+           
+                $http.get("http://api.themoviedb.org/3/movie/"+category+"?api_key=cc9227d0368f24d2cbcd299743b4075c&page="+page).then(function(response) {
                     //localStorage.setItem('heroes', JSON.stringify(heroes.data));
                     defer.resolve(response.data);
                     console.log(response.data);
@@ -34,12 +69,10 @@
             // }
 
             var defer = $q.defer();
-            //$http.get(urlConfig.MOVIES).then(function(movies) {
-            $http.get("http://api.themoviedb.org/3/movie/popular?api_key=cc9227d0368f24d2cbcd299743b4075c").then(function(response) {
-                //localStorage.setItem('movies', JSON.stringify(movies.data));
-                //var movie = _loopMovies(response.data, id);
-                defer.resolve(response.data);
-                //console.log(movie);
+        
+            $http.get("http://api.themoviedb.org/3/movie/"+id+"?api_key=cc9227d0368f24d2cbcd299743b4075c&append_to_response=credits,account_states,alternative_titles,images,keywords,releases,videos,translations,similar,reviews,lists,changes,rating").then(function(response) {
+
+                var movie = defer.resolve(response.data);
                 if(movie !== false) {
                     defer.resolve(movie);
                 } else {
@@ -49,21 +82,31 @@
                 defer.reject(err);
             });
 
+            
+            
             return defer.promise;
         }
 
-        $movies = resp
+     
 
-        // function _loopMovies(movies, id) {
-        //     var result = false;
+        
+ function _getMoviesSearch(search){
+    var defer = $q.defer();
+            $http.get("http://api.themoviedb.org/3/search/movie?api_key=cc9227d0368f24d2cbcd299743b4075c&query="+search).then(function(response) {
+                var movie =  defer.resolve(response.data);
+                if(movie !== false) {
+                    defer.resolve(movie);
+                } else {
+                    defer.reject('Expected Movie does not exists!');
+                }
+            }, function(err) {
+                defer.reject(err);
+            });
+            return defer.promise;
+        }       
 
-        //     movies.forEach(function(movie) {
-        //         if(movie.id === parseInt(id)) {
-        //             result = movie;
-        //         }
-        //     });
 
-        //     return result;
-        // }
     }
+
+    
 }());
