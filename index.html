@@ -20,6 +20,31 @@
         <a class="selected" href="">FILMS</a>
         <a class="" href="">SÉRIES</a>
     </div>
+    <div class="filters-search-user">
+        <div class="filters">
+            <span class="genre">Genre : </span>
+            <select>
+                <option value="">Tous</option>
+                <option value="action">Action</option>
+                <option value="aventure">Aventure</option>
+                <option value="comedie">Comédie</option>
+                <option value="horreur">Horreur</option>
+            </select>
+            <span class="genre">Trier par : </span>
+            <select>
+                <option value="popularite">Popularité</option>
+                <option value="note">Note</option>
+                <option value="annee">Année</option>
+            </select>
+        </div>
+        <div class="search">
+            <input type="search" placeholder="Titre, acteur ..." name="the_search">
+        </div>
+        <div class="user">
+            <img class="user-img" src="images/placeholder.png"/>
+            <div class="user-name">User Name</div>
+        </div>
+    </div>
 </header>
 <section class="container">
     <ng-view></ng-view>

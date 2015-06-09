@@ -264,7 +264,7 @@
 
 
 h1, h2, .title-home, .title-details, .infos {
-	font-family:'Roboto-Bold';
+	font-family:$primary-font-bold;
 	color:$primary-color;
 }
 
@@ -274,7 +274,7 @@ h1{
 
 
 h3, h4 {
-	font-family:'Roboto-Regular';
+	font-family:$primary-font-bold;
 }
 
 .title-home{
