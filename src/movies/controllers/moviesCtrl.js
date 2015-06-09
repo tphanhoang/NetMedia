@@ -4,7 +4,14 @@
     .controller('MovieCtrl', MovieCtrl)
     .controller('MoviesCtrl', MoviesCtrl)
     .controller('MoviesGenreCtrl', MoviesGenreCtrl)
-    .controller('MoviesSearchCtrl', MoviesSearchCtrl);
+    .controller('MoviesSearchCtrl', MoviesSearchCtrl)
+    .controller('LoginCtrl', function($scope, $auth) {
+
+    $scope.authenticate = function(provider) {
+      $auth.authenticate(provider);
+    };
+
+  });
     
 
     function MovieCtrl($scope, $location, $routeParams, Movie) {
