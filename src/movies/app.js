@@ -1,6 +1,3 @@
-/**
- * Created by Pebie on 28/04/15.
- */
 (function() {
     'use strict';
     angular.module('netMediaApp', ['ngRoute']).config(function ($routeProvider) {
