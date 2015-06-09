@@ -1,0 +1,188 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Carve Demo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/carve.css">
+        <style>
+            body {
+                margin-top:50px;
+            }
+        </style>
+    </head>
+    <body>    
+            <div style="margin-left:90px; width:1600px;">
+                <h3>Carve Demo: One Dimensional Data</h3>
+                
+
+                <div id="plot0a" style="height:500px;width:765px;display:inline-block;"></div><div id="plot0b" style="height:500px;width:765px;display:inline-block;padding-left:50px;"></div>
+                
+                <div id="plot1a" style="height:500px;width:765px;display:inline-block;"></div><div id="plot1b" style="height:500px;width:765px;display:inline-block;padding-left:50px;"></div>
+                
+                <div id="plot2a" style="height:500px;width:765px;display:inline-block;"></div><div id="plot2b" style="height:500px;width:765px;display:inline-block;"></div>
+                
+                <div id="plot3a" style="height:500px;width:765px;display:inline-block;"></div><div id="plot3b" style="height:500px;width:765px;display:inline-block;"></div>
+            </div>
+            
+    <!--[if lt IE 7]>    
+    <p class="chromeframe">
+        You are using an <strong>outdated</strong>
+        browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser</a>
+        or
+        <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a>
+        to improve your experience.
+    </p>
+    <![endif]-->    
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min.js"></script>
+<script src="scripts/carve.js"></script>
+<script type="text/javascript" lang="javascript">
+var data = [
+
+            { id: "Sparky", height : 10, weight : 14,  breed : "dachsund", group: 'hound' },
+            { id: "Lucy", height : 24, weight : 64,  breed : "retriever", group: 'sporting' },
+            { id: "Chewbaca", height : 33, weight : 180, breed : "great dane", group: 'working' },
+            { id: "Belle", height : 20, weight : 27,  breed : "whippet", group: 'hound' },
+            { id: "Crowe", height : 28, weight : 95,  breed : "ridgeback", group: 'hound' },
+            { id: "Chico", height : 7,  weight : 6,  breed : "chihuahua", group: 'toy' },
+            { id: "Katie", height : 32,  weight : 225,  breed : "mastiff", group: 'working' },
+            { id: "Hamish", height : 27,  weight : 50,  breed : "saluki", group: 'hound' }
+];
+
+var carve_obj = carve({
+            width : 700,
+            height: 500,
+            radius : 10,
+            margin : { top: 15, bottom: 40, left: 65, right: 50 }
+        });
+
+var carve_vis = carve_obj("#plot0a");
+
+ carve_vis
+        .colorBy({
+            label : "breed",
+            list : _.pluck(data, "breed")
+        })
+        .axisLabel({ x: "Height", y : "Weight (lbs)" })
+        .axisKey({ x: 'height', y : "weight" })
+        .data(data)
+        .render();
+
+ var carve_vis = carve_obj("#plot0b");
+
+ carve_vis
+        .colorBy({
+            label : "breed",
+            list : _.pluck(data, "breed")
+        })
+        .axisLabel({ y: "Height", x : "Weight (lbs)" })
+        .axisKey({ y: 'height', x : "weight" })
+        .data(data)
+        .render();
+
+
+var carve_vis = carve_obj("#plot1a");
+
+ carve_vis
+        .colorBy({
+            label : "breed",
+            list : _.pluck(data, "breed")
+        })
+        .axisLabel({ x: "Dog Name", y : "Weight (lbs)" })
+        .axisKey({ y : "weight" })
+        .data(data)
+        .render();
+
+carve_vis = carve_obj("#plot1b");
+carve_vis
+        .colorBy({
+            label : "breed",
+            list : _.pluck(data, "breed")
+        })
+        .axisLabel({ y: "Dog Name", x : "Weight (lbs)" })
+        .axisKey({ x : "weight" })
+        .data(data)
+        .render();
+
+var guid = (function() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+               .toString(16)
+               .substring(1);
+  }
+  return function() {
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+           s4() + '-' + s4() + s4() + s4();
+  };
+})();
+
+var data2 = _.map(_.range(100), function(index) { return { id: guid(), height: (Math.random() * 20) + 10 }; } );
+
+var carve_obj = carve({
+            width : 700,
+            height: 500,
+            radius : 10,
+            margin : { top: 15, bottom: 40, left: 15, right: 50 }
+        });
+
+carve_vis = carve_obj("#plot2a");
+
+ carve_vis
+        .axisLabel({ x : "Height (in)" })
+        .axisKey({ x : "height" })
+        .data(data2)
+        .render();
+
+carve_vis = carve_obj("#plot2b");
+
+ carve_vis
+        .axisLabel({ y : "Height (in)" })
+        .axisKey({ y : "height" })
+        .data(data2)
+        .render();
+
+var labels1 = ['a','b','c','d'];
+var labels2 = ['w','x','y','z'];
+
+var data3 = _.map( _.range(100), function(index) { 
+    return { 
+        id: guid(), 
+        type : labels1[ Math.floor(Math.random() * labels1.length) ], 
+        variety: labels2[ Math.floor(Math.random() * labels2.length) ]
+    }; 
+} );
+
+var carve_obj = carve({
+            width : 700,
+            height: 500,
+            radius : 10,
+            margin : { top: 15, bottom: 40, left: 15, right: 50 }
+        });
+var carve_vis = carve_obj("#plot3a");
+
+ carve_vis
+        .axisLabel({ x : "Type", y : 'Variety' })
+        .axisKey({ x : "type", y : 'variety' })
+        .data(data3)
+        .render();
+
+carve_vis = carve_obj("#plot3b");
+
+ carve_vis
+        .axisLabel({ y : "Type", x : 'Variety' })
+        .axisKey({ y : "type", x : 'variety' })
+        .data(data3)
+        .render();
+
+</script>
+
+</body>
+</html>
