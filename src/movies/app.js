@@ -11,7 +11,7 @@
                     controller: 'MoviesCtrl',
                     resolve: {
                         Movies: function(MovieFactory) {
-                            return MovieFactory.getMovies(1);
+                            return MovieFactory.getMovies('popular',1);
                         },
                         ListGenreMovies: function(MovieFactory) {
                             return MovieFactory.getListGenreMovies();
@@ -32,7 +32,7 @@
                     controller: 'SeriesCtrl',
                     resolve: {
                         Series: function(SerieFactory) {
-                            return SerieFactory.getSeries(1);
+                            return SerieFactory.getSeries('popular',1);
                         }
                     }
                 })
@@ -43,6 +43,9 @@
                     resolve: {
                         Movie: function($route, MovieFactory) {
                             return MovieFactory.getMovie($route.current.params.id);
+                        },
+                        ListGenreMovies: function(MovieFactory) {
+                            return MovieFactory.getListGenreMovies();
                         }
 
                     }

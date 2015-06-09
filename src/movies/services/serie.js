@@ -12,9 +12,9 @@
             getSeriesSearch : _getSeriesSearch
         };
  
-    function _getSeries(page) {
+    function _getSeries(category, page) {
         var defer = $q.defer();
-        $http.get("http://api.themoviedb.org/3/tv/popular?api_key=cc9227d0368f24d2cbcd299743b4075c&page="+page).then(function(response) {
+        $http.get("http://api.themoviedb.org/3/tv/"+category+"?api_key=cc9227d0368f24d2cbcd299743b4075c&page="+page).then(function(response) {
             defer.resolve(response.data);
         }, function(err) {
             defer.reject(err);

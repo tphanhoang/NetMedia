@@ -47,11 +47,11 @@
         }
 
 
-        function _getMovies(page) {
+        function _getMovies(category, page) {
             
             var defer = $q.defer();
            
-                $http.get("http://api.themoviedb.org/3/movie/popular?api_key=cc9227d0368f24d2cbcd299743b4075c&page="+page).then(function(response) {
+                $http.get("http://api.themoviedb.org/3/movie/"+category+"?api_key=cc9227d0368f24d2cbcd299743b4075c&page="+page).then(function(response) {
                     //localStorage.setItem('heroes', JSON.stringify(heroes.data));
                     defer.resolve(response.data);
                     console.log(response.data);

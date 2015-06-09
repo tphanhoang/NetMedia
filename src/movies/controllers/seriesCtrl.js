@@ -56,6 +56,12 @@
         $scope.query = {};
         $scope.series.more=[];
         $scope.page = 2;
+        $scope.categories = {
+            'on_the_air':"En ce moment",
+            'airing_today':"Diffusé aujourd'hui",
+            'top_rated':"Les mieux notés",
+            'popular':"Les plus populaires"
+            };
 
         $scope.changeOrder = function($scope,filter) {
             $scope.query.order = filter;
@@ -81,25 +87,50 @@
                 $scope.page = 2;
                 $scope.series.more=[];      
             }  
+        }
+        $scope.category = function(category, page){
+            if(category!=null){
+                SerieFactory.getSeries(category,page).then(function(result){
+                    $scope.categoryValue = category;
+                    $scope.page = 2;
+                    $scope.series = result;
+                    
+                    $scope.series.more=[];   
+                }, function (result){
+                alert("Erreur : ça a planté ! pas de bras | pas data");
+            })}
+            else{
+                $scope.series = $scope.seriesDefault;
+            }                
         }        
         $scope.showMoreSeries = function(page){
-            if($scope.searchTest){
-
-                SerieFactory.getSeriesSearch($scope.SearchTestValue, page).then(function(result){
-                    $scope.series.more[page-1] = result.results;
-                }, function (result){
-                    alert("Erreur : ça a planté ! pas de bras | pas data");
-                });
-
-                Series.page  = page<Series.total_pages? $scope.page ++ : $scope.page;
-            }
-            else{
-            SerieFactory.getSeries(page).then(function(result){
+            if($scope.searchTest || $scope.categoryTest){
+                
+            SerieFactory.getSeriesSearch($scope.SearchTestValue, page).then(function(result){
                 $scope.series.more[page-1] = result.results;
             }, function (result){
                 alert("Erreur : ça a planté ! pas de bras | pas data");
             });
 
+            Series.page  = page<Series.total_pages? $scope.page ++ : $scope.page;
+            }
+            else{
+
+                if($scope.categoryValue!=null){
+            SerieFactory.getSeries($scope.categoryValue, page).then(function(result){
+                $scope.series.more[page-1] = result.results;
+            }, function (result){
+                alert("Erreur : ça a planté ! pas de bras | pas data");
+            });
+
+                }
+                else{
+            SerieFactory.getSeries('popular', page).then(function(result){
+                $scope.series.more[page-1] = result.results;
+            }, function (result){
+                alert("Erreur : ça a planté ! pas de bras | pas data");
+            });
+            }
             Series.page  = page<Series.total_pages? $scope.page ++ : $scope.page;
             }
         }
