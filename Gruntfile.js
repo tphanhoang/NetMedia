@@ -180,7 +180,7 @@ options: {
     grunt.loadNpmTasks('grunt-cdn');
     grunt.loadNpmTasks('grunt-connect');
 
-    grunt.registerTask('default', ['svgmin', 'imagemin', 'htmlmin', 'concat', 'cssmin', 'sass', 'connect' ]);
+    grunt.registerTask('default', ['svgmin', 'imagemin', 'htmlmin', 'concat','sass', 'cssmin', 'connect' ]);
     grunt.registerTask('test', ['jshint', 'qunit']);
 
 

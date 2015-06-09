@@ -14,7 +14,7 @@
                             return MovieFactory.getListGenreMovies();
                         }
                     }
-                }) 
+                })
                 .when('/series/r/:search', {
                     templateUrl: 'src/movies/views/series.html',
                     controller: 'SeriesSearchCtrl',
@@ -46,7 +46,7 @@
                         }
 
                     }
-                }) 
+                })
                 .when('/movies/r/:search', {
                     templateUrl: 'src/movies/views/movies.html',
                     controller: 'MoviesSearchCtrl',
