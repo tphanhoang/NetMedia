@@ -1,0 +1,168 @@
+<button class="btn-back btn btn-primary" ng-click="back()">Retour à la série</button>
+<hr>
+Episodes : <button ng-repeat="(key, episode) in serieSeason.episodes" class="btn btn-primary" ng-click="showEpisode(serie_id,season_id,episode.episode_number)"> {{episode.episode_number}}</button>
+<hr>
+
+
+<div class="panel panel-primary">
+
+    <div class="panel-heading">
+        <h3 class="panel-title panel-title title--inline">{{serieSeason.name}}</h3>   
+    </div>
+	
+	<ul>				
+		<li><label>overview</label> : {{serieSeason.overview}}</li>
+		<li><label>id</label> : {{serieSeason.id}}</li>
+		<li><label>poster_path</label> : <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{serieSeason.poster_path}}"></li>
+		<li><label>season_number</label> : {{serieSeason.season_number}}</li>
+	</ul>
+         <div class="panel-heading">
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [serie/id/season/season_id/credits] (TPH)</h3>
+        </div>
+    <ul>
+
+		<li><label>credits</label> : 
+			<ul>
+				<li><label>cast</label> : 
+					<ul> 
+					<li ng-repeat="(key, cast) in serieSeason.credits.cast"> <label>id</label> : {{cast.id}}
+						<ul>
+							<li><label>character</label> : {{cast.character}}</li>
+							<li><label>credit_id</label> : {{cast.credit_id}}</li>
+							<li><label>name</label> : {{cast.name}}</li>
+							<li><label>profile_path</label> : <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w185{{cast.profile_path}}"></li>
+							<li><label>order</label> : {{cast.order}}</li>
+						</ul>
+					</li>
+					</ul>
+				</li>
+				<li> crew : 
+					<ul> 
+					<li ng-repeat="(key, crew) in serieSeason.credits.crew"> <label>id</label> : {{crew.id}}
+						<ul>
+							<li><label>credit_id</label> : {{crew.credit_id}}</li>
+							<li><label>department</label> : {{crew.department}}</li>
+							<li><label>name</label> : {{crew.name}}</li>
+							<li><label>job</label> : {{crew.job}}</li>
+							<li><label>profile_path</label> : <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w185{{crew.profile_path}}"></li>
+						</ul>
+					</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+         <div class="panel-heading">
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [serie/id/season/season_id/external_ids] (TPH)</h3>
+        </div>
+    <ul>
+
+		<li>
+			<ul>
+				<li> <label>external id : </label>
+				<ul>
+					<li><label>freebase_mid</label> : {{serieSeason.external_ids.freebase_mid}}</li>
+					<li><label>freebase_id</label> : {{serieSeason.external_ids.freebase_id}}</li>
+					<li><label>tvdb_id</label> : {{serieSeason.external_ids.tvdb_id}}</li>
+					<li><label>tvrage_id</label> : {{serieSeason.external_ids.tvrage_id}}</li>
+				</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+         <div class="panel-heading">
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [serie/id/season/season_id/images] (TPH)</h3>
+        </div>
+	<ul>
+		<li>images : 
+			<ul> 
+				<li ng-repeat="(key, poster) in serieSeason.images.posters"> <label>id :</label> 
+				<ul>
+					<li><label>aspect_ratio</label> : {{poster.aspect_ratio}}</li>
+					<li><label>file_path</label> : <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{poster.file_path}}"></li>
+					<li><label>height</label> : {{poster.height}}</li>
+					<li><label>id</label> : {{poster.id}}</li>
+					<li><label>iso_639_1</label> : {{poster.iso_639_1}}</li>
+					<li><label>vote_average</label> : {{poster.vote_average}}</li>
+					<li><label>vote_count</label> : {{poster.vote_count}}</li>
+					<li><label>width</label> : {{poster.width}}</li>
+				</ul>
+			</li>
+			</ul>
+		</li>
+	</ul>
+
+         <div class="panel-heading">
+            <h3 class="panel-title panel-title title--inline">Infos de l'Api [serie/id/season/season_id/videos] (TPH)</h3>
+        </div>
+    <ul>
+		<li>videos : 
+			<ul> 
+			<li ng-repeat="(key, video) in serieSeason.videos.results"> video : 
+				<ul>
+					<li>video.<label>id</label> : {{video.id}}</li>
+					<li>video.<label>iso_639_1</label> : {{video.iso_639_1}}</li>
+					<li>video.<label>key</label> : <youtube code='video.key'>{{video.key}} </youtube></li>
+					<li>video.<label>name</label> : {{video.name}}</li>
+					<li>video.<label>site</label> : {{video.site}}</li>
+					<li>video.<label>size</label> : {{video.size}}</li>
+					<li>video.<label>type</label> : {{video.type}}</li>
+				</ul>
+			</li>
+			</ul>
+		</li>
+	</ul>
+	</li>
+		<li><label>air_date</label> : {{serieSeason.air_date}}</li>
+		<li><label>episodes</label> :
+			<ul> 
+			<li ng-repeat="(key, episode) in serieSeason.episodes"> <label>episode_number</label> : {{episode.episode_number}}
+				<ul>
+					<li><label>name</label> : {{episode.name}}</li>
+					<li><label>overview</label> : {{episode.overview}}</li>					
+					<li><label>id</label> : {{episode.id}}</li>
+					<li><label>season_number</label> : {{episode.season_number}}</li>
+					<li><label>still_path</label> : <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{episode.still_path}}"></li>
+					<li><label>air_date</label> : {{episode.air_date}}</li>
+					<li><label>production_code</label> : {{episode.production_code}}</li>		
+					<li> <label>crew</label> :
+						<ul ng-repeat="(key, cast) in episode.crew">
+							<li><label>id</label> : {{cast.id}}
+								<ul>								
+									<li><label>credit_id</label> : {{cast.credit_id}}</li>
+									<li><label>name</label> : {{cast.name}}</li>
+									<li><label>department</label> : {{cast.department}}</li>
+									<li><label>job</label> : {{cast.job}}</li>
+									<li><label>profile_path</label> : <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w185{{cast.profile_path}}"></li>
+								</ul>
+							</li>
+						</ul>
+					</li>				
+					<li><label>guest_stars</label> : 
+						<ul> 
+							<li ng-repeat="(key, star) in episode.guest_stars"> <label>star.id</label> : {{star.id}}
+							<ul>
+								
+								<li><label>name</label> :{{star.name}}</li>
+								<li><label>credit_id</label> :{{star.credit_id}}</li>
+								<li><label>character</label> :{{star.character}}</li>
+								<li><label>order</label> :{{star.order}}</li>
+								<li><label>profile_path</label> :<img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w185{{star.profile_path}}"></li>
+							</ul>
+						</li>
+					</li>
+					
+
+					<li><label>vote_average</label> : {{episode.ote_average}}</li>
+					<li><label>vote_count</label> : {{episode.vote_count}}	</li>
+				</ul>
+			<hr>	
+			</li> 
+			</ul>
+		</li>
+
+	</ul>
+	</li>
+	</div>
+	</div>
+

@@ -1,0 +1,85 @@
+<div class="panel panel-primary">
+{{series.total_pages}}
+
+    <form style="width:450px;margin:5px;padding:15px;border:solid 1px black;background-color:#68228B">
+        <label style="color:white">Recherche : </label>
+        <input  class="btn" style="width:100%"
+                ng-change="search(searchValue,1)"
+                ng-model="searchValue">
+    </form>
+<div class="panel-heading">
+    <h3 class="panel-title panel-title title--inline">Liste des Films Populaires | <a href="#/films">Films</a> | <a href="#/series">Series</a> </h3>
+   
+    </div>
+
+    <div ng-if="series.total_results==0"> Aucun série n'a été trouvé lors de votre recherche</div>
+    
+    <div class="panel-body">
+
+       
+    <div  ng-repeat="serie in series.results">
+      <div class="col-sm-6 col-md-4" >
+    <div class="pull-right" ng-switch on="movie.status">
+        <span ng-switch-when="0" class="label label-success">Disponible</span>
+        <span ng-switch-when="1" class="label label-warning">Occupé(e)</span>
+        <span ng-switch-when="2" class="label label-danger">Blessé(e)</span>
+    </div>
+    <div class="thumbnail">
+        <img src="http://image.tmdb.org/t/p/w500{{serie.poster_path}}" class="image-thumbnail">   
+<hr>
+        <img src="http://image.tmdb.org/t/p/w500{{serie.backdrop_path}}" class="image-thumbnail">  
+        <div class="caption">
+           
+            <h3>name : {{serie.name}}</h3>
+            <p>original_name : {{serie.original_name}}</p>
+            <p>id : {{serie.id}}</p>                    
+            <p>first_air_date : {{serie.first_air_date}}</p>
+            <p>origin_country : {{serie.origin_country}}</p>
+            <p>popularity : {{serie.popularity}}</p>
+            <p>vote_average : {{serie.vote_average}}</p>
+            <p>vote_count : {{serie.vote_count}}</p>
+            <button class="btn btn-primary" ng-click="showSerie(serie.id)">Regarder</button>
+        </div>
+    </div>
+    </div>    </div>   
+
+    <div ng-repeat="series in series.more">
+    <div  ng-repeat="serie in series">
+      <div class="col-sm-6 col-md-4" >
+    <div class="pull-right" ng-switch on="movie.status">
+        <span ng-switch-when="0" class="label label-success">Disponible</span>
+        <span ng-switch-when="1" class="label label-warning">Occupé(e)</span>
+        <span ng-switch-when="2" class="label label-danger">Blessé(e)</span>
+    </div>
+    <div class="thumbnail">
+        <img src="http://image.tmdb.org/t/p/w500{{serie.poster_path}}" class="image-thumbnail">   
+<hr>
+        <img src="http://image.tmdb.org/t/p/w500{{serie.backdrop_path}}" class="image-thumbnail">  
+        <div class="caption">
+           
+            <h3>name : {{serie.name}}</h3>
+            <p>original_name : {{serie.original_name}}</p>
+            <p>id : {{serie.id}}</p>                    
+            <p>first_air_date : {{serie.first_air_date}}</p>
+            <p>origin_country : {{serie.origin_country}}</p>
+            <p>popularity : {{serie.popularity}}</p>
+            <p>vote_average : {{serie.vote_average}}</p>
+            <p>vote_count : {{serie.vote_count}}</p>
+            <button class="btn btn-primary" ng-click="showSerie(serie.id)">Regarder</button>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+</div>
+
+         <div class="panel-heading">
+            <p style="margin:auto;width:140px" >
+                <button ng-if="series.total_pages>=page"  class="btn btn-primary" ng-click="showMoreSeries(page)"> Voir plus de séries ! </button>
+            </p>
+        </div>
+
+    </div>
+
+</div>

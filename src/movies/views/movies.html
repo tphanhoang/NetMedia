@@ -1,34 +1,101 @@
 <div class="panel panel-primary">
 
 
-  <!--   <div class="panel-heading">
-        <h3 class="panel-title panel-title title--inline">Liste des Films Populaires</h3>
-        <span class="dropdown pull-right">
-            <a href="" class="dropdown-toggle" data-toggle="dropdown">Filtrer <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li
-                    ng-class="{disabled: query.order == 'name'}"
-                    ng-click="changeOrder('name')">
-                        <a href="">Action</a>
-                </li>
-                <li
-                    ng-class="{disabled: query.order == 'age'}"
-                    ng-click="changeOrder('age')">
-                        <a href="">Aventure</a>
-                </li>
-                <li
-                    ng-class="{disabled: query.order == 'status'}"
-                    ng-click="changeOrder('status')">
-                        <a href="">Comédie</a>
-                </li>
-            </ul>
-        </span>
-    </div> -->
+    <div class="panel-heading">
+    <h3 class="panel-title panel-title title--inline">Liste des Films Populaires | <a href="#/films">Films</a> | <a href="#/series">Series</a> </h3>
+    
+    <form style="width:450px;margin:5px;padding:15px;border:solid 1px black;background-color:#68228B">
+        <label style="color:white">Tri par genre : </label>
+        <select class="form-control" 
+                ng-change="genre(value)"
+                ng-model="value"
+                ng-options="genre.id as genre.name for genre in listGenre.genres"
+            >
+            <option value="">Triez par genre</option>
+        </select>
+        <hr>
+        <label style="color:white">Recherche : </label>
+        <input  class="btn" style="width:100%"
+                ng-change="search(searchValue)"
+                ng-model="searchValue">
+    </form>
+
+
+        
+
+
+
+    </div> 
 
     <div class="panel-body">
 
-        <movie-block ng-repeat="movie in movies.results | orderBy: query.order" movie="movie"></movie-block>
+        <div ng-if="movies.total_results==0"> Aucun film n'a été trouvé lors de votre recherche</div>
+
+        <div ng-repeat="movie in movies.results | orderBy: query.order" movie="movie" >
+            <div class="col-sm-6 col-md-4">
+                <div class="pull-right" ng-switch on="movie.status">
+                    <span ng-switch-when="0" class="label label-success">Disponible</span>
+                    <span ng-switch-when="1" class="label label-warning">Occupé(e)</span>
+                    <span ng-switch-when="2" class="label label-danger">Blessé(e)</span>
+                </div>
+                <div class="thumbnail">
+                    <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="image-thumbnail"> 
+                    <hr>
+                    <img src="http://image.tmdb.org/t/p/w500{{movie.backdrop_path}}" class="image-thumbnail"> 
+                    <div class="caption">
+                        <p>adult : {{movie.adult}}</p>
+                        <h3>title : {{movie.title}}</h3>
+                        <p>original_title : {{movie.original_title}}</p>
+                        <p>id : {{movie.id}}</p>
+                        <p>genre_ids : <ul><li ng-repeat="(key, genre) in movie.genre_ids">{{genre}} (traité TpH : {{ genreList[genre] }} )</li></ul></p>
+                        <p>vote_average : {{movie.vote_average}}</p>
+                        <p>original_language : {{movie.original_language}}</p>
+                        <p>release_date : {{movie.release_date}}</p>
+                        <p>overview : {{movie.overview}}</p>
+                        <p>popularity : {{movie.popularity}}</p>
+                        <p>video : {{movie.video}}</p>
+                        <p>vote_average : {{movie.vote_average}}</p>
+                        <p>vote_count : {{movie.vote_count}}</p>
+                        <button class="btn btn-primary" ng-click="showMovie(movie.id)">Regarder</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div ng-repeat="movies in movies.more | orderBy: query.order" movie="movie" >
+        <div ng-repeat="movie in movies | orderBy: query.order" movie="movie" >
+            <div class="col-sm-6 col-md-4">
+                <div class="pull-right" ng-switch on="movie.status">
+                    <span ng-switch-when="0" class="label label-success">Disponible</span>
+                    <span ng-switch-when="1" class="label label-warning">Occupé(e)</span>
+                    <span ng-switch-when="2" class="label label-danger">Blessé(e)</span>
+                </div>
+                <div class="thumbnail">
+                    <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="image-thumbnail"> 
+                    <hr>
+                    <img src="http://image.tmdb.org/t/p/w500{{movie.backdrop_path}}" class="image-thumbnail"> 
+                    <div class="caption">
+                        <p>adult : {{movie.adult}}</p>
+                        <h3>title : {{movie.title}}</h3>
+                        <p>original_title : {{movie.original_title}}</p>
+                        <p>id : {{movie.id}}</p>
+                        <p>genre_ids : <ul><li ng-repeat="(key, genre) in movie.genre_ids">{{genre}} (traité TpH : {{ genreList[genre] }} )</li></ul></p>
+                        <p>vote_average : {{movie.vote_average}}</p>
+                        <p>original_language : {{movie.original_language}}</p>
+                        <p>release_date : {{movie.release_date}}</p>
+                        <p>overview : {{movie.overview}}</p>
+                        <p>popularity : {{movie.popularity}}</p>
+                        <p>video : {{movie.video}}</p>
+                        <p>vote_average : {{movie.vote_average}}</p>
+                        <p>vote_count : {{movie.vote_count}}</p>
+                        <button class="btn btn-primary" ng-click="showMovie(movie.id)">Regarder</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
 
     </div>
-
+<button class="btn btn-primary" ng-click="showMoreMovies(page)"> Voir plus de films ! </button>
 </div>

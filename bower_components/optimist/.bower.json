@@ -1,0 +1,14 @@
+{
+  "name": "optimist",
+  "homepage": "https://github.com/substack/node-optimist",
+  "version": "0.2.7",
+  "_release": "0.2.7",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.2.7",
+    "commit": "7286de1acf726413baea28be7b6eeeb953b6bf59"
+  },
+  "_source": "git://github.com/substack/node-optimist.git",
+  "_target": "0.2.x",
+  "_originalSource": "optimist"
+}
