@@ -153,6 +153,9 @@ h1 {
 
 h3, h4 {
   font-family: "Roboto-Bold";
+  color: #FFF;
+  margin-top: -10px;
+  font-size: 0.7em;
 }
 
 .title-home {
@@ -181,7 +184,7 @@ body {
 }
 
 .panel-body {
-  margin-top: 20px;
+  margin-top: 60px;
   margin-left: 20px;
 }
 
@@ -222,11 +225,12 @@ body {
   color: #FFF;
   margin-left: 5px;
   margin-right: 5px;
-  padding: 20px;
+  padding: 14px;
   padding-bottom: 31px;
   padding-top: 35px;
   text-decoration: none;
   font-family: "Roboto-Bold";
+  font-size: 0.8em;
 }
 
 a.selected {
@@ -237,12 +241,13 @@ a.selected {
 .filters-search-user {
   display: inline-block;
   display: -webkit-box;
-  margin-top: -20px;
-  margin-left: 52%;
+  margin-top: -68px;
+  margin-left: 49%;
+  font-size: 0.8em;
 }
 
 .search {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .filters > select {
@@ -252,7 +257,7 @@ a.selected {
   background-color: #17181B;
   color: #DEB90C;
   border: 0px solid #17181B;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .genre {
@@ -278,15 +283,15 @@ a.selected {
   width: 40px;
   border-radius: 50%;
   border: 5px solid #DEB90C;
-  margin-top: 10px;
-  margin-left: 25px;
+  margin-top: 5px;
+  margin-left: 17px;
 }
 
 .user-name {
   color: #DEB90C;
   font-family: "Roboto";
-  margin-top: -38px;
-  margin-left: 98px;
+  margin-top: -36px;
+  margin-left: 72px;
 }
 
 /*# sourceMappingURL=main.css.map */

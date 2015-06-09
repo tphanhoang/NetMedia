@@ -17,10 +17,11 @@
     <img src="images/logo-netmedia-ok.png" class="logo-accueil"/>
     <div class="menu-navigation">
         <a class="" href="">DÉCOUVRIR</a>
-        <a class="selected" href="">FILMS</a>
-        <a class="" href="">SÉRIES</a>
+        <a class="selected" href="#/films">FILMS</a>
+        <a class="" href="#/series">SÉRIES</a>
     </div>
-    <div class="filters-search-user">
+
+    <!-- <div class="filters-search-user">
         <div class="filters">
             <span class="genre">Genre : </span>
             <select>
@@ -44,7 +45,25 @@
             <img class="user-img" src="images/placeholder.png"/>
             <div class="user-name">User Name</div>
         </div>
-    </div>
+    </div> -->
+
+
+    <!--   <form style="width:450px;margin:5px;padding:15px;border:solid 1px black;background-color:#68228B">
+        <label style="color:white">Tri par genre : </label>
+        <select class="form-control" 
+                ng-change="genre(value)"
+                ng-model="value"
+                ng-options="genre.id as genre.name for genre in listGenre.genres"
+            >
+            <option value="">Triez par genre</option>
+        </select>
+        <hr>
+        <label style="color:white">Recherche : </label>
+        <input  class="btn" style="width:100%"
+                ng-change="search(searchValue)"
+                ng-model="searchValue">
+    </form> -->
+
 </header>
 <button ng-click="authenticate('facebook')">Sign in with Facebook</button>
 <div id="fb-root">
