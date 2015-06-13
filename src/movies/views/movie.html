@@ -6,7 +6,7 @@
         </div>
 
     </div>
-        
+
     <div class="infoTvMovie">
         <div class="posterContent">
             <img class="posterImg" ng-src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}"/>
@@ -36,7 +36,7 @@
         </div>
     </div>
 
-    
+
     <div class="contentTvMovie clearfix">
 
         <h3 class="synopsisFont fontRegular">Synopsis</h3>
@@ -44,10 +44,51 @@
 
     </div>
 
+    <div class="infoPoster">
+        <div class="posterContent">
+            <img class="posterImg" ng-src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}"/>
+        </div>
+        <div class="contentTvMovieInfo">
+            <h2 class="titleTvMovie">{{movie.title}}</h2>
+            <ul class="detailTvMovie regularFont">
+                <li>{{movie.release_date}}</li>
+                <li ng-repeat="(key, genre) in movie.genres | limitTo:1">{{genre.name}}</li>
+                <li>{{movie.runtime}}</li>
+            </ul>
+            <br />
+            <div class="popularityStar regularFont">{{movie.popularity}}
+            </div>
+            <div class="castings">
+                <label class="castBy">Réalisé par :</label>
+                <span class="fontRegular" ng-repeat="(key, crew) in movie.credits.crew"  ng-if='crew.job=="Director"'>{{crew.name }}</span><br /><br /><br />
+                <label class="castBy">Avec :</label>
+                <div class="castByActor">
+                    <span class="fontRegular" ng-repeat="(key, role) in movie.credits.cast | limitTo: 4">{{role.name}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="userActionMovie">
+        <div class="favoriteAdd fontRegular">
+        Ajouter aux favoris
+        </div>
+        <div class="reloadMovie fontRegular">
+        Reprendre la lecture
+        </div>
+    </div>
+
+    <div class="contentTvMovie">
+
+        <h3 class="synopsisFont fontRegular">Synopsis</h3>
+        <p class="resumeTvMovie fontRegular">{{movie.overview}}</p>
+
+    </div>
+
+
 
     <div class="panel-body panel-body">
         <div>
-           
+
             <span class="bloc-hero" ng-switch on="movie.status">
                 <h3>{{movie.title}}</h3>
                 <h4>{{movie.release_date}}</h4>
@@ -77,11 +118,11 @@
         </div>
 
         <ul>
-                  
+
             <li><label>adult : </label> {{movie.adult}}</li>
-            <li><label>backdrop_path : </label> 
+            <li><label>backdrop_path : </label>
             <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{movie.backdrop_path}}"/></li>
-            <li><label>belongs_to_collection : </label> 
+            <li><label>belongs_to_collection : </label>
                 <ul>
                     <li><label> id :</label> {{movie.belongs_to_collection.id}}</li>
                     <li><label> name :</label> {{movie.belongs_to_collection.name}}</li>
@@ -90,7 +131,7 @@
                 </ul>
             </li>
             <li><label>budget : </label> {{movie.budget}}</li>
-            <li><label>genres : </label> 
+            <li><label>genres : </label>
                  <ul ng-repeat="(key, genre) in movie.genres">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>id :</label> {{genre.id}}</li>
@@ -105,7 +146,7 @@
             <li><label>overview : </label> {{movie.overview}}</li>
             <li><label>popularity : </label> {{movie.popularity}}</li>
             <li><label>poster_path : </label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"/></li>
-            <li><label>production_companies : </label>                 
+            <li><label>production_companies : </label>
                  <ul ng-repeat="(key, production_company) in movie.production_companies">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>id :</label> {{production_company.id}}</li>
@@ -143,7 +184,7 @@
         </div>
         <ul>
             <li><label>id :</label> {{movie.credits.id}}</li>
-            <li><label>cast :</label> 
+            <li><label>cast :</label>
                 <ul ng-repeat="(key, role) in movie.credits.cast">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>cast_id :</label> {{role.cast_id}}</li>
@@ -178,7 +219,7 @@
                 </ul>
             </li>
         </ul>
-        
+
 
 
          <div class="panel-heading">
@@ -244,11 +285,11 @@
                 </ul>
             </li>
         </ul>
-        
+
          <div class="panel-heading">
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/translations] (TPH)</h3>
         </div>
-        
+
         <ul>
             <li><label>id :</label> {{movie.translations.id}}</li>
                 <ul ng-repeat="(key, translation) in movie.translations.translations">
@@ -257,14 +298,14 @@
                         <li><label>english_name :</label> {{translation.english_name}}</li>
                         <li><label>name :</label> {{translation.name}}</li></ul></li>
                 </ul></li>
-            
+
         </ul>
 
          <div class="panel-heading">
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/similar] (TPH)</h3>
         </div>
-    
-        
+
+
         <ul>
             <li><label>page :</label> {{movie.similar.page}}</li>
                 <ul ng-repeat="(key, result) in movie.similar.results">
@@ -284,7 +325,7 @@
                         <li><label>vote_average</label> :{{result.vote_average}}</li>
                         <li><label>vote_count</label> :{{result.vote_count}}</li></ul></li>
                 </ul></li>
-            
+
             <li><label>total_pages :</label> {{movie.similar.total_pages}}</li>
             <li><label>total_results :</label> {{movie.similar.total_results}}</li>
         </ul>
@@ -293,8 +334,8 @@
          <div class="panel-heading">
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/reviews] (TPH)</h3>
         </div>
-        
-        
+
+
         <ul>
             <li><label>id :</label> {{movie.translations.id}}</li>
                 <ul ng-repeat="(key, result) in movie.reviews.results">
@@ -303,7 +344,7 @@
                         <li><label>author :</label> {{result.author}}</li>
                         <li><label>content :</label> {{result.content}}</li></ul></li>
                 </ul></li>
-            
+
             <li><label>total_pages :</label> {{movie.reviews.total_pages}}</li>
             <li><label>total_results :</label> {{movie.reviews.total_results}}</li>
         </ul>
@@ -312,7 +353,7 @@
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/lists] (TPH)</h3>
         </div>
 
-        
+
         <ul>
             <li><label>id :</label> {{movie.lists.id}}</li>
                 <ul ng-repeat="(key, result) in movie.lists.results">
@@ -325,7 +366,7 @@
                         <li><label>name :</label> {{result.name}}</li>
                         <li><label>poster_path :</label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{result.poster_path}}"/></li></ul></li>
                 </ul></li>
-            
+
         </ul>
 
          <div class="panel-heading">

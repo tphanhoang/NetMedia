@@ -3,6 +3,10 @@
 <head lang="en">
     <!-- <link rel="stylesheet" href="vendors/css/bootstrap.min.css"/> -->
     <link rel="stylesheet" href="vendors/css/custom.css"/>
+    <link rel="stylesheet" href="src/styles/styles.css"/>
+
+
+
     <!-- <link rel="icon" href=""> -->
     <link rel="stylesheet" href="dist/css/main.css"/>
     <meta charset="UTF-8">
@@ -17,10 +21,11 @@
     <img src="images/logo-netmedia-ok.png" class="logo-accueil"/>
     <div class="menu-navigation">
         <a class="" href="">DÉCOUVRIR</a>
-        <a class="selected" href="">FILMS</a>
-        <a class="" href="">SÉRIES</a>
+        <a class="selected" href="#/films">FILMS</a>
+        <a class="" href="#/series">SÉRIES</a>
     </div>
-    <div class="filters-search-user">
+
+    <!-- <div class="filters-search-user">
         <div class="filters">
             <span class="genre">Genre : </span>
             <select>
@@ -44,10 +49,27 @@
             <img class="user-img" src="images/placeholder.png"/>
             <div class="user-name">User Name</div>
         </div>
-    </div>
+    </div> -->
+
+
+    <!--   <form style="width:450px;margin:5px;padding:15px;border:solid 1px black;background-color:#68228B">
+        <label style="color:white">Tri par genre : </label>
+        <select class="form-control" 
+                ng-change="genre(value)"
+                ng-model="value"
+                ng-options="genre.id as genre.name for genre in listGenre.genres"
+            >
+            <option value="">Triez par genre</option>
+        </select>
+        <hr>
+        <label style="color:white">Recherche : </label>
+        <input  class="btn" style="width:100%"
+                ng-change="search(searchValue)"
+                ng-model="searchValue">
+    </form> -->
+
 </header>
-<button ng-click="authenticate('facebook')">Sign in with Facebook</button>
-<div id="fb-root">
+
 </div>
 
 <section class="container">
@@ -59,6 +81,23 @@
 </footer>
 </body>
 
+<script>
+ window.fbAsyncInit = function() {
+   FB.init({
+     appId      : '375442245978064',
+     xfbml      : true,
+     version    : 'v2.3'
+   });
+ };
+
+ (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 <script src="vendors/js/angular.min.js"></script>
 <script src="vendors/js/angular-route.min.js"></script>
 <script src="vendors/js/fb.js"></script>
@@ -77,5 +116,7 @@
 <script src="src/movies/services/movie.js"></script>
 <script src="src/movies/services/serie.js"></script>
 <script src="src/movies/services/urlConfig.js"></script>
+<script src="//cdn.jsdelivr.net/satellizer/0.11.1/satellizer.min.js"></script>
+
 
 </html>
