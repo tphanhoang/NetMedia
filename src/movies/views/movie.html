@@ -1,19 +1,57 @@
-<div class="panel panel-primary">
+    <div class="headerContent">
+        <div class="gradient">
+        </div>
+        <div class="backdropImg" style="background-image:url(http://image.tmdb.org/t/p/w1280{{movie.backdrop_path}})">
 
-    <div class="panel-heading">
-        <h3 class="panel-title panel-title title--inline">Fiche Info</h3>
+        </div>
+
     </div>
+        
+    <div class="infoTvMovie">
+        <div class="posterContent">
+            <img class="posterImg" ng-src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}"/>
+        </div>
+        <div class="contentTvMovieInfo">
+            <h2 class="titleTvMovie">{{movie.title}}</h2>
+            <ul class="detailTvMovie regularFont">
+                <li>{{movie.release_date}}</li>
+                <li ng-repeat="(key, genre) in movie.genres | limitTo:1">{{genre.name}}</li>
+                <li>{{movie.runtime}}</li>
+            </ul>
+            <br />
+            <div class="popularityStar regularFont">{{movie.popularity}}
+            </div>
+            <div class="castings">
+                <label class="castBy">Réalisé par :</label>
+                <span class="fontRegular" ng-repeat="(key, crew) in movie.credits.crew"  ng-if='crew.job=="Director"'>{{crew.name }} </span><br /><br /><br />
+                <label class="castBy">Avec :</label>
+                <div class="castByActor">
+                    <span class="fontRegular" ng-repeat="(key, role) in movie.credits.cast | limitTo: 4">{{role.name}}, </span>
+                </div>
+            </div>
+            <div class="userActionMovie clearfix">
+                <a href = "#"><div class="favoriteAdd fontRegular">Ajouter aux favoris</div></a>
+                <a href = "#"><div class="reloadMovie fontRegular">Reprendre la lecture</div></a>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="contentTvMovie clearfix">
+
+        <h3 class="synopsisFont fontRegular">Synopsis</h3>
+        <p class="resumeTvMovie fontRegular">{{movie.overview}}</p>
+
+    </div>
+
 
     <div class="panel-body panel-body">
         <div>
-            <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}"/>
+           
             <span class="bloc-hero" ng-switch on="movie.status">
                 <h3>{{movie.title}}</h3>
                 <h4>{{movie.release_date}}</h4>
                 <p>{{movie.overview}}</p>
-                <span ng-switch-when="0" class="label label-success">Disponible</span>
-                <span ng-switch-when="1" class="label label-warning">Occupé(e)</span>
-                <span ng-switch-when="2" class="label label-danger">Blessé(e)</span>
             </span>
 
             <div class="btn-group pull-right">
@@ -32,7 +70,6 @@
         <div ng-show="alert == 'success'" class="alert alert-success"><strong>Statut modifié!</strong></div>
         <div ng-show="alert == 'error'" class="alert alert-danger"><strong>Echec !</strong></div>
     </div>
-</div>
 
     <div class="panel panel-primary">
         <div class="panel-heading">
