@@ -6,10 +6,18 @@
         </div>
 
     </div>
+<<<<<<< HEAD
 
 
     <div class="infoTvMovie">
+=======
+
+
+    <div class="infoTvMovie">
+
+>>>>>>> 80dea524f8df7a66dc5c7441841cae83e68f507b
     <div class="infoPoster">
+
         <div class="posterContent">
             <img class="posterImg" ng-src="http://image.tmdb.org/t/p/w342{{serie.poster_path}}"/>
         </div>
@@ -46,6 +54,7 @@
         <hr class="separatorSeason"></hr>
         <span class="seasonFont">Saison</span>
         <button ng-repeat="(key, season) in serie.seasons"  ng-click="showSeason(serie_id,season.season_number)"  class="seasonNumberFont">{{season.season_number}}</button>
+        
         </div>
     </div>
     <div class="userActionMovie">
@@ -63,6 +72,7 @@
         <p class="resumeTvMovie fontRegular">{{movie.overview}}</p>
         <hr class="separatorSeason"></hr>
         <h4 class="seasonFont">Saison</h4>
+
         <button ng-repeat="(key, season) in serie.seasons"  ng-click="showSeason(serie_id,season.season_number)"  class="seasonNumberFont regularFont">{{season.season_number}}</button>
 
         <hr class="separatorSeason"></hr>
