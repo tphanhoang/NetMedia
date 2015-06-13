@@ -94,6 +94,7 @@
                     $scope.categoryValue = category;
                     $scope.page = 2;
                     $scope.series = result;
+                    $categoryTest = true;
                     
                     $scope.series.more=[];   
                 }, function (result){

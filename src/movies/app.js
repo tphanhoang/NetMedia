@@ -1,7 +1,11 @@
 (function() {
     'use strict';
-    angular.module('netMediaApp', ['ngRoute']).config(function ($routeProvider) {
-
+    angular.module('netMediaApp', ['ngRoute','satellizer']).config(function ($routeProvider, $authProvider) {
+   
+    $authProvider.facebook({
+      clientId: '375442245978064'
+    });
+    
             $routeProvider
                 .when('/movies', {
                     templateUrl: 'src/movies/views/movies.html',
@@ -14,6 +18,11 @@
                             return MovieFactory.getListGenreMovies();
                         }
                     }
+                })
+                .when('/login', {
+                    templateUrl: 'src/movies/views/login.html',
+                    controller: 'LoginCtrl'
+                    
                 })
                 .when('/series/r/:search', {
                     templateUrl: 'src/movies/views/series.html',

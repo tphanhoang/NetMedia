@@ -42,7 +42,49 @@
         <h3 class="synopsisFont fontRegular">Synopsis</h3>
         <p class="resumeTvMovie fontRegular">{{movie.overview}}</p>
 
+
     </div>
+        
+    <div class="infoPoster">
+        <div class="posterContent">
+            <img class="posterImg" ng-src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}"/>
+        </div>
+        <div class="contentTvMovieInfo">
+            <h2 class="titleTvMovie">{{movie.title}}</h2>
+            <ul class="detailTvMovie regularFont">
+                <li>{{movie.release_date}}</li>
+                <li ng-repeat="(key, genre) in movie.genres | limitTo:1">{{genre.name}}</li>
+                <li>{{movie.runtime}}</li>
+            </ul>
+            <br />
+            <div class="popularityStar regularFont">{{movie.popularity}}
+            </div>
+            <div class="castings">
+                <label class="castBy">Réalisé par :</label>
+                <span class="fontRegular" ng-repeat="(key, crew) in movie.credits.crew"  ng-if='crew.job=="Director"'>{{crew.name }}</span><br /><br /><br />
+                <label class="castBy">Avec :</label>
+                <div class="castByActor">
+                    <span class="fontRegular" ng-repeat="(key, role) in movie.credits.cast | limitTo: 4">{{role.name}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="userActionMovie">
+        <div class="favoriteAdd fontRegular">
+        Ajouter aux favoris
+        </div>
+        <div class="reloadMovie fontRegular">
+        Reprendre la lecture
+        </div>
+    </div>
+    
+    <div class="contentTvMovie">
+
+        <h3 class="synopsisFont fontRegular">Synopsis</h3>
+        <p class="resumeTvMovie fontRegular">{{movie.overview}}</p>
+
+    </div>
+
 
 
     <div class="panel-body panel-body">
