@@ -1138,6 +1138,12 @@ h1.tab-top-flop::after {
     margin-top: 20px;
     margin-right: 20px;
   }
+
+  .category-switch {
+    height: 55px;
+    width: auto;
+    position: absolute;
+  }
 }
 @media only screen and (max-width: 1024px) {
   .sidebar {
@@ -1248,6 +1254,12 @@ h1.tab-top-flop::after {
     float: left;
     margin-top: 20px;
     margin-right: 20px;
+  }
+
+  .category-switch {
+    height: 55px;
+    width: auto;
+    position: absolute;
   }
 }
 
