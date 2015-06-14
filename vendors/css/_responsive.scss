@@ -1,0 +1,24 @@
+@media (min-width:0px) and (max-width:1050px) {
+	.filters-search-user{
+		display:none;
+	}
+
+	.burger-menu{
+		width: 50px;
+		float: right;
+		margin-right: 20px;
+		margin-top: -35px;
+	}
+
+	.burger-menu:hover{
+		cursor:pointer;
+	}
+}
+
+@media (min-width:1051px){
+	.burger-menu{
+		display: none;
+	}
+}
+
+

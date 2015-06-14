@@ -8,6 +8,10 @@
     </div>
         
     <div class="infoTvMovie">
+    <div class="infoTvMovie">
+
+    <div class="infoPoster">
+
         <div class="posterContent">
             <img class="posterImg" ng-src="http://image.tmdb.org/t/p/w342{{serie.poster_path}}"/>
         </div>
@@ -29,6 +33,7 @@
                     <span class="fontRegular" ng-repeat="(key, role) in serie.credits.cast | limitTo: 4">{{role.name}}, </span>
                 </div>
             </div>
+
             <div class="userActionMovie clearfix">
                 <a href = "#"><div class="favoriteAdd fontRegular">Ajouter aux favoris</div></a>
                 <a href = "#"><div class="reloadMovie fontRegular">Reprendre la lecture</div></a>
@@ -42,8 +47,36 @@
         <p class="resumeTvMovie fontRegular">{{serie.overview}}</p>
         <hr class="separatorSeason"></hr>
         <span class="seasonFont">Saison</span>
+
+        </div>
+    </div>
+    <div class="userActionMovie">
+        <div class="favoriteAdd fontRegular">
+        Ajouter aux favoris
+        </div>
+        <div class="reloadMovie fontRegular">
+        Reprendre la lecture
+        </div>
+    </div>
+    
+    <div class="contentTvMovie clearfix">
+
+        <h3 class="synopsisFont fontRegular">Synopsis</h3>
+        <p class="resumeTvMovie fontRegular">{{serie.overview}}</p>
+        <hr class="separatorSeason"></hr>
+        <span class="seasonFont">Saison</span>
         <button ng-repeat="(key, season) in serie.seasons"  ng-click="showSeason(serie_id,season.season_number)"  class="seasonNumber fontRegular">{{season.season_number}}</button>
         <hr class="separatorSeason"></hr>
+        <h4 class="seasonFont">Saison</h4>
+
+        <button ng-repeat="(key, season) in serie.seasons"  ng-click="showSeason(season.season_number)"  class="seasonNumberFont regularFont">{{season.season_number}}</button>
+        <hr class="separatorSeason">
+
+        <h4 class="seasonFont">Episode</h4>
+        <button ng-repeat="(key, episode) in serieSeason.episodes" ng-click="showEpisode(serieSeason.season_number,episode.episode_number)"  class="seasonNumberFont regularFont"> {{episode.episode_number}}</button>
+        <hr class="separatorSeason">
+        saison séléctionnée : {{serieSeason.season_number}} <br>
+        episode séléctionné : {{serieEpisode.episode_number}}<br>
 
     </div>
 

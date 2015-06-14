@@ -1,11 +1,15 @@
 (function() {
     'use strict';
     angular.module('netMediaApp', ['ngRoute','satellizer']).config(function ($routeProvider, $authProvider) {
-   
+
     $authProvider.facebook({
       clientId: '375442245978064'
     });
-    
+    $authProvider.google({
+     clientId: '637464175636-dq448pvt8n7d1vkadij88koht3ore4e6.apps.googleusercontent.com'
+   });
+
+
             $routeProvider
                 .when('/movies', {
                     templateUrl: 'src/movies/views/movies.html',
@@ -22,7 +26,7 @@
                 .when('/login', {
                     templateUrl: 'src/movies/views/login.html',
                     controller: 'LoginCtrl'
-                    
+
                 })
                 .when('/profil', {
                     templateUrl: 'src/movies/views/profil-1.html',
@@ -100,6 +104,9 @@
                     resolve: {
                         Serie: function($route, SerieFactory) {
                             return SerieFactory.getSerie($route.current.params.id);
+                        },
+                        SerieSeason : function($route, SerieFactory){
+                            return SerieFactory.getSerieSeason($route.current.params.id,1);
                         }
                     }
                 })
