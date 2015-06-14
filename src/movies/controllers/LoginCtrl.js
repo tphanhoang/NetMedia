@@ -1,9 +1,19 @@
 angular.module('netMediaApp')
   .controller('loginCtrl', function($http, $scope, $auth) {
 
-   
+    $scope.master = {};
 
-    $scope.languages = 
+    $scope.update = function(user) {
+      $scope.master = angular.copy(user);
+    };
+
+    $scope.reset = function() {
+      $scope.user = angular.copy($scope.master);
+    };
+
+    $scope.reset();
+
+    $scope.languages =
     [
      {name:"1"},
      {name:"2"},
@@ -17,9 +27,9 @@ angular.module('netMediaApp')
           $scope.msg = 'Data saved';
         });
       $scope.msg = 'Data sent: '+ angular.toJson($scope.languages);
-      
+
     };
-  
+
   })
 
 
@@ -29,8 +39,6 @@ angular.module('netMediaApp')
             $http.get('/netmedia/src/movies/controllers/test.json').then(function(data){
        console.log(data)
         });
- 
+
 
 });
-
-  
