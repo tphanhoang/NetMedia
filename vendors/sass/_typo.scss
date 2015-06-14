@@ -276,7 +276,7 @@ h1{
 h3, h4 {
 	font-family:$primary-font-bold;
   color:$primary-color;
-  margin-top: -10px;
+  margin-top: 5px;
   font-size: 0.7em;
 }
 
@@ -294,6 +294,7 @@ h3, h4 {
 
 h2{
 	font-size:$size-h2;
+  margin-top: 10px;
 }
 
 .season{

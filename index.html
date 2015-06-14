@@ -4,11 +4,10 @@
     <!-- <link rel="stylesheet" href="vendors/css/bootstrap.min.css"/> -->
     <link rel="stylesheet" href="vendors/css/custom.css"/>
     <link rel="stylesheet" href="src/styles/styles.css"/>
-
-
-
     <!-- <link rel="icon" href=""> -->
     <link rel="stylesheet" href="dist/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="dist/css/component.css" />
+    <script src="dist/js/modernizr.custom.js"></script>
     <meta charset="UTF-8">
     <title>NetMedia</title>
 </head>
@@ -17,7 +16,10 @@
 
 <body ng-app="netMediaApp">
 
-<header class="container page-header">
+   
+
+
+<!-- <header class="container page-header">
     <img src="images/logo-netmedia-ok.png" class="logo-accueil"/>
     <div class="menu-navigation">
         <a class="" href="">DÉCOUVRIR</a>
@@ -28,7 +30,7 @@
     <nav class="left-menu">
     </nav>
 
-    <!-- <div class="filters-search-user">
+     <div class="filters-search-user">
         <div class="filters">
             <span class="genre">Genre : </span>
             <select>
@@ -52,26 +54,9 @@
             <img class="user-img" src="images/placeholder.png"/>
             <div class="user-name">User Name</div>
         </div>
-    </div> -->
+    </div>
 
-
-    <!--   <form style="width:450px;margin:5px;padding:15px;border:solid 1px black;background-color:#68228B">
-        <label style="color:white">Tri par genre : </label>
-        <select class="form-control" 
-                ng-change="genre(value)"
-                ng-model="value"
-                ng-options="genre.id as genre.name for genre in listGenre.genres"
-            >
-            <option value="">Triez par genre</option>
-        </select>
-        <hr>
-        <label style="color:white">Recherche : </label>
-        <input  class="btn" style="width:100%"
-                ng-change="search(searchValue)"
-                ng-model="searchValue">
-    </form> -->
-
-</header>
+</header> -->
 
 </div>
 
@@ -121,5 +106,9 @@
 <script src="src/movies/services/urlConfig.js"></script>
 <script src="//cdn.jsdelivr.net/satellizer/0.11.1/satellizer.min.js"></script>
 
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+      
 
 </html>

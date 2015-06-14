@@ -2,9 +2,33 @@
 
 
     <div class="panel-heading">
-    <!-- <h3 class="panel-title panel-title title--inline">Liste des Films Populaires | <a href="#/films">Films</a> | <a href="#/series">Series</a> </h3> -->
+        <div class="cbp-spmenu-push">
+        <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+            <h3>Menu</h3>
+            <a href="#">Celery seakale</a>
+            <a href="#">Dulse daikon</a>
+            <a href="#">Zucchini garlic</a>
+            <a href="#">Catsear azuki bean</a>
+            <a href="#">DandelioYYYYYYn bunya</a>
+            <a href="#">Rutabaga</a>
+        </nav>
+        <div class="container">
+            
+            <div class="main">
+                <section>
+                    <header class="container page-header">
+    <img src="images/logo-netmedia-ok.png" class="logo-accueil"/>
+    <div class="menu-navigation">
+        <a class="" href="">DÉCOUVRIR</a>
+        <a class="selected" href="#/films">FILMS</a>
+        <a class="" href="#/series">SÉRIES</a>
+    </div>
+    <img id="showLeft" src="images/burger-menu.png"/ class="burger-menu"/>
+    <nav class="left-menu">
+    </nav>
 
-    <form style="width:370px" class="filters-search-user">
+     <form style="width:370px" class="filters-search-user">
+        <div class="filters-search-user">
         <div class="filters">
         <label class="genre">Genre : </label>
         <select class="form-control" style="width:106px"
@@ -33,7 +57,92 @@
             <img class="user-img" src="images/placeholder.png"/>
             <div class="user-name">User Name</div>
         </div>
-    </form>
+    </div>
+    </form> 
+
+</header>
+                    <!-- <button id="showLeft" style="margin-left:55%"><img src="images/burger-menu.png"/></button> -->
+                    
+                </section>
+                
+            </div>
+        </div>
+    </div>
+    <!-- <h3 class="panel-title panel-title title--inline">Liste des Films Populaires | <a href="#/films">Films</a> | <a href="#/series">Series</a> </h3> -->
+     <!-- <div id="page">
+            <div class="header Fixed">
+                <a href="#menu"></a>
+
+                <div class="logo"><img src="images/logo-netmedia-ok.png" width="120" height="auto"></div>
+
+                <ul class="onglets">
+
+                    <li><a href="#">DÉCOUVRIR</a></li>
+                    <li><a href="#/films">FILMS</a></li>
+                    <li><a href="#/series">SÉRIES</a></li>
+
+                </ul>            
+            </div>
+           
+            <nav id="menu">
+                <ul>
+                    <li><a href="#content">Introduction</a></li>
+                    <li><a href="#first">First section</a></li>
+                    <li><a href="#second">Second section</a></li>
+                    <li><a href="#third">Third section</a></li>
+                </ul>
+            </nav>
+        </div>  --> 
+    <!--  <form style="width:370px" class="filters-search-user">
+        <div class="filters-search-user">
+        <div class="filters">
+        <label class="genre">Genre : </label>
+        <select class="form-control" style="width:106px"
+                ng-change="genre(value)"
+                ng-model="value"
+                ng-options="genre.id as genre.name for genre in listGenre.genres"
+            >
+            <option value="">Tous</option>
+        </select>
+        <label class="genre">Trier par : </label>
+        <select
+                ng-change="category(value,1)" style="width:120px"
+                ng-model="value"
+                ng-options="key as value for (key, value) in categories"
+            >
+            <option value="">Tous</option>
+        </select>
+
+        </div>
+        <div class="search">
+        <input  class="btn" style="width:100%"
+                ng-change="search(searchValue)"
+                ng-model="searchValue" type="search">
+        </div>
+        <div class="user">
+            <img class="user-img" src="images/placeholder.png"/>
+            <div class="user-name">User Name</div>
+        </div>
+    </div>
+    </form>  -->
+
+    <!-- 
+    tibo navbar
+    <form style="width:450px;margin:5px;padding:15px;border:solid 1px black;background-color:#68228B">
+        <label style="color:white">Tri par genre : </label>
+        <select class="form-control" 
+                ng-change="genre(value)"
+                ng-model="value"
+                ng-options="genre.id as genre.name for genre in listGenre.genres"
+            >
+            <option value="">Triez par genre</option>
+        </select>
+        <hr>
+        <label style="color:white">Recherche : </label>
+        <input  class="btn" style="width:100%"
+                ng-change="search(searchValue)"
+                ng-model="searchValue">
+    </form>  -->
     </div> 
 
     <div class="panel-body">
@@ -106,3 +215,93 @@
     </div>
 <button class="btn btn-primary" ng-click="showMoreMovies(page)" style="margin:0 auto"> Voir plus de films ! </button>
 </div>
+  
+<script type="text/javascript">
+/*!
+ * classie - class helper functions
+ * from bonzo https://github.com/ded/bonzo
+ * 
+ * classie.has( elem, 'my-class' ) -> true/false
+ * classie.add( elem, 'my-new-class' )
+ * classie.remove( elem, 'my-unwanted-class' )
+ * classie.toggle( elem, 'my-class' )
+ */
+
+/*jshint browser: true, strict: true, undef: true */
+
+( function( window ) {
+
+'use strict';
+
+// class helper functions from bonzo https://github.com/ded/bonzo
+
+function classReg( className ) {
+  return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
+}
+
+// classList support for class management
+// altho to be fair, the api sucks because it won't accept multiple classes at once
+var hasClass, addClass, removeClass;
+
+if ( 'classList' in document.documentElement ) {
+  hasClass = function( elem, c ) {
+    return elem.classList.contains( c );
+  };
+  addClass = function( elem, c ) {
+    elem.classList.add( c );
+  };
+  removeClass = function( elem, c ) {
+    elem.classList.remove( c );
+  };
+}
+else {
+  hasClass = function( elem, c ) {
+    return classReg( c ).test( elem.className );
+  };
+  addClass = function( elem, c ) {
+    if ( !hasClass( elem, c ) ) {
+      elem.className = elem.className + ' ' + c;
+    }
+  };
+  removeClass = function( elem, c ) {
+    elem.className = elem.className.replace( classReg( c ), ' ' );
+  };
+}
+
+function toggleClass( elem, c ) {
+  var fn = hasClass( elem, c ) ? removeClass : addClass;
+  fn( elem, c );
+}
+
+window.classie = {
+  // full names
+  hasClass: hasClass,
+  addClass: addClass,
+  removeClass: removeClass,
+  toggleClass: toggleClass,
+  // short names
+  has: hasClass,
+  add: addClass,
+  remove: removeClass,
+  toggle: toggleClass
+};
+
+})( window );
+
+var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+                body = document.body;
+
+            showLeft.onclick = function() {
+                classie.toggle( this, 'active' );
+                classie.toggle( menuLeft, 'cbp-spmenu-open' );
+                disableOther( 'showLeft' );
+            };
+
+            function disableOther( button ) {
+                if( button !== 'showLeft' ) {
+                    classie.toggle( showLeft, 'disabled' );
+                }
+                
+            }
+
+</script>

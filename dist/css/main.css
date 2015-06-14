@@ -155,12 +155,12 @@ h1 {
 h3, h4 {
   font-family: "Roboto-Bold";
   color: #FFF;
-  margin-top: -10px;
+  margin-top: 5px;
   font-size: 0.7em;
 }
 
 .title-home {
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 .title-details {
@@ -173,6 +173,7 @@ h3, h4 {
 
 h2 {
   font-size: 2.6em;
+  margin-top: 10px;
 }
 
 .season {
@@ -185,7 +186,7 @@ body {
 }
 
 .panel-body {
-  margin-top: 60px;
+  margin-top: 150px;
   margin-left: 20px;
 }
 
@@ -243,7 +244,6 @@ a.selected {
 .filters-search-user {
   display: inline-block;
   display: -webkit-box;
-  margin-top: -68px;
   margin-left: 49%;
   font-size: 0.8em;
 }
@@ -296,7 +296,6 @@ a.selected {
   margin-left: 72px;
 }
 
-<<<<<<< HEAD
 @media (min-width: 0px) and (max-width: 1050px) {
   .filters-search-user {
     display: none;
@@ -560,66 +559,6 @@ h2 {
 
 .clearfix {
   clear: both;
-=======
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  background-color: #17181B;
-  position: relative;
-  margin: 0;
-  height: 100%;
 }
 
 h3.user-name-profil {
