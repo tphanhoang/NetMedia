@@ -1,4 +1,4 @@
-@media (min-width:0px) and (max-width:1050px) {
+@media (min-width:0px) and (max-width:1185px) {
 	.filters-search-user{
 		display:none;
 	}
@@ -15,10 +15,14 @@
 	}
 }
 
-@media (min-width:1051px){
+@media (min-width:1186px){
 	.burger-menu{
 		display: none;
 	}
 }
 
+.filters-menu-left{
+margin-left:20px;
+margin-top:30px;
+}
 

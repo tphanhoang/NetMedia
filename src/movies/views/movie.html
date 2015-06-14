@@ -1,11 +1,169 @@
-    <div class="headerContent">
+
+    <div class="panel-heading">
+        <div class="cbp-spmenu-push">
+            <!-- Début menu à gauche qui slide -->
+            <nav class="cbp-spmenu cbp-spmenu-vertical" id="cbp-spmenu-s1" >
+                <img src="images/logo-netmedia-ok.png" class="logo-accueil"/>
+                <div class="menu-navigation">
+                    <a class="selected" href="#/films" style="color:#000">FILMS</a>
+                    <a class="" href="#/series">SÉRIES</a>
+                </div>
+                <div class="filters filters-menu-left">
+                    <label class="genre">Genre : </label>
+                    <select class="form-control" 
+                            ng-change="genre(value)"
+                            ng-model="value"
+                            ng-options="genre.id as genre.name for genre in listGenre.genres"
+                        >
+                        <option value="">Tous</option>
+                    </select><br/><br/><br/><br/>
+                    <label class="genre">Trier par : </label>
+                    <select
+                            ng-change="category(value,1)" 
+                            ng-model="value"
+                            ng-options="key as value for (key, value) in categories"
+                        >
+                        <option value="">Tous</option>
+                    </select>
+                </div>
+                <br/><br/><br/>
+                <div class="search">
+                    <input  class="btn" style="width:92%"
+                        ng-change="search(searchValue)"
+                        ng-model="searchValue" type="search">
+                </div>
+                <br/><br/><br/><br/>
+                <div class="user">
+                    <img class="user-img" src="images/placeholder.png"/>
+                    <div class="user-name">User Name</div>
+                </div>
+            </nav>
+            <!-- Fin menu à gauche qui slide -->
+            <!-- <div class="container">
+                <div class="main">
+                    <section>
+                        <header class="container page-header">
+                            <img src="images/logo-netmedia-ok.png" class="logo-accueil"/>
+                            <div class="menu-navigation">
+                                <a class="" href="">DÉCOUVRIR</a>
+                                <a class="selected" href="#/films">FILMS</a>
+                                <a class="" href="#/series">SÉRIES</a>
+                            </div>
+                            <img id="showLeft" src="images/burger-menu.png"/ class="burger-menu"/>
+                            <nav class="left-menu">
+                            </nav>
+                            <form style="width:370px" class="filters-search-user">
+                                <div class="filters-search-user">
+                                    <div class="filters">
+                                        <label class="genre">Genre : </label>
+                                        <select class="form-control" style="width:106px"
+                                                ng-change="genre(value)"
+                                                ng-model="value"
+                                                ng-options="genre.id as genre.name for genre in listGenre.genres"
+                                            >
+                                            <option value="">Tous</option>
+                                        </select>
+                                        <label class="genre">Trier par : </label>
+                                        <select
+                                                ng-change="category(value,1)" style="width:120px"
+                                                ng-model="value"
+                                                ng-options="key as value for (key, value) in categories"
+                                            >
+                                            <option value="">Tous</option>
+                                        </select>
+                                    </div>
+                                    <div class="search">
+                                    <input  class="btn" style="width:100%"
+                                            ng-change="search(searchValue)"
+                                            ng-model="searchValue" type="search">
+                                    </div>
+                                    <div class="user">
+                                        <img class="user-img" src="images/placeholder.png"/>
+                                        <div class="user-name">User Name</div>
+                                    </div>
+                                </div>
+                            </form> 
+                        </header> 
+                    </section>
+                </div>
+            </div> -->
+        </div>
+    </div> 
+        <!-- <div class="panel-heading">
+        <div class="cbp-spmenu-push">
+            <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+                <img src="images/logo-netmedia-ok.png" class="logo-accueil"/>
+                <div class="search">
+                    <input  class="btn" style="width:92%"
+                        ng-change="search(searchValue)"
+                        ng-model="searchValue" type="search">
+                </div>
+                <br/><br/><br/><br/>
+                <div class="user">
+                    <img class="user-img" src="images/placeholder.png"/>
+                    <div class="user-name">User Name</div>
+                </div>
+            </nav>
+        <div class="container">
+            <div class="main">
+                <section>
+                    <header class="container page-header">
+                        <img src="images/logo-netmedia-ok.png" class="logo-accueil"/>
+                        <div class="menu-navigation">
+                            <a class="" href="">DÉCOUVRIR</a>
+                            <a class="selected" href="#/films">FILMS</a>
+                            <a class="" href="#/series">SÉRIES</a>
+                        </div>
+                        <img id="showLeft" src="images/burger-menu.png"/ class="burger-menu"/>
+                        <nav class="left-menu">
+                        </nav>
+                        <form style="width:370px" class="filters-search-user">
+                            <div class="filters-search-user">
+                                <div class="filters">
+                                    <label class="genre">Genre : </label>
+                                    <select class="form-control" style="width:106px"
+                                            ng-change="genre(value)"
+                                            ng-model="value"
+                                            ng-options="genre.id as genre.name for genre in listGenre.genres"
+                                        >
+                                        <option value="">Tous</option>
+                                    </select>
+                                    <label class="genre">Trier par : </label>
+                                    <select
+                                            ng-change="category(value,1)" style="width:120px"
+                                            ng-model="value"
+                                            ng-options="key as value for (key, value) in categories"
+                                        >
+                                        <option value="">Tous</option>
+                                    </select>
+                                </div>
+                                <div class="search">
+                                <input  class="btn" style="width:100%"
+                                        ng-change="search(searchValue)"
+                                        ng-model="searchValue" type="search">
+                                </div>
+                                <div class="user">
+                                    <img class="user-img" src="images/placeholder.png"/>
+                                    <div class="user-name">User Name</div>
+                                </div>
+                            </div>
+                        </form> 
+                    </header> 
+                </section>
+            </div>
+        </div>
+    </div> -->
+    <div style="margin-left:235px">
+     <div class="headerContent">
         <div class="gradient">
         </div>
         <div class="backdropImg" style="background-image:url(http://image.tmdb.org/t/p/w1280{{movie.backdrop_path}})">
 
         </div>
-
     </div>
+
+    <!-- </div> -->
+
         
     <div class="infoTvMovie">
         <div class="posterContent">
@@ -34,17 +192,21 @@
                 <a href = "#"><div class="reloadMovie fontRegular">Reprendre la lecture</div></a>
             </div>
         </div>
+        <!-- <div class="clearfix" style="color:white;">
+            nrbfzfb hfbze fbhzjbffh nrbfzfb hfbze fbhzjbffh nrbfzfb hfbze fbhzjbffh nrbfzfb hfbze fbhzjbffh nrbfzfb hfbze fbhzjbffh nrbfzfb hfbze fbhzjbffh nrbfzfb hfbze fbhzjbffh nrbfzfb hfbze fbhzjbffh nrbfzfb hfbze fbhzjbffh 
+        </div> -->
     </div>
 
     
-    <div class="contentTvMovie clearfix">
+    <!-- <div class="contentTvMovie clearfix">
 
         <h3 class="synopsisFont fontRegular">Synopsis</h3>
-        <p class="resumeTvMovie fontRegular">{{movie.overview}}</p>
+         <span style="color:white">{{movie.overview}}</span> 
+        hv
 
 
-    </div>
-        
+    </div> -->
+        <!-- 
     <div class="infoPoster">
         <div class="posterContent">
             <img class="posterImg" ng-src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}"/>
@@ -83,37 +245,14 @@
         <h3 class="synopsisFont fontRegular">Synopsis</h3>
         <p class="resumeTvMovie fontRegular">{{movie.overview}}</p>
 
-    </div>
+    </div> -->
+
+</div>
+
+   
 
 
-
-    <div class="panel-body panel-body">
-        <div>
-           
-            <span class="bloc-hero" ng-switch on="movie.status">
-                <h3>{{movie.title}}</h3>
-                <h4>{{movie.release_date}}</h4>
-                <p>{{movie.overview}}</p>
-            </span>
-
-            <div class="btn-group pull-right">
-                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
-                    Modifier Statut <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu" change-status>
-                    <li ng-click="updateStatus(0)" ng-class="{disabled: movie.status == 0}"><a>Disponible</a></li>
-                    <li ng-click="updateStatus(1)" ng-class="{disabled: movie.status == 1}"><a>Occupé(e)</a></li>
-                    <li ng-click="updateStatus(2)" ng-class="{disabled: movie.status == 2}"><a>Blessé(e)</a></li>
-                </ul>
-            </div>
-
-        </div>
-        <button class="btn-back btn btn-primary" ng-click="back()">Retour à la liste</button>
-        <div ng-show="alert == 'success'" class="alert alert-success"><strong>Statut modifié!</strong></div>
-        <div ng-show="alert == 'error'" class="alert alert-danger"><strong>Echec !</strong></div>
-    </div>
-
-    <div class="panel panel-primary">
+  <!--   <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id] (TPH)</h3>
         </div>
@@ -374,4 +513,4 @@
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [movie/id/changes] (TPH)</h3>
         </div>
         {{movie.changes}}
-    </div>
+    </div> -->

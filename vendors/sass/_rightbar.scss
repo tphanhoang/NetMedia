@@ -1,13 +1,13 @@
 .filters-search-user{
 	display:inline-block;
 	display: -webkit-box;
-	// margin-top:-68px;
-	margin-left:49%;
+	margin-top:-8px;
+	margin-left:36%;
 	font-size:0.8em;
 }
 
 .filters{
-		
+		width: 315px;
 }
 
 .search{
@@ -23,6 +23,10 @@
 	border:0px solid $background-color;
 	font-size:12px;
 
+}
+
+.filters-menu-left > select{
+	background-color:#2D2D2D;
 }
 
 .genre {
@@ -42,6 +46,7 @@
 
 .user{
 	margin-top:-24px;
+	margin-left:10%;
 }
 
 .user-img{
@@ -55,6 +60,6 @@
 .user-name{
 	color:$yellow-color;
 	font-family:$primary-font;
-	margin-top:-36px;
+	margin-top:-31px;
 	margin-left:72px;
 }
