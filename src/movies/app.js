@@ -3,7 +3,12 @@
     angular.module('netMediaApp', ['ngRoute','satellizer']).config(function ($routeProvider, $authProvider) {
 
     $authProvider.facebook({
-      clientId: '375442245978064'
+        clientId: '375442245978064'
+    });
+    
+    $authProvider.google({
+        url: 'auth/google',
+        clientId: '215811154628-p7dhsd30jkhike6cnm55qtc2ojdvcdob.apps.googleusercontent.com'
     });
     $authProvider.google({
      clientId: '637464175636-dq448pvt8n7d1vkadij88koht3ore4e6.apps.googleusercontent.com'
@@ -123,6 +128,11 @@
                         }
                     }
                 })
+                .when('/login',{
+                    templateUrl: 'src/movies/views/login.html',
+                    controller: 'loginCtrl'
+                })
+             
                 .otherwise('/movies');
         });
 }());
