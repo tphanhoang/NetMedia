@@ -1,32 +1,31 @@
 .logo-accueil{
-	width:200px;
-	margin:20px;
+    width:185px;
+    margin:20px;
 }
 
 .page-header{
-	border-bottom:8px solid $yellow-color;
-	padding-bottom:24px;
+    border-bottom:8px solid $yellow-color;
+    padding-bottom:24px;
+    min-height:80px;
 }
 
-.menu-navigation{
-	margin-left:230px;
-	margin-top:-55px;
-}
 
 .menu-navigation > a {
-	color:$primary-color;
-	margin-left: 5px;
-	margin-right: 5px;
-	padding:14px;
-	padding-bottom:31px;
-	padding-top:35px;
-	text-decoration:none;
-	font-family:$primary-font-bold;
-	font-size:0.8em;
+    color:$primary-color;
+    padding:14px;
+    padding-bottom:31px;
+    padding-top:35px;
+    text-decoration:none;
+    font-family:$primary-font-bold;
+    font-size:0.8em;
 }
+
 
 a.selected{
-	background-color:$yellow-color;
-	color:$background-color;
+    background-color:$yellow-color;
+    color:#000;
 }
 
+#cbp-spmenu-s1{
+    width:235px;
+}
