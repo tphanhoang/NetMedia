@@ -24,6 +24,11 @@
                     controller: 'LoginCtrl'
                     
                 })
+                .when('/profil', {
+                    templateUrl: 'src/movies/views/profil-1.html',
+                    controller: 'profilCtrl'
+                    
+                })
                 .when('/series/r/:search', {
                     templateUrl: 'src/movies/views/series.html',
                     controller: 'SeriesSearchCtrl',

@@ -1,0 +1,21 @@
+.gradient, .div1, .div2 {
+  background-color: #19e619;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e61919), to(#19e619));
+  background-image: -webkit-linear-gradient(#e61919, #19e619);
+  background-image: -moz-linear-gradient(#e61919, #19e619);
+  background-image: -o-linear-gradient(#e61919, #19e619);
+  background-image: -ms-linear-gradient(#e61919, #19e619);
+  background-image: linear-gradient(#e61919, #19e619);
+  background-repeat: repeat-x;
+  -webkit-background-size: 100% 30px;
+  -moz-background-size: 100% 30px;
+  -o-background-size: 100% 30px;
+  background-size: 100% 30px; }
+
+.div1 {
+  color: white; }
+
+.div2 {
+  color: blue; }
+
+/*# sourceMappingURL=test.css.map */

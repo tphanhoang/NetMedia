@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$primaryColor".
-        on line 154 of ./positions.scss
+        on line 144 of ./src/styles/positions.scss
 
-149: .seasonNumberFont{
-150:     position:relative;
-151:     height:35px;
-152:     line-height:35px;
-153:     text-align:center;
-154:     background-color: $primaryColor;
-155:     margin: 10px 10px;
-156:     background:none;
-157:     border:none;
-158:     padding-bottom:20px !important;
-159:     width:20px;
+139: }
+140: 
+141: .seasonNumber{
+142:     position:relative;
+143:     text-align:center;
+144:     background-color: $primaryColor;
+145:     border:none;
+146:     background: transparent;
+147:     border: none !important;
+148:     cursor: pointer;
+149:     width: 50px;
 
 Backtrace:
-./positions.scss:154
+./src/styles/positions.scss:144
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/script/tree/node.rb:50:in `perform'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:394:in `visit_prop'
@@ -67,4 +67,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$primaryColor\".\A         on line 154 of ./positions.scss\A \A 149: .seasonNumberFont{\A 150:     position:relative;\A 151:     height:35px;\A 152:     line-height:35px;\A 153:     text-align:center;\A 154:     background-color: $primaryColor;\A 155:     margin: 10px 10px;\A 156:     background:none;\A 157:     border:none;\A 158:     padding-bottom:20px !important;\A 159:     width:20px;"; }
+  content: "Error: Undefined variable: \"$primaryColor\".\A         on line 144 of ./src/styles/positions.scss\A \A 139: }\A 140: \A 141: .seasonNumber{\A 142:     position:relative;\A 143:     text-align:center;\A 144:     background-color: $primaryColor;\A 145:     border:none;\A 146:     background: transparent;\A 147:     border: none !important;\A 148:     cursor: pointer;\A 149:     width: 50px;"; }

@@ -7,7 +7,7 @@
 
     </div>
         
-    <div class="infoPoster">
+    <div class="infoTvMovie">
         <div class="posterContent">
             <img class="posterImg" ng-src="http://image.tmdb.org/t/p/w342{{serie.poster_path}}"/>
         </div>
@@ -29,26 +29,22 @@
                     <span class="fontRegular" ng-repeat="(key, role) in serie.credits.cast | limitTo: 4">{{role.name}}, </span>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="userActionMovie">
-        <div class="favoriteAdd fontRegular">
-        Ajouter aux favoris
-        </div>
-        <div class="reloadMovie fontRegular">
-        Reprendre la lecture
+            <div class="userActionMovie clearfix">
+                <a href = "#"><div class="favoriteAdd fontRegular">Ajouter aux favoris</div></a>
+                <a href = "#"><div class="reloadMovie fontRegular">Reprendre la lecture</div></a>
+            </div>
         </div>
     </div>
     
-    <div class="contentTvMovie">
+    <div class="contentTvMovie clearfix">
 
         <h3 class="synopsisFont fontRegular">Synopsis</h3>
-        <p class="resumeTvMovie fontRegular">{{movie.overview}}</p>
+        <p class="resumeTvMovie fontRegular">{{serie.overview}}</p>
         <hr class="separatorSeason"></hr>
-        <h4 class="seasonFont">Saison</h4>
-        <button ng-repeat="(key, season) in serie.seasons"  ng-click="showSeason(serie_id,season.season_number)"  class="seasonNumberFont regularFont">{{season.season_number}}</button>
+        <span class="seasonFont">Saison</span>
+        <button ng-repeat="(key, season) in serie.seasons"  ng-click="showSeason(serie_id,season.season_number)"  class="seasonNumber fontRegular">{{season.season_number}}</button>
         <hr class="separatorSeason"></hr>
-    
+
     </div>
 
    

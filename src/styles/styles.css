@@ -51,6 +51,9 @@ body {
   font-size: 1em;
   color: #fff; }
 
+.scndColor {
+  color: #deb90c; }
+
 .castBy {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
@@ -80,14 +83,12 @@ h2 {
   font-size: 1.9em;
   color: #fff; }
 
-h4 {
+.seasonFont {
+  color: #deb90c;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 1.9em; }
-
-.seasonFont {
-  color: #deb90c; }
 
 .seasonNumberFont {
   font-size: 1.3em; }
@@ -117,7 +118,7 @@ h4 {
 
 .headerContent {
   position: relative;
-  height: 433px;
+  height: 440px;
   overflow: hidden; }
 
 .gradient {
@@ -136,58 +137,50 @@ h4 {
   -webkit-filter: blur(5px);
   top: 10;
   left: 0;
-  width: 100%;
-  z-index: 1; }
+  width: 100%; }
 
-.infoPoster {
+.infoTvMovie {
   position: relative;
-  width: auto; }
+  width: auto;
+  z-index: 3; }
 
 .posterContent {
   position: relative;
+  float: left;
   margin-top: -245px;
-  margin-left: 92px;
-  z-index: 2;
-  max-width: 265px; }
+  max-width: 265px;
+  padding-left: 1.8796992481203%; }
 
 .posterImg {
   max-width: 100%; }
 
 .contentTvMovieInfo {
-  position: absolute;
-  top: 0;
-  left: 400px;
-  z-index: 2;
-  width: auto; }
+  position: relative;
+  float: left;
+  width: 60%;
+  margin-top: -225px;
+  padding-left: 3.267973856209%; }
 
 .titleTvMovie {
   position: relative;
-  margin: 20px;
-  margin-left: 0px;
-  z-index: 2; }
+  margin: 0 0 20px 0; }
 
 .detailTvMovie {
   position: relative;
-  margin: 20px;
-  margin-left: 0px;
-  z-index: 2; }
+  padding: 20px 0 20px 0; }
 
 .detailTvMovie li {
   display: inline;
-  float: left;
-  margin-top: 20px;
-  margin-bottom: 40px; }
+  float: left; }
 
 .popularityStar {
   position: relative;
   text-align: left;
-  width: 50px;
-  margin-top: 50px;
-  margin-bottom: 25px; }
+  padding: 20px 0 40px 0; }
 
 .castings {
   position: relative;
-  margin-top: 80px; }
+  padding: 40px 0 20px 0; }
 
 .castBy {
   float: left;
@@ -203,11 +196,9 @@ h4 {
   margin-left: 90px; }
 
 .userActionMovie {
-  position: absolute;
-  top: 590px;
-  left: 400px;
-  z-index: 2;
-  width: auto; }
+  position: relative;
+  width: auto;
+  padding: 40px 0 20px 0; }
 
 .favoriteAdd {
   position: relative;
@@ -217,37 +208,37 @@ h4 {
   display: inline-block; }
 
 .contentTvMovie {
-  width: 100%;
+  width: 90%;
   position: relative;
-  padding-left: 95px;
-  padding-right: 95px; }
+  margin-left: auto;
+  margin-right: auto; }
 
 .synopsisFont {
-  margin-top: 25px;
+  padding-top: 35px;
   margin-bottom: 25px; }
 
 .resumeTvMovie {
-  margin-bottom: 20px; }
+  margin: 50px 0 50px 0; }
 
 .seasonFont {
-  margin-top: 5px;
+  margin-top: 10px;
   margin-left: 20px;
   width: auto;
   display: inline; }
 
-.seasonNumberFont {
+.seasonNumber {
   position: relative;
-  height: 35px;
-  line-height: 35px;
   text-align: center;
   background-color: #fff;
-  margin: 10px 10px;
-  background: none;
   border: none;
-  padding-bottom: 20px !important;
-  width: 20px; }
+  background: transparent;
+  border: none !important;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  padding: 0 3px 0 3px; }
 
-.seasonNumberFont:hover {
+.seasonNumber:hover {
   background-color: #2d2d2d; }
 
 .separatorSeason {
@@ -256,7 +247,11 @@ h4 {
   margin-bottom: 15px;
   color: #deb90c;
   border-color: #deb90c;
-  height: 2,5px; }
+  height: 2,5px;
+  width: 100%; }
+
+.clearfix {
+  clear: both; }
 
 .favoriteAdd:before {
   content: "";
