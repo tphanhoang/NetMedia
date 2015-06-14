@@ -1,50 +1,296 @@
-/*
-Error: File to import not found or unreadable: icon.
-       Load path: /Users/kevinsachs/NetMedia
-        on line 4 of vendors/css/styles.scss
+@import url(http://fonts.googleapis.com/css?family=Roboto:700italic,300,700,500italic,400);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
-1: @import 'reset';
-2: @import 'colorFont';
-3: @import 'positions';
-4: @import 'icon'
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
 
-Backtrace:
-vendors/css/styles.scss:4
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:66:in `rescue in import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:45:in `import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:28:in `imported_file'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:37:in `css_import?'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/engine.rb:368:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/engine.rb:285:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/exec/sass_scss.rb:407:in `run'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/exec/sass_scss.rb:63:in `process_result'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/exec/base.rb:52:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/exec/base.rb:19:in `parse!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/bin/sass:13:in `<top (required)>'
-/usr/bin/sass:23:in `load'
-/usr/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: icon.\A        Load path: /Users/kevinsachs/NetMedia\A         on line 4 of vendors/css/styles.scss\A \A 1: @import 'reset';\A 2: @import 'colorFont';\A 3: @import 'positions';\A 4: @import 'icon'"; }
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  background-color: #17181b;
+}
+
+.regularFont {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: #fff;
+}
+
+.castBy {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #deb90c;
+  font-size: 1.1em;
+}
+
+.fontRegular {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #fff;
+  font-size: 1.1em;
+}
+
+.synopsisFont {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #deb90c;
+  font-size: 1.5em;
+}
+
+.resumeTvMovie {
+  font-size: 0.9em;
+  line-height: 1.6em;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.9em;
+  color: #fff;
+}
+
+.seasonFont {
+  color: #deb90c;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.9em;
+}
+
+.seasonNumberFont {
+  font-size: 1.3em;
+}
+
+.gradient {
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjglIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMDkiLz4KICAgIDxzdG9wIG9mZnNldD0iNjAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuNjUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjY1Ii8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.09) 8%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0.65) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(8%, rgba(0, 0, 0, 0.09)), color-stop(60%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.65)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.09) 8%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0.65) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.09) 8%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0.65) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.09) 8%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0.65) 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.09) 8%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0.65) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+  /* IE6-8 */
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.headerContent {
+  position: relative;
+  height: 440px;
+  overflow: hidden;
+}
+
+.gradient {
+  position: absolute;
+  height: 408px;
+  top: 10;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.backdropImg {
+  background-position: center top;
+  background-size: cover;
+  position: absolute;
+  height: 400px;
+  -webkit-filter: blur(5px);
+  top: 10;
+  left: 0;
+  width: 100%;
+}
+
+.infoTvMovie {
+  position: relative;
+  width: auto;
+  z-index: 3;
+}
+
+.posterContent {
+  position: relative;
+  float: left;
+  margin-top: -245px;
+  max-width: 265px;
+  padding-left: 1.8796992481203%;
+}
+
+.posterImg {
+  max-width: 100%;
+}
+
+.contentTvMovieInfo {
+  position: relative;
+  float: left;
+  width: 60%;
+  margin-top: -225px;
+  padding-left: 3.267973856209%;
+}
+
+.titleTvMovie {
+  position: relative;
+  margin: 0 0 20px 0;
+}
+
+.detailTvMovie {
+  position: relative;
+  padding: 20px 0 20px 0;
+}
+
+.detailTvMovie li {
+  display: inline;
+  float: left;
+}
+
+.popularityStar {
+  position: relative;
+  text-align: left;
+  padding: 20px 0 40px 0;
+}
+
+.castings {
+  position: relative;
+  padding: 40px 0 20px 0;
+}
+
+.castBy {
+  float: left;
+  margin-right: 15px;
+}
+
+.castByActor {
+  position: absolute;
+  left: 110px;
+  width: 850px;
+}
+
+.castByResult {
+  position: relative;
+  margin-left: 90px;
+}
+
+.userActionMovie {
+  position: relative;
+  width: auto;
+  padding: 40px 0 20px 0;
+}
+
+.favoriteAdd {
+  position: relative;
+  display: inline-block;
+}
+
+.reloadMovie {
+  display: inline-block;
+}
+
+.contentTvMovie {
+  width: 90%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.synopsisFont {
+  padding-top: 35px;
+  margin-bottom: 25px;
+}
+
+.resumeTvMovie {
+  margin: 50px 0 50px 0;
+}
+
+.seasonFont {
+  margin-top: 5px;
+  margin-left: 20px;
+  width: auto;
+  display: inline;
+}
+
+.seasonNumberFont {
+  position: relative;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  background-color: #fff;
+  margin: 10px 10px;
+  background: none;
+  border: none;
+  padding-bottom: 20px !important;
+  width: 20px;
+}
+
+.seasonNumberFont:hover {
+  background-color: #2d2d2d;
+}
+
+.separatorSeason {
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #deb90c;
+  border-color: #deb90c;
+  height: 2,5px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+/*# sourceMappingURL=styles.css.map */
