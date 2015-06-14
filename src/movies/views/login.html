@@ -1,2 +1,18 @@
-<button ng-click="authenticate('facebook')">Sign in with Facebook</button>
-<div id="fb-root">
+<style>p{
+		color:white;
+		}</style>
+
+<form>
+
+   <div ng-repeat="lang in languages">
+     <label>{{lang.name}}</label>
+     <input type="text" ng-model="lang.value" >
+   </div>
+   <button method="POST" ng-click="save()">Save</button>
+   
+</form>
+{{languages}}
+
+<p style='margin-top:20px'>
+
+	</p>	

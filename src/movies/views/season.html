@@ -1,6 +1,6 @@
 <button class="btn-back btn btn-primary" ng-click="back()">Retour à la série</button>
 <hr>
-Episodes : <button ng-repeat="(key, episode) in serieSeason.episodes" class="btn btn-primary" ng-click="showEpisode(serie_id,season_id,episode.episode_number)"> {{episode.episode_number}}</button>
+Episodes : <button ng-repeat="(key, episode) in serieSeason.episodes" class="btn btn-primary" ng-click="showEpisode(serieSeason.season_number,season_id,episode.episode_number)"> {{episode.episode_number}}</button>
 <hr>
 
 
