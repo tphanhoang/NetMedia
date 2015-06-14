@@ -1016,6 +1016,7 @@ h1.tab-top-flop {
   text-transform: uppercase;
   float: right;
   color: #DEB90C;
+  margin-right: 50px;
 }
 
 h1.tab-top-flop::after {
