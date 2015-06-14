@@ -95,6 +95,9 @@
                     resolve: {
                         Serie: function($route, SerieFactory) {
                             return SerieFactory.getSerie($route.current.params.id);
+                        },
+                        SerieSeason : function($route, SerieFactory){
+                            return SerieFactory.getSerieSeason($route.current.params.id,1);
                         }
                     }
                 })

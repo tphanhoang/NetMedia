@@ -6,8 +6,6 @@
         </div>
 
     </div>
-        
-
     <div class="infoTvMovie">
 
     <div class="infoPoster">
@@ -66,9 +64,15 @@
         <hr class="separatorSeason"></hr>
         <h4 class="seasonFont">Saison</h4>
 
-        <button ng-repeat="(key, season) in serie.seasons"  ng-click="showSeason(serie_id,season.season_number)"  class="seasonNumberFont regularFont">{{season.season_number}}</button>
-        <hr class="separatorSeason"></hr>
-    
+        <button ng-repeat="(key, season) in serie.seasons"  ng-click="showSeason(season.season_number)"  class="seasonNumberFont regularFont">{{season.season_number}}</button>
+        <hr class="separatorSeason">
+
+        <h4 class="seasonFont">Saison</h4>
+        <button ng-repeat="(key, episode) in serieSeason.episodes" ng-click="showEpisode(serieSeason.season_number,episode.episode_number)"  class="seasonNumberFont regularFont"> {{episode.episode_number}}</button>
+        <hr class="separatorSeason">
+        saison séléctionnée : {{serieSeason.season_number}} <br>
+        episode séléctionné : {{serieEpisode.episode_number}}<br>
+
     </div>
 
    
