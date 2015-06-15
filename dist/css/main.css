@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:700italic,300,700,500italic,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto:700italic,300,700,800,500italic,400);
 @font-face {
   font-family: 'Roboto';
   src: url("../fonts/Roboto-Thin.eot");
@@ -375,12 +375,21 @@ h2 {
   color: #fff;
 }
 
-.seasonFont {
-  color: #deb90c;
+h4 {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 1.9em;
+  font-size: 0.7em;
+}
+
+.titleTvMovies {
+  font-weight: 800;
+  font-size: 2.1em;
+}
+
+.seasonFont {
+  color: #deb90c;
+  font-size: 3em;
 }
 
 .seasonNumberFont {
@@ -406,6 +415,20 @@ h2 {
   /* IE6-8 */
 }
 
+.contentBigTvMovie {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.mainContentPageTvMovie {
+  position: relative;
+  top: 0;
+  left: 235px;
+  right: 0;
+  width: 100%;
+}
+
 .container {
   width: 100%;
   margin: 0;
@@ -414,7 +437,7 @@ h2 {
 
 .headerContent {
   position: relative;
-  height: 440px;
+  height: 433px;
   overflow: hidden;
 }
 
@@ -436,28 +459,50 @@ h2 {
   top: 10;
   left: 0;
   width: 100%;
+  z-index: 1;
 }
 
-.infoTvMovie {
-  position: relative;
-  width: auto;
+.titleTvMovieContener {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 150px;
+  margin-left: 3.4716981132075%;
   z-index: 3;
 }
 
-.posterContent {
-  position: relative;
-  float: left;
-  margin-top: -245px;
-  max-width: 265px;
-  padding-left: 1.8796992481203%;
+.titleTvMovies {
+  height: 166px;
+  line-height: 166px;
 }
 
-.posterImg {
+.infoPoster {
+  position: relative;
+  width: auto;
+}
+
+.posterContentTvMovie {
+  position: relative;
+  margin-top: -245px;
+  margin-left: 3.4716981132075%;
+  z-index: 2;
+  max-width: 265px;
+  padding: 0 !important;
+}
+
+.posterImgTvMovie {
+  position: relative;
   max-width: 100%;
 }
 
 .contentTvMovieInfo {
   position: relative;
+  top: -212px;
+  left: 265px;
+  margin-left: 3.4716981132075%;
+  margin-right: 3.4716981132075%;
+  z-index: 2;
+  width: auto !important;
   float: left;
   width: 60%;
   margin-top: -225px;
@@ -466,28 +511,34 @@ h2 {
 
 .titleTvMovie {
   position: relative;
-  margin: 0 0 20px 0;
+  margin: 20px;
+  margin-left: 0px;
+  z-index: 3;
 }
 
 .detailTvMovie {
   position: relative;
-  padding: 20px 0 20px 0;
+  margin: 20px;
+  margin-left: 0px;
+  z-index: 2;
 }
 
 .detailTvMovie li {
   display: inline;
   float: left;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .popularityStar {
   position: relative;
   text-align: left;
-  padding: 20px 0 40px 0;
+  width: 50px;
 }
 
 .castings {
   position: relative;
-  padding: 40px 0 20px 0;
+  margin-right: 40px;
 }
 
 .castBy {
@@ -495,10 +546,10 @@ h2 {
   margin-right: 15px;
 }
 
-.castByActor {
+.castActor {
   position: absolute;
   left: 110px;
-  width: 850px;
+  width: 163%;
 }
 
 .castByResult {
@@ -507,9 +558,11 @@ h2 {
 }
 
 .userActionMovie {
-  position: relative;
+  position: absolute;
+  top: 590px;
+  left: 400px;
+  z-index: 2;
   width: auto;
-  padding: 40px 0 20px 0;
 }
 
 .favoriteAdd {
@@ -521,20 +574,19 @@ h2 {
   display: inline-block;
 }
 
-.contentTvMovie {
-  width: 90%;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
+.contentSynopsisTvMovie {
+  width: 75%;
+  margin: 25px;
+  background-color: #2D2D2D;
+  padding: 20px;
 }
 
 .synopsisFont {
-  padding-top: 35px;
-  margin-bottom: 25px;
+  margin-top: -15px;
 }
 
 .resumeTvMovie {
-  margin: 50px 0 50px 0;
+  margin-bottom: 20px;
 }
 
 .seasonFont {
@@ -561,17 +613,14 @@ h2 {
   background-color: #2d2d2d;
 }
 
-.separatorSeason {
+.separatorsSeason {
   margin: 0;
   margin-top: 15px;
   margin-bottom: 15px;
   color: #deb90c;
   border-color: #deb90c;
   height: 2,5px;
-}
-
-.clearfix {
-  clear: both;
+  width: 95%;
 }
 
 h3.user-name-profil {

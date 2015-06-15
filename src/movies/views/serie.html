@@ -1,94 +1,112 @@
-    <div class="headerContent">
-        <div class="panel-heading">
+<div class="contentBigTvMovie container page-header">
+
+    <div class="panel-heading">
+
         <div class="cbp-spmenu-push">
-            <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+        
+            <nav class="cbp-spmenu cbp-spmenu-vertical" id="cbp-spmenu-s1" >
+                
+                <img id="showLeft" src="images/burger-menu.png"/ class="burger-menu"/>
+
                 <img src="images/logo-netmedia-ok.png" class="logo-accueil"/>
+
+                <div class="menu-navigation">
+
+                    <a class="selected" href="#/films" style="color:#000">FILMS</a>
+                    <a class="" href="#/series">SÉRIES</a>
+
+                </div>
+
+                <div class="filters filters-menu-left">
+                    <label class="genre">Genre : </label>
+                    <select class="form-control" 
+                            ng-change="genre(value)"
+                            ng-model="value"
+                            ng-options="genre.id as genre.name for genre in listGenre.genres"
+                        >
+                        <option value="">Tous</option>
+                    </select><br/><br/><br/><br/>
+                    <label class="genre">Trier par : </label>
+                    <select
+                            ng-change="category(value,1)" 
+                            ng-model="value"
+                            ng-options="key as value for (key, value) in categories"
+                        >
+                        <option value="">Tous</option>
+                    </select>
+                </div>
+
                 <br/><br/><br/>
+
                 <div class="search">
                     <input  class="btn" style="width:92%"
                         ng-change="search(searchValue)"
                         ng-model="searchValue" type="search">
                 </div>
+
                 <br/><br/><br/><br/>
+
                 <div class="user">
                     <img class="user-img" src="images/placeholder.png"/>
                     <div class="user-name">User Name</div>
                 </div>
-            </nav>
-        <div class="container">
-            <div class="main">
-                <section>
-                    <header class="container page-header">
-                        <img src="images/logo-netmedia-ok.png" class="logo-accueil"/>
-                        <div class="menu-navigation">
-                            <a class="" href="">DÉCOUVRIR</a>
-                            <a href="#/films">FILMS</a>
-                            <a class="selected" href="#/series">SÉRIES</a>
-                        </div>
-                        <img id="showLeft" src="images/burger-menu.png"/ class="burger-menu"/>
-                        <nav class="left-menu">
-                        </nav>
-                        <form style="width:370px" class="filters-search-user">
-                            <div class="filters-search-user">
-                                <div class="filters">
-                                    <label class="genre">Trier par : </label>
-                                    <select
-                                            ng-change="category(value,1)" style="width:120px"
-                                            ng-model="value"
-                                            ng-options="key as value for (key, value) in categories"
-                                        >
-                                        <option value="">Tous</option>
-                                    </select>
-                                </div>
-                                <div class="search">
-                                <input  class="btn" style="width:100%"
-                                        ng-change="search(searchValue)"
-                                        ng-model="searchValue" type="search">
-                                </div>
-                                <div class="user">
-                                    <img class="user-img" src="images/placeholder.png"/>
-                                    <div class="user-name">User Name</div>
-                                </div>
-                            </div>
-                        </form> 
-                    </header> 
-                </section>
-            </div>
-        </div>
-    </div>
-   
-    </div> 
-        <div class="gradient">
-        </div>
-        <div class="backdropImg" style="background-image:url(http://image.tmdb.org/t/p/w1280{{serie.backdrop_path}})">
+            
+            </nav>                        
+                        
 
-        </div>
+
+
 
     </div>
-        
+
+</div> 
+
+<div class="mainContentPageTvMovie">
+
+    <div class="headerContent">
+
+        <div class="gradient"></div>
+    
+        <div class="backdropImg" style="background-image:url(http://image.tmdb.org/t/p/w1280{{serie.backdrop_path}})"></div>     
+
+    </div>
+
+    <div class="titleTvMovieContener">
+                
+                <h2 class="titleTvMovies">{{serie.name}}</h2>
+                
+    </div>
 
     <div class="infoTvMovie">
 
-    <div class="infoPoster">
+        <div class="posterContentTvMovie">
 
-        <div class="posterContent">
-            <img class="posterImg" ng-src="http://image.tmdb.org/t/p/w342{{serie.poster_path}}"/>
+            <img class="posterImgTvMovie" ng-src="http://image.tmdb.org/t/p/w342{{serie.poster_path}}"/>
+
         </div>
+            
         <div class="contentTvMovieInfo">
-            <h2 class="titleTvMovie">{{serie.name}}</h2>
-            <ul class="detailTvMovie regularFont">
-                <li>{{serie.first_air_date}} </li>
-                <li ng-repeat="(key, genre) in serie.genres | limitTo:1">   {{genre.name}} </li>
-                <li>{{serie.runtime}} </li>
-            </ul>
-            <br />
+            
+            <div class="detailTvMovie regularFont">
+                
+                <span>
+                    <label class="castBy">Date de sortie :</label>{{serie.first_air_date}} 
+                </span>
+                <br/><br/><br/>
+                <label class="castBy">Genres :</label>
+                <span ng-repeat="(key, genre) in serie.genres | limitTo:1">   {{genre.name}} </span>
+                <span>{{serie.runtime}} </span>
+
+            </div>
+
             <div class="popularityStar regularFont">{{serie.popularity}}
             </div>
+            
             <div class="castings">
                 <label class="castBy">Réalisé par :</label>
                 <span class="fontRegular" ng-repeat="real in serie.created_by" >{{real.name}}, </span><br /><br /><br />
                 <label class="castBy">Avec :</label>
-                <div class="castByActor">
+                <div class="castActor">
                     <span class="fontRegular" ng-repeat="(key, role) in serie.credits.cast | limitTo: 4">{{role.name}}, </span>
                 </div>
             </div>
@@ -97,47 +115,34 @@
                 <a href = "#"><div class="favoriteAdd fontRegular">Ajouter aux favoris</div></a>
                 <a href = "#"><div class="reloadMovie fontRegular">Reprendre la lecture</div></a>
             </div>
-        </div>
-    </div>
-    
-    <div class="contentTvMovie clearfix">
 
-        <h3 class="synopsisFont fontRegular">Synopsis</h3>
+        </div>
+
+        </div>
+    
+        <div class="contentSynopsisTvMovie clearfix">
+        
+        <div class=" fontRegular">Synopsis</div>
+
         <p class="resumeTvMovie fontRegular">{{serie.overview}}</p>
-        <hr class="separatorSeason"></hr>
-        <span class="seasonFont">Saison</span>
-
-        </div>
-    </div>
-    <div class="userActionMovie">
-        <div class="favoriteAdd fontRegular">
-        Ajouter aux favoris
-        </div>
-        <div class="reloadMovie fontRegular">
-        Reprendre la lecture
-        </div>
-    </div>
-    
-    <div class="contentTvMovie">
-
-        <h3 class="synopsisFont fontRegular">Synopsis</h3>
-        <p class="resumeTvMovie fontRegular">{{movie.overview}}</p>
-        <hr class="separatorSeason"></hr>
+        <hr align="center" class="separatorsSeason"/>
         <h4 class="seasonFont">Saison</h4>
+        <button ng-repeat="(key, season) in serie.seasons"  ng-click="showSeason(season.season_number)"  class="seasonNumberFont regularFont">{{season.season_number}}</button>
+        <hr align="center" class="separatorsSeason"/>
+        <h4 class="seasonFont">Episode</h4>
+        <button ng-repeat="(key, episode) in serieSeason.episodes" ng-click="showEpisode(serieSeason.season_number,episode.episode_number)"  class="seasonNumberFont regularFont"> {{episode.episode_number}}</button>
+        saison séléctionnée : {{serieSeason.season_number}} <br>
+        episode séléctionné : {{serieEpisode.episode_number}}<br>
 
-        <button ng-repeat="(key, season) in serie.seasons"  ng-click="showSeason(serie_id,season.season_number)"  class="seasonNumberFont regularFont">{{season.season_number}}</button>
-        <hr class="separatorSeason"></hr>
-    
     </div>
+       
 
-   
-
-    <div class="panel panel-primary">
-        <div class="panel-heading">
+       <!--  <div class="panel panel-primary">
+            <div class="panel-heading">
             <h3 class="panel-title panel-title title--inline"> Serie : {{serie.name}}</h3>
-        </div>
+            </div>
 
-        <ul>
+            <ul>
            
             <li><label>name : </label> {{serie.name}}</li>
             <li><label>backdrop_path : </label> 
@@ -387,93 +392,4 @@
         </div>
 
         {{serie.back}}
-    </div>
-    <script type="text/javascript">
-/*!
- * classie - class helper functions
- * from bonzo https://github.com/ded/bonzo
- * 
- * classie.has( elem, 'my-class' ) -> true/false
- * classie.add( elem, 'my-new-class' )
- * classie.remove( elem, 'my-unwanted-class' )
- * classie.toggle( elem, 'my-class' )
- */
-
-/*jshint browser: true, strict: true, undef: true */
-
-( function( window ) {
-
-'use strict';
-
-// class helper functions from bonzo https://github.com/ded/bonzo
-
-function classReg( className ) {
-  return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
-}
-
-// classList support for class management
-// altho to be fair, the api sucks because it won't accept multiple classes at once
-var hasClass, addClass, removeClass;
-
-if ( 'classList' in document.documentElement ) {
-  hasClass = function( elem, c ) {
-    return elem.classList.contains( c );
-  };
-  addClass = function( elem, c ) {
-    elem.classList.add( c );
-  };
-  removeClass = function( elem, c ) {
-    elem.classList.remove( c );
-  };
-}
-else {
-  hasClass = function( elem, c ) {
-    return classReg( c ).test( elem.className );
-  };
-  addClass = function( elem, c ) {
-    if ( !hasClass( elem, c ) ) {
-      elem.className = elem.className + ' ' + c;
-    }
-  };
-  removeClass = function( elem, c ) {
-    elem.className = elem.className.replace( classReg( c ), ' ' );
-  };
-}
-
-function toggleClass( elem, c ) {
-  var fn = hasClass( elem, c ) ? removeClass : addClass;
-  fn( elem, c );
-}
-
-window.classie = {
-  // full names
-  hasClass: hasClass,
-  addClass: addClass,
-  removeClass: removeClass,
-  toggleClass: toggleClass,
-  // short names
-  has: hasClass,
-  add: addClass,
-  remove: removeClass,
-  toggle: toggleClass
-};
-
-})( window );
-
-var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
-                body = document.body;
-
-            showLeft.onclick = function() {
-                classie.toggle( this, 'active' );
-                classie.toggle( menuLeft, 'cbp-spmenu-open' );
-                disableOther( 'showLeft' );
-            };
-
-            function disableOther( button ) {
-                if( button !== 'showLeft' ) {
-                    classie.toggle( showLeft, 'disabled' );
-                }
-                
-            }
-
-</script>
+    </div> -->

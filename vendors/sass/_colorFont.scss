@@ -1,8 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:700italic,300,700,500italic,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto:700italic,300,700,800,500italic,400);
 
 $backgroundColor: #17181b;
 $primaryColor: #fff;
 $secondaryColor: #deb90c;
+
 
 
 body {
@@ -50,12 +51,22 @@ h2 {
     color: $primaryColor;
 }
 
-.seasonFont {
-    color: $secondaryColor;
+h4 {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
-    font-size:1.9em;
+    font-size:0.7em;
+}
+
+
+.titleTvMovies {
+    font-weight: 800;
+    font-size: 2.1em;   
+}
+
+.seasonFont {
+    color: $secondaryColor;
+    font-size: 3em;
 }
 
 .seasonNumberFont {
