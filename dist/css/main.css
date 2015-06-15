@@ -215,7 +215,6 @@ body {
 }
 
 .page-header {
-  border-bottom: 8px solid #DEB90C;
   padding-bottom: 24px;
   min-height: 80px;
 }
@@ -389,7 +388,7 @@ h4 {
 
 .seasonFont {
   color: #deb90c;
-  font-size: 3em;
+  font-size: 1.5em;
 }
 
 .seasonNumberFont {

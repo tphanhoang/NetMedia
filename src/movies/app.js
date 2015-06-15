@@ -51,7 +51,10 @@
                         }
                     }
                 })
-
+                .when('/profil', {
+                    templateUrl: 'src/movies/views/profil.html',
+                    controller:'LoginCtrl'
+                })
                 .when('/movie/:id', {
                     templateUrl: 'src/movies/views/movie.html',
                     controller: 'MovieCtrl',
@@ -136,3 +139,4 @@
                 .otherwise('/movies');
         });
 }());
+
