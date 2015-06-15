@@ -51,9 +51,6 @@ body {
   font-size: 1em;
   color: #fff; }
 
-.scndColor {
-  color: #deb90c; }
-
 .castBy {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
@@ -83,12 +80,14 @@ h2 {
   font-size: 1.9em;
   color: #fff; }
 
-.seasonFont {
-  color: #deb90c;
+h4 {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 1.9em; }
+
+.seasonFont {
+  color: #deb90c; }
 
 .seasonNumberFont {
   font-size: 1.3em; }
@@ -111,6 +110,18 @@ h2 {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
   /* IE6-8 */ }
 
+.contentBigTvMovie {
+  position: relative;
+  width: 100%;
+  overflow: hidden; }
+
+.mainContentPageTvMovie {
+  position: relative;
+  top: 0;
+  left: 235px;
+  right: 0;
+  width: 100%; }
+
 .container {
   width: 100%;
   margin: 0;
@@ -118,7 +129,7 @@ h2 {
 
 .headerContent {
   position: relative;
-  height: 440px;
+  height: 433px;
   overflow: hidden; }
 
 .gradient {
@@ -137,50 +148,57 @@ h2 {
   -webkit-filter: blur(5px);
   top: 10;
   left: 0;
-  width: 100%; }
+  width: 100%;
+  z-index: 1; }
 
-.infoTvMovie {
+.infoPoster {
   position: relative;
-  width: auto;
-  z-index: 3; }
+  width: auto; }
 
 .posterContent {
   position: relative;
-  float: left;
   margin-top: -245px;
-  max-width: 265px;
-  padding-left: 1.8796992481203%; }
+  margin-left: 92px;
+  z-index: 2;
+  max-width: 265px; }
 
 .posterImg {
   max-width: 100%; }
 
 .contentTvMovieInfo {
-  position: relative;
-  float: left;
-  width: 60%;
-  margin-top: -225px;
-  padding-left: 3.267973856209%; }
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: auto; }
 
 .titleTvMovie {
   position: relative;
-  margin: 0 0 20px 0; }
+  margin: 20px;
+  margin-left: 0px;
+  z-index: 3; }
 
 .detailTvMovie {
   position: relative;
-  padding: 20px 0 20px 0; }
+  margin: 20px;
+  margin-left: 0px;
+  z-index: 2; }
 
 .detailTvMovie li {
   display: inline;
-  float: left; }
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 40px; }
 
 .popularityStar {
   position: relative;
   text-align: left;
-  padding: 20px 0 40px 0; }
+  width: 50px;
+  margin-top: 50px;
+  margin-bottom: 25px; }
 
 .castings {
   position: relative;
-  padding: 40px 0 20px 0; }
+  margin-top: 80px; }
 
 .castBy {
   float: left;
@@ -196,9 +214,11 @@ h2 {
   margin-left: 90px; }
 
 .userActionMovie {
-  position: relative;
-  width: auto;
-  padding: 40px 0 20px 0; }
+  position: absolute;
+  top: 590px;
+  left: 400px;
+  z-index: 2;
+  width: auto; }
 
 .favoriteAdd {
   position: relative;
@@ -208,37 +228,37 @@ h2 {
   display: inline-block; }
 
 .contentTvMovie {
-  width: 90%;
+  width: 100%;
   position: relative;
-  margin-left: auto;
-  margin-right: auto; }
+  padding-left: 95px;
+  padding-right: 95px; }
 
 .synopsisFont {
-  padding-top: 35px;
+  margin-top: 25px;
   margin-bottom: 25px; }
 
 .resumeTvMovie {
-  margin: 50px 0 50px 0; }
+  margin-bottom: 20px; }
 
 .seasonFont {
-  margin-top: 10px;
+  margin-top: 5px;
   margin-left: 20px;
   width: auto;
   display: inline; }
 
-.seasonNumber {
+.seasonNumberFont {
   position: relative;
+  height: 35px;
+  line-height: 35px;
   text-align: center;
   background-color: #fff;
+  margin: 10px 10px;
+  background: none;
   border: none;
-  background: transparent;
-  border: none !important;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  padding: 0 3px 0 3px; }
+  padding-bottom: 20px !important;
+  width: 20px; }
 
-.seasonNumber:hover {
+.seasonNumberFont:hover {
   background-color: #2d2d2d; }
 
 .separatorSeason {
@@ -247,11 +267,31 @@ h2 {
   margin-bottom: 15px;
   color: #deb90c;
   border-color: #deb90c;
-  height: 2,5px;
-  width: 100%; }
+  height: 2,5px; }
 
-.clearfix {
-  clear: both; }
+.logo-accueil {
+  width: 185px;
+  margin: 20px; }
+
+.page-header {
+  border-bottom: 8px solid #deb90c;
+  padding-bottom: 24px;
+  min-height: 80px; }
+
+.menu-navigation > a {
+  color: #fff;
+  padding: 14px;
+  padding-bottom: 31px;
+  padding-top: 35px;
+  text-decoration: none;
+  font-size: 0.8em; }
+
+a.selected {
+  background-color: #deb90c;
+  color: #000; }
+
+#cbp-spmenu-s1 {
+  width: 235px; }
 
 .favoriteAdd:before {
   content: "";
@@ -273,4 +313,3 @@ h2 {
   margin-left: 10px; }
 
 /*# sourceMappingURL=styles.css.map */
-
