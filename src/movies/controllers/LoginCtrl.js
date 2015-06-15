@@ -1,5 +1,5 @@
 angular.module('netMediaApp')
-  .controller('loginCtrl', function($http, $scope, $auth) {
+  .controller('loginCtrl', function($http, $scope, $auth, $window, $location) {
 
     $scope.master = {};
 
@@ -7,6 +7,17 @@ angular.module('netMediaApp')
       data =JSON.stringify(user);
       $http.post('/netmedia/scripts/signUp.php', data)
     };
+
+    $scope.login = function(user) {
+      data =JSON.stringify(user);
+      $http.post('/netmedia/scripts/login.php', data).then(function(results) { 
+        if (results.data.status == "success"){
+         $location.path('/profil'); 
+        }
+        if (results.data.status == "error"){
+        alert('Vos informations de connexions sont erronées !')  
+        }
+    })};
 
     $scope.reset = function() {
       $scope.user = angular.copy($scope.master);
