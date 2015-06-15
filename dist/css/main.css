@@ -910,6 +910,13 @@ h1.tab-top-flop::after {
     margin-right: 20px;
   }
 }
+@font-face {
+  font-family: 'VideoJS';
+  src: url("../fonts/vjs.eot");
+  src: url("../fonts/vjs.eot?#iefix") format("embedded-opentype"), url("../fonts/vjs.woff") format("woff"), url("../fonts/vjs.ttf") format("truetype"), url("../fonts/vjs.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 section.player {
   position: absolute;
   top: 0px;
@@ -956,13 +963,6 @@ e.g. <video class="video-js my-skin-name">
 The control icons are from a custom font. Each icon corresponds to a character
 (e.g. "\e001"). Font icons allow for easy scaling and coloring of icons.
 */
-@font-face {
-  font-family: 'VideoJS';
-  src: url("font/vjs.eot");
-  src: url("font/vjs.eot?#iefix") format("embedded-opentype"), url("font/vjs.woff") format("woff"), url("font/vjs.ttf") format("truetype"), url("font/vjs.svg#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
 /* Base UI Component Classes
 --------------------------------------------------------------------------------
 */
