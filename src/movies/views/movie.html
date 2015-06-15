@@ -14,36 +14,8 @@
                     <a class="" href="#/series">SÉRIES</a>
 
                 </div>
-                
-                <div class="filters filters-menu-left">
-                    <label class="genre">Genre : </label>
-                    <select class="form-control" 
-                            ng-change="genre(value)"
-                            ng-model="value"
-                            ng-options="genre.id as genre.name for genre in listGenre.genres"
-                    >
-                    <option value="">Tous</option>
-                    </select><br/><br/><br/><br/>
-                    <label class="genre">Trier par : </label>
-                    <select
-                            ng-change="category(value,1)" 
-                            ng-model="value"
-                            ng-options="key as value for (key, value) in categories"
-                        >
-                        <option value="">Tous</option>
-                    </select>
-                </div>
 
                 <br/><br/><br/>
-
-                <div class="search">
-                    <input  class="btn" style="width:92%"
-                        ng-change="search(searchValue)"
-                        ng-model="searchValue" type="search">
-                </div>
-
-                <br/><br/><br/><br/>
-                
                 <div class="user">
                     <img class="user-img" src="images/placeholder.png"/>
                     <div class="user-name">User Name</div>

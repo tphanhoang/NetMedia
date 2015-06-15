@@ -17,33 +17,6 @@
 
                 </div>
 
-                <div class="filters filters-menu-left">
-                    <label class="genre">Genre : </label>
-                    <select class="form-control" 
-                            ng-change="genre(value)"
-                            ng-model="value"
-                            ng-options="genre.id as genre.name for genre in listGenre.genres"
-                        >
-                        <option value="">Tous</option>
-                    </select><br/><br/><br/><br/>
-                    <label class="genre">Trier par : </label>
-                    <select
-                            ng-change="category(value,1)" 
-                            ng-model="value"
-                            ng-options="key as value for (key, value) in categories"
-                        >
-                        <option value="">Tous</option>
-                    </select>
-                </div>
-
-                <br/><br/><br/>
-
-                <div class="search">
-                    <input  class="btn" style="width:92%"
-                        ng-change="search(searchValue)"
-                        ng-model="searchValue" type="search">
-                </div>
-
                 <br/><br/><br/><br/>
 
                 <div class="user">
@@ -94,12 +67,13 @@
                 </span>
                 <br/><br/><br/>
                 <label class="castBy">Genres :</label>
-                <span ng-repeat="(key, genre) in serie.genres | limitTo:1">   {{genre.name}} </span>
-                <span>{{serie.runtime}} </span>
-
+                <span ng-repeat="(key, genre) in serie.genres | limitTo:3"> {{genre.name}} </span>
+                <span>
+                    {{serie.runtime}} 
+                </span>
             </div>
 
-            <div class="popularityStar regularFont">{{serie.popularity}}
+            <div class=" regularFont"><label class="castBy">Nombre de vues :</label>{{serie.popularity}}
             </div>
             
             <div class="castings">
@@ -110,19 +84,18 @@
                     <span class="fontRegular" ng-repeat="(key, role) in serie.credits.cast | limitTo: 4">{{role.name}}, </span>
                 </div>
             </div>
+        </div>
 
-            <div class="userActionMovie clearfix">
+    </div>
+
+    <div class="">
                 <a href = "#"><div class="favoriteAdd fontRegular">Ajouter aux favoris</div></a>
                 <a href = "#"><div class="reloadMovie fontRegular">Reprendre la lecture</div></a>
-            </div>
-
-        </div>
-
-        </div>
+    </div>
     
-        <div class="contentSynopsisTvMovie clearfix">
+    <div class="contentSynopsisTvMovie clearfix">
         
-        <div class=" fontRegular">Synopsis</div>
+        <div class="synopsisFont fontRegular">Synopsis</div>
 
         <p class="resumeTvMovie fontRegular">{{serie.overview}}</p>
         <hr align="center" class="separatorsSeason"/>
@@ -131,6 +104,7 @@
         <hr align="center" class="separatorsSeason"/>
         <h4 class="seasonFont">Episode</h4>
         <button ng-repeat="(key, episode) in serieSeason.episodes" ng-click="showEpisode(serieSeason.season_number,episode.episode_number)"  class="seasonNumberFont regularFont"> {{episode.episode_number}}</button>
+        <br/><br/>
         saison séléctionnée : {{serieSeason.season_number}} <br>
         episode séléctionné : {{serieEpisode.episode_number}}<br>
 
