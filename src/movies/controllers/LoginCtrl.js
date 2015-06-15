@@ -3,8 +3,9 @@ angular.module('netMediaApp')
 
     $scope.master = {};
 
-    $scope.update = function(user) {
-      $scope.master = angular.copy(user);
+    $scope.signUp = function(user) {
+      data =JSON.stringify(user);
+      $http.post('/netmedia/scripts/signUp.php', data)
     };
 
     $scope.reset = function() {

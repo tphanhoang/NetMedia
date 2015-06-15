@@ -16,7 +16,6 @@
    <button method="POST" ng-click="save()">Save</button>
 
 </form>
-{{languages}}
 
 <p style='margin-top:20px'>
 
@@ -49,6 +48,7 @@
             </div>
           </div>
           <div class="sminputs">
+
             <div class="input full">
               <label class="string optional" for="user-name">Born</label>
               <select ng-model="user.age">
@@ -56,6 +56,7 @@
                 <option value="1991">1991</option>
                 <option value="1992">1992</option>
                 <option value="1993">1993</option>
+                <input type="date" name="anniversaire" ng-model="user.age" >
               </select>
             </div>
           </div>
@@ -63,9 +64,9 @@
             <div class="input full">
               <label class="gender" for="user-name">Gender</label>
               <label class="gender">Homme</label>
-              <input class="gender" ng-model="user.gender" type= "radio" name="tarif" value="Homme"></input>
+              <input class="gender" ng-model="user.gender" type= "radio" name="tarif" value="male"></input>
               <label class="gender">Femme</label>
-              <input class="gender" ng-model="user.gender" type= "radio" name="tarif" value="Femme"></input>
+              <input class="gender" ng-model="user.gender" type= "radio" name="tarif" value="female"></input>
             </div>
           </div>
           <div class="sminputs">
@@ -76,10 +77,10 @@
           </div>
           <div class="simform__actionsd">
             <input type="button" ng-click="reset()" value="Reset" />
-            <input type="submit" ng-click="update(user)" value="Save" />        </div>
+            <input type="submit" ng-click="signUp(user)" value="Save" />        </div>
         </form>
 
-        <pre>form = {{user | json}}</pre>
+        <pre>form = {{user}}</pre>
         <pre>master = {{master | json}}</pre>
       </div>
       <div class="logmod__alter">
