@@ -303,32 +303,6 @@ a.selected {
   margin-left: 72px;
 }
 
-@media (min-width: 0px) and (max-width: 1185px) {
-  .filters-search-user {
-    display: none;
-  }
-
-  .burger-menu {
-    width: 50px;
-    float: right;
-    margin-right: 20px;
-    margin-top: -35px;
-  }
-
-  .burger-menu:hover {
-    cursor: pointer;
-  }
-}
-@media (min-width: 1186px) {
-  .burger-menu {
-    display: none;
-  }
-}
-.filters-menu-left {
-  margin-left: 20px;
-  margin-top: 30px;
-}
-
 body {
   background-color: #17181b;
 }
@@ -903,6 +877,175 @@ h1.tab-top-flop::after {
     float: left;
     margin-top: 20px;
     margin-right: 20px;
+  }
+}
+@media (min-width: 700px) {
+  .burger-menu {
+    display: none;
+  }
+
+  .logo-phone {
+    display: none;
+  }
+}
+.filters-menu-left {
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+@media (min-width: 1100px) and (max-width: 1200px) {
+  .infoTvMovie {
+    padding-right: 54%;
+  }
+
+  .contentSynopsisTvMovie {
+    width: 70%;
+  }
+}
+@media (min-width: 900px) and (max-width: 1099px) {
+  .userActionMovie {
+    left: 200px;
+  }
+
+  .contentSynopsisTvMovie {
+    width: 65%;
+  }
+
+  .castActor {
+    width: 70%;
+  }
+}
+@media (min-width: 700px) and (max-width: 899px) {
+  .posterContentTvMovie {
+    display: none;
+  }
+
+  .contentTvMovieInfo {
+    top: -70px;
+    left: -15px;
+  }
+
+  .contentSynopsisTvMovie {
+    width: 55%;
+    margin-top: 25%;
+  }
+
+  .userActionMovie {
+    left: 50px;
+    top: 500px;
+  }
+
+  .castActor {
+    width: 85%;
+  }
+}
+@media (min-width: 600px) and (max-width: 699px) {
+  .panel-heading {
+    display: none;
+  }
+
+  .burger-menu {
+    width: 50px;
+    float: right;
+  }
+
+  .logo-phone {
+    float: left;
+    width: 185px;
+  }
+
+  .burger-menu:hover {
+    cursor: pointer;
+  }
+
+  .mainContentPageTvMovie {
+    left: 0px;
+  }
+
+  .topbar-phone {
+    padding: 5px 5px 50px 5px;
+    border-bottom: 8px solid #DEB90C;
+  }
+
+  .castings {
+    width: 98%;
+    margin-right: 0px;
+  }
+
+  .castActor {
+    width: 50%;
+  }
+
+  .contentSynopsisTvMovie {
+    width: 85%;
+  }
+
+  .userActionMovie {
+    left: 130px;
+    margin-top: -2%;
+  }
+
+  .userActionSerie {
+    left: 130px;
+  }
+
+  .panel-body {
+    margin-left: 0px;
+  }
+}
+@media (min-width: 0px) and (max-width: 599px) {
+  .panel-heading {
+    display: none;
+  }
+
+  .burger-menu {
+    width: 50px;
+    float: right;
+  }
+
+  .logo-phone {
+    float: left;
+    width: 185px;
+  }
+
+  .burger-menu:hover {
+    cursor: pointer;
+  }
+
+  .mainContentPageTvMovie {
+    left: 0px;
+  }
+
+  .topbar-phone {
+    padding: 5px 5px 50px 5px;
+    border-bottom: 8px solid #DEB90C;
+  }
+
+  .userActionMovie {
+    left: 20px;
+    top: 73%;
+  }
+
+  .userActionSerie {
+    left: 20px;
+    top: 51%;
+  }
+
+  .contentTvMovieInfo {
+    left: 0px;
+    top: 210px;
+  }
+
+  .contentSynopsisTvMovie {
+    margin-top: 107%;
+  }
+
+  .castActor {
+    width: 75%;
+  }
+
+  .panel-body {
+    margin-left: 0px;
   }
 }
 
