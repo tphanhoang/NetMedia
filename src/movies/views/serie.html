@@ -23,8 +23,8 @@
                             ng-change="genre(value)"
                             ng-model="value"
                             ng-options="genre.id as genre.name for genre in listGenre.genres"
-                    >
-                    <option value="">Tous</option>
+                        >
+                        <option value="">Tous</option>
                     </select><br/><br/><br/><br/>
                     <label class="genre">Trier par : </label>
                     <select
@@ -71,62 +71,64 @@
 
     </div>
 
+    <div class="titleTvMovieContener">
+                
+                <h2 class="titleTvMovies">{{serie.name}}</h2>
+                
+    </div>
+
     <div class="infoTvMovie">
 
-        <div class="infoPoster">
+        <div class="posterContentTvMovie">
 
-            <div class="posterContent">
+            <img class="posterImgTvMovie" ng-src="http://image.tmdb.org/t/p/w342{{serie.poster_path}}"/>
 
-                <img class="posterImg" ng-src="http://image.tmdb.org/t/p/w342{{serie.poster_path}}"/>
+        </div>
+            
+        <div class="contentTvMovieInfo">
+            
+            <ul class="detailTvMovie regularFont">
+                
+                <li>{{serie.first_air_date}} </li>
+                <li ng-repeat="(key, genre) in serie.genres | limitTo:1">   {{genre.name}} </li>
+                <li>{{serie.runtime}} </li>
 
+            </ul>
+
+            <div class="popularityStar regularFont">{{serie.popularity}}
             </div>
             
-            <div class="contentTvMovieInfo">
-                
-                <h2 class="titleTvMovie">{{serie.name}}</h2>
-                <ul class="detailTvMovie regularFont">
-                    <li>{{serie.first_air_date}} </li>
-                    <li ng-repeat="(key, genre) in serie.genres | limitTo:1">   {{genre.name}} </li>
-                    <li>{{serie.runtime}} </li>
-                </ul>
-                <br />
-                <div class="popularityStar regularFont">{{serie.popularity}}
+            <div class="castings">
+                <label class="castBy">Réalisé par :</label>
+                <span class="fontRegular" ng-repeat="real in serie.created_by" >{{real.name}}, </span><br /><br /><br />
+                <label class="castBy">Avec :</label>
+                <div class="castActor">
+                    <span class="fontRegular" ng-repeat="(key, role) in serie.credits.cast | limitTo: 4">{{role.name}}, </span>
                 </div>
-                <div class="castings">
-                    <label class="castBy">Réalisé par :</label>
-                    <span class="fontRegular" ng-repeat="real in serie.created_by" >{{real.name}}, </span><br /><br /><br />
-                    <label class="castBy">Avec :</label>
-                    <div class="castByActor">
-                        <span class="fontRegular" ng-repeat="(key, role) in serie.credits.cast | limitTo: 4">{{role.name}}, </span>
-                    </div>
-                </div>
+            </div>
 
-                <div class="userActionMovie clearfix">
-                    <a href = "#"><div class="favoriteAdd fontRegular">Ajouter aux favoris</div></a>
-                    <a href = "#"><div class="reloadMovie fontRegular">Reprendre la lecture</div></a>
-                </div>
-
+            <div class="userActionMovie clearfix">
+                <a href = "#"><div class="favoriteAdd fontRegular">Ajouter aux favoris</div></a>
+                <a href = "#"><div class="reloadMovie fontRegular">Reprendre la lecture</div></a>
             </div>
 
         </div>
-    
-        <div class="contentTvMovie clearfix">
-
-            <h3 class="synopsisFont fontRegular">Synopsis</h3>
-            <p class="resumeTvMovie fontRegular">{{serie.overview}}</p>
 
         </div>
-
-    </div>
     
-    <div class="contentTvMovie">
+        <div class="contentSynopsisTvMovie clearfix">
         
-        <p class="resumeTvMovie fontRegular">{{movie.overview}}</p>
-        <hr class="separatorSeason"/>
-        <h4 class="seasonFont">Saison</h4>
+        <div class=" fontRegular">Synopsis</div>
 
-        <button ng-repeat="(key, season) in serie.seasons"  ng-click="showSeason(serie_id,season.season_number)"  class="seasonNumberFont regularFont">{{season.season_number}}</button>
-        <hr class="separatorSeason"/>
+        <p class="resumeTvMovie fontRegular">{{serie.overview}}</p>
+        <hr align="center" class="separatorsSeason"/>
+        <h4 class="seasonFont">Saison</h4>
+        <button ng-repeat="(key, season) in serie.seasons"  ng-click="showSeason(season.season_number)"  class="seasonNumberFont regularFont">{{season.season_number}}</button>
+        <hr align="center" class="separatorsSeason"/>
+        <h4 class="seasonFont">Episode</h4>
+        <button ng-repeat="(key, episode) in serieSeason.episodes" ng-click="showEpisode(serieSeason.season_number,episode.episode_number)"  class="seasonNumberFont regularFont"> {{episode.episode_number}}</button>
+        saison séléctionnée : {{serieSeason.season_number}} <br>
+        episode séléctionné : {{serieEpisode.episode_number}}<br>
 
     </div>
        

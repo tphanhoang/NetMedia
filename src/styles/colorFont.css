@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:700italic,300,700,500italic,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto:700italic,300,700,800,500italic,400);
 body {
   background-color: #17181b; }
 
@@ -43,8 +43,13 @@ h4 {
   text-transform: uppercase;
   font-size: 1.9em; }
 
+.titleTvMovies {
+  font-weight: 800;
+  font-size: 2.1em; }
+
 .seasonFont {
-  color: #deb90c; }
+  color: #deb90c;
+  font-size: 3em; }
 
 .seasonNumberFont {
   font-size: 1.3em; }

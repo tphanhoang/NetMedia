@@ -199,7 +199,7 @@
             </div>
         </div>
 
-    <div ng-repeat="movies in movies.more | orderBy: query.order" movie="movie" >
+    <div infinite-scroll="MovieFactory(page)" ng-repeat="movies in movies.more | orderBy: query.order" movie="movie" >
         <div ng-repeat="movie in movies | orderBy: query.order" movie="movie" class="movie-block">
             <div class="col-sm-6 col-md-4">
                 <div class="pull-right" ng-switch on="movie.status">

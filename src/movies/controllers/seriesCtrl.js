@@ -8,16 +8,33 @@
         .controller('SeriesSearchCtrl', SeriesSearchCtrl);
 
 
-    function SerieCtrl($scope, $location, $routeParams, Serie) {
+    function SerieCtrl($scope, $location, $routeParams, Serie, SerieSeason, SerieFactory) {
 
         $scope.serie = Serie;
         $scope.serie_id = $routeParams.id;
+        $scope.serieSeason = SerieSeason;
+        $scope.serieSeason.season_number = 1;
+        $scope.serieEpisode = 't';
 
         $scope.back = function() {
             $location.path('/series');
-        }
-        $scope.showSeason = function(id, season_id){
-            $location.path('/serie/'+id+'/'+season_id);
+        };
+        $scope.showSeason = function(season_id){
+            SerieFactory.getSerieSeason($routeParams.id, season_id).then(function(result){
+                $scope.serieSeason = result;
+            }, function (result){
+                alert("Erreur : ça a planté ! pas de bras | pas data");
+            });
+
+
+            // $location.path('/serie/'+id+'/'+season_id);
+        };
+        $scope.showEpisode = function(season_id, episode_id){
+            SerieFactory.getSerieEpisode($routeParams.id, season_id, episode_id).then(function(result){
+                $scope.serieEpisode = result;
+            }, function (result){
+                alert("Erreur : ça a planté ! pas de bras | pas data");
+            });
         }
     }
 
@@ -66,7 +83,7 @@
         $scope.changeOrder = function($scope,filter) {
             $scope.query.order = filter;
         }
-    	$scope.showSerie = function(id) {
+        $scope.showSerie = function(id) {
             $location.path('/serie/' + id);
         }
         $scope.search = function(value,page){

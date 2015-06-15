@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$primaryColor".
-        on line 164 of ./src/styles/positions.scss
+        on line 189 of ./src/styles/positions.scss
 
-159: .seasonNumberFont{
-160:     position:relative;
-161:     height:35px;
-162:     line-height:35px;
-163:     text-align:center;
-164:     background-color: $primaryColor;
-165:     margin: 10px 10px;
-166:     background:none;
-167:     border:none;
-168:     padding-bottom:20px !important;
-169:     width:20px;
+184: .seasonNumberFont{
+185:     position:relative;
+186:     height:35px;
+187:     line-height:35px;
+188:     text-align:center;
+189:     background-color: $primaryColor;
+190:     margin: 10px 10px;
+191:     background:none;
+192:     border:none;
+193:     padding-bottom:20px !important;
+194:     width:20px;
 
 Backtrace:
-./src/styles/positions.scss:164
+./src/styles/positions.scss:189
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/script/tree/node.rb:50:in `perform'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/tree/visitors/perform.rb:394:in `visit_prop'
@@ -67,4 +67,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$primaryColor\".\A         on line 164 of ./src/styles/positions.scss\A \A 159: .seasonNumberFont{\A 160:     position:relative;\A 161:     height:35px;\A 162:     line-height:35px;\A 163:     text-align:center;\A 164:     background-color: $primaryColor;\A 165:     margin: 10px 10px;\A 166:     background:none;\A 167:     border:none;\A 168:     padding-bottom:20px !important;\A 169:     width:20px;"; }
+  content: "Error: Undefined variable: \"$primaryColor\".\A         on line 189 of ./src/styles/positions.scss\A \A 184: .seasonNumberFont{\A 185:     position:relative;\A 186:     height:35px;\A 187:     line-height:35px;\A 188:     text-align:center;\A 189:     background-color: $primaryColor;\A 190:     margin: 10px 10px;\A 191:     background:none;\A 192:     border:none;\A 193:     padding-bottom:20px !important;\A 194:     width:20px;"; }

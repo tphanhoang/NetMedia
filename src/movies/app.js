@@ -1,6 +1,8 @@
 (function() {
     'use strict';
-    angular.module('netMediaApp', ['ngRoute','satellizer']).config(function ($routeProvider, $authProvider) {
+    angular.module('netMediaApp', ['ngRoute','satellizer','infinite-scroll']).config(function ($routeProvider, $authProvider) {
+        angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250)
+
    
     $authProvider.facebook({
       clientId: '375442245978064'
@@ -95,6 +97,9 @@
                     resolve: {
                         Serie: function($route, SerieFactory) {
                             return SerieFactory.getSerie($route.current.params.id);
+                        },
+                        SerieSeason : function($route, SerieFactory){
+                            return SerieFactory.getSerieSeason($route.current.params.id,1);
                         }
                     }
                 })
