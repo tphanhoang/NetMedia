@@ -5,7 +5,7 @@
     $authProvider.facebook({
         clientId: '375442245978064'
     });
-    
+
     $authProvider.google({
         url: 'auth/google',
         clientId: '215811154628-p7dhsd30jkhike6cnm55qtc2ojdvcdob.apps.googleusercontent.com'
@@ -54,6 +54,10 @@
                 .when('/profil', {
                     templateUrl: 'src/movies/views/profil.html',
                     controller:'ProfilCtrl'
+                })
+                .when('/player', {
+                    templateUrl: 'src/movies/views/player.html',
+                    controller:'PlayerCtrl'
                 })
                 .when('/movie/:id', {
                     templateUrl: 'src/movies/views/movie.html',
@@ -135,8 +139,7 @@
                     templateUrl: 'src/movies/views/login.html',
                     controller: 'loginCtrl'
                 })
-             
+
                 .otherwise('/movies');
         });
 }());
-

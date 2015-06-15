@@ -1,916 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:700italic,300,700,800,500italic,400);
-@font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-Thin.eot");
-  src: url("../fonts/Roboto-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Thin.woff2") format("woff2"), url("../fonts/Roboto-Thin.woff") format("woff"), url("../fonts/Roboto-Thin.ttf") format("truetype"), url("../fonts/Roboto-Thin.svg#Roboto") format("svg");
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Roboto-Thin';
-  src: url("../fonts/Roboto-Thin.eot");
-  src: url("../fonts/Roboto-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Thin.woff2") format("woff2"), url("../fonts/Roboto-Thin.woff") format("woff"), url("../fonts/Roboto-Thin.ttf") format("truetype"), url("../fonts/Roboto-Thin.svg#Roboto") format("svg");
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-ThinItalic.eot");
-  src: url("../fonts/Roboto-ThinItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-ThinItalic.woff2") format("woff2"), url("../fonts/Roboto-ThinItalic.woff") format("woff"), url("../fonts/Roboto-ThinItalic.ttf") format("truetype"), url("../fonts/Roboto-ThinItalic.svg#Roboto") format("svg");
-  font-weight: 100;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Roboto-ThinItalic';
-  src: url("../fonts/Roboto-ThinItalic.eot");
-  src: url("../fonts/Roboto-ThinItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-ThinItalic.woff2") format("woff2"), url("../fonts/Roboto-ThinItalic.woff") format("woff"), url("../fonts/Roboto-ThinItalic.ttf") format("truetype"), url("../fonts/Roboto-ThinItalic.svg#Roboto") format("svg");
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-Light.eot");
-  src: url("../fonts/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff"), url("../fonts/Roboto-Light.ttf") format("truetype"), url("../fonts/Roboto-Light.svg#Roboto") format("svg");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Roboto-Light';
-  src: url("../fonts/Roboto-Light.eot");
-  src: url("../fonts/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff"), url("../fonts/Roboto-Light.ttf") format("truetype"), url("../fonts/Roboto-Light.svg#Roboto") format("svg");
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-LightItalic.eot");
-  src: url("../fonts/Roboto-LightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-LightItalic.woff2") format("woff2"), url("../fonts/Roboto-LightItalic.woff") format("woff"), url("../fonts/Roboto-LightItalic.ttf") format("truetype"), url("../fonts/Roboto-LightItalic.svg#Roboto") format("svg");
-  font-weight: 300;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Roboto-LightItalic';
-  src: url("../fonts/Roboto-LightItalic.eot");
-  src: url("../fonts/Roboto-LightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-LightItalic.woff2") format("woff2"), url("../fonts/Roboto-LightItalic.woff") format("woff"), url("../fonts/Roboto-LightItalic.ttf") format("truetype"), url("../fonts/Roboto-LightItalic.svg#Roboto") format("svg");
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-Regular.eot");
-  src: url("../fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff"), url("../fonts/Roboto-Regular.ttf") format("truetype"), url("../fonts/Roboto-Regular.svg#Roboto") format("svg");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Roboto-Regular';
-  src: url("../fonts/Roboto-Regular.eot");
-  src: url("../fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff"), url("../fonts/Roboto-Regular.ttf") format("truetype"), url("../fonts/Roboto-Regular.svg#Roboto") format("svg");
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-RegularItalic.eot");
-  src: url("../fonts/Roboto-RegularItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-RegularItalic.woff2") format("woff2"), url("../fonts/Roboto-RegularItalic.woff") format("woff"), url("../fonts/Roboto-RegularItalic.ttf") format("truetype"), url("../fonts/Roboto-RegularItalic.svg#Roboto") format("svg");
-  font-weight: 400;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Roboto-RegularItalic';
-  src: url("../fonts/Roboto-RegularItalic.eot");
-  src: url("../fonts/Roboto-RegularItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-RegularItalic.woff2") format("woff2"), url("../fonts/Roboto-RegularItalic.woff") format("woff"), url("../fonts/Roboto-RegularItalic.ttf") format("truetype"), url("../fonts/Roboto-RegularItalic.svg#Roboto") format("svg");
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-Medium.eot");
-  src: url("../fonts/Roboto-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff"), url("../fonts/Roboto-Medium.ttf") format("truetype"), url("../fonts/Roboto-Medium.svg#Roboto") format("svg");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Roboto-Medium';
-  src: url("../fonts/Roboto-Medium.eot");
-  src: url("../fonts/Roboto-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff"), url("../fonts/Roboto-Medium.ttf") format("truetype"), url("../fonts/Roboto-Medium.svg#Roboto") format("svg");
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-MediumItalic.eot");
-  src: url("../fonts/Roboto-MediumItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-MediumItalic.woff2") format("woff2"), url("../fonts/Roboto-MediumItalic.woff") format("woff"), url("../fonts/Roboto-MediumItalic.ttf") format("truetype"), url("../fonts/Roboto-MediumItalic.svg#Roboto") format("svg");
-  font-weight: 500;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Roboto-MediumItalic';
-  src: url("../fonts/Roboto-MediumItalic.eot");
-  src: url("../fonts/Roboto-MediumItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-MediumItalic.woff2") format("woff2"), url("../fonts/Roboto-MediumItalic.woff") format("woff"), url("../fonts/Roboto-MediumItalic.ttf") format("truetype"), url("../fonts/Roboto-MediumItalic.svg#Roboto") format("svg");
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-Bold.eot");
-  src: url("../fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto-Bold.ttf") format("truetype"), url("../fonts/Roboto-Bold.svg#Roboto") format("svg");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Roboto-Bold';
-  src: url("../fonts/Roboto-Bold.eot");
-  src: url("../fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto-Bold.ttf") format("truetype"), url("../fonts/Roboto-Bold.svg#Roboto") format("svg");
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-BoldItalic.eot");
-  src: url("../fonts/Roboto-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-BoldItalic.woff2") format("woff2"), url("../fonts/Roboto-BoldItalic.woff") format("woff"), url("../fonts/Roboto-BoldItalic.ttf") format("truetype"), url("../fonts/Roboto-BoldItalic.svg#Roboto") format("svg");
-  font-weight: 700;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Roboto-BoldItalic';
-  src: url("../fonts/Roboto-BoldItalic.eot");
-  src: url("../fonts/Roboto-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-BoldItalic.woff2") format("woff2"), url("../fonts/Roboto-BoldItalic.woff") format("woff"), url("../fonts/Roboto-BoldItalic.ttf") format("truetype"), url("../fonts/Roboto-BoldItalic.svg#Roboto") format("svg");
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-Black.eot");
-  src: url("../fonts/Roboto-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Black.woff2") format("woff2"), url("../fonts/Roboto-Black.woff") format("woff"), url("../fonts/Roboto-Black.ttf") format("truetype"), url("../fonts/Roboto-Black.svg#Roboto") format("svg");
-  font-weight: 900;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Roboto-Black';
-  src: url("../fonts/Roboto-Black.eot");
-  src: url("../fonts/Roboto-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Black.woff2") format("woff2"), url("../fonts/Roboto-Black.woff") format("woff"), url("../fonts/Roboto-Black.ttf") format("truetype"), url("../fonts/Roboto-Black.svg#Roboto") format("svg");
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-BlackItalic.eot");
-  src: url("../fonts/Roboto-BlackItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-BlackItalic.woff2") format("woff2"), url("../fonts/Roboto-BlackItalic.woff") format("woff"), url("../fonts/Roboto-BlackItalic.ttf") format("truetype"), url("../fonts/Roboto-BlackItalic.svg#Roboto") format("svg");
-  font-weight: 900;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Roboto-BlackItalic';
-  src: url("../fonts/Roboto-BlackItalic.eot");
-  src: url("../fonts/Roboto-BlackItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-BlackItalic.woff2") format("woff2"), url("../fonts/Roboto-BlackItalic.woff") format("woff"), url("../fonts/Roboto-BlackItalic.ttf") format("truetype"), url("../fonts/Roboto-BlackItalic.svg#Roboto") format("svg");
-}
-h1, h2, .title-home, .title-details, .infos {
-  font-family: "Roboto-Bold";
-  color: #FFF;
-}
-
-h1 {
-  margin-bottom: 0px;
-}
-
-h3, h4 {
-  font-family: "Roboto-Bold";
-  color: #FFF;
-  margin-top: 5px;
-  font-size: 0.7em;
-}
-
-.title-home {
-  font-size: 0.9em;
-}
-
-.title-details {
-  font-size: 3em;
-}
-
-.infos {
-  font-size: 0.7em;
-}
-
-h2 {
-  font-size: 2.6em;
-  margin-top: 10px;
-}
-
-.season {
-  font-size: 2.45em;
-}
-
-body {
-  background-color: #17181B;
-  margin: 0px;
-}
-
-.panel-body {
-  margin-top: 20px;
-  margin-left: 246px;
-}
-
-.movie-block {
-  float: left;
-  margin: 5px;
-  padding: 5px;
-  width: 185px;
-  height: auto;
-}
-
-.image-thumbnail {
-  width: 100%;
-  height: 280px;
-}
-
-.image-thumbnail:hover {
-  outline: 3px solid white;
-  cursor: pointer;
-  opacity: 0.7;
-}
-
-.logo-accueil {
-  width: 185px;
-  margin: 20px;
-}
-
-.page-header {
-  padding-bottom: 24px;
-  min-height: 80px;
-}
-
-.menu-navigation > a {
-  color: #FFF;
-  padding: 14px;
-  padding-bottom: 31px;
-  padding-top: 35px;
-  text-decoration: none;
-  font-family: "Roboto-Bold";
-  font-size: 0.8em;
-}
-
-a.selected {
-  background-color: #DEB90C;
-  color: #000;
-}
-
-#cbp-spmenu-s1 {
-  width: 235px;
-}
-
-.filters-search-user {
-  display: inline-block;
-  display: -webkit-box;
-  margin-top: -8px;
-  margin-left: 36%;
-  font-size: 0.8em;
-}
-
-.filters {
-  width: 315px;
-}
-
-.search {
-  margin-left: 10px;
-}
-
-.filters > select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: #17181B;
-  color: #DEB90C;
-  border: 0px solid #17181B;
-  font-size: 12px;
-}
-
-.filters-menu-left > select {
-  background-color: #2D2D2D;
-}
-
-.genre {
-  color: #FFF;
-  font-family: "Roboto";
-}
-
-[type="search"] {
-  -webkit-appearance: textfield;
-  -webkit-box-sizing: content-box;
-  border: 1px solid #DEB90C;
-  background-color: #17181B;
-  height: 30px;
-  margin-top: -10px;
-  color: #FFF;
-}
-
-.user {
-  margin-top: -24px;
-  margin-left: 10%;
-}
-
-.user-img {
-  width: 40px;
-  border-radius: 50%;
-  border: 5px solid #DEB90C;
-  margin-top: 5px;
-  margin-left: 17px;
-}
-
-.user-name {
-  color: #DEB90C;
-  font-family: "Roboto";
-  margin-top: -31px;
-  margin-left: 72px;
-}
-
-@media (min-width: 0px) and (max-width: 1185px) {
-  .filters-search-user {
-    display: none;
-  }
-
-  .burger-menu {
-    width: 50px;
-    float: right;
-    margin-right: 20px;
-    margin-top: -35px;
-  }
-
-  .burger-menu:hover {
-    cursor: pointer;
-  }
-}
-@media (min-width: 1186px) {
-  .burger-menu {
-    display: none;
-  }
-}
-.filters-menu-left {
-  margin-left: 20px;
-  margin-top: 30px;
-}
-
-body {
-  background-color: #17181b;
-}
-
-.regularFont {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 1em;
-  color: #fff;
-}
-
-.castBy {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: #deb90c;
-  font-size: 1.1em;
-}
-
-.fontRegular {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: #fff;
-  font-size: 1.1em;
-}
-
-.synopsisFont {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color: #deb90c;
-  font-size: 1.5em;
-}
-
-.resumeTvMovie {
-  font-size: 0.9em;
-  line-height: 1.6em;
-}
-
-h2 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 1.9em;
-  color: #fff;
-}
-
-h4 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.7em;
-}
-
-.titleTvMovies {
-  font-weight: 800;
-  font-size: 2.1em;
-}
-
-.seasonFont {
-  color: #deb90c;
-  font-size: 1.5em;
-}
-
-.seasonNumberFont {
-  font-size: 1.3em;
-}
-
-.gradient {
-  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjglIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMDkiLz4KICAgIDxzdG9wIG9mZnNldD0iNjAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuNjUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjY1Ii8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-  background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.09) 8%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0.65) 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(8%, rgba(0, 0, 0, 0.09)), color-stop(60%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.65)));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.09) 8%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0.65) 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.09) 8%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0.65) 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.09) 8%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0.65) 100%);
-  /* IE10+ */
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.09) 8%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0.65) 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
-  /* IE6-8 */
-}
-
-.contentBigTvMovie {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.mainContentPageTvMovie {
-  position: relative;
-  top: 0;
-  left: 235px;
-  right: 0;
-  width: 100%;
-}
-
-.container {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.headerContent {
-  position: relative;
-  height: 433px;
-  overflow: hidden;
-}
-
-.gradient {
-  position: absolute;
-  height: 408px;
-  top: 10;
-  left: 0;
-  width: 100%;
-  z-index: 2;
-}
-
-.backdropImg {
-  background-position: center top;
-  background-size: cover;
-  position: absolute;
-  height: 400px;
-  -webkit-filter: blur(5px);
-  top: 10;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-}
-
-.titleTvMovieContener {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  height: 150px;
-  margin-left: 3.4716981132075%;
-  z-index: 3;
-}
-
-.titleTvMovies {
-  height: 166px;
-  line-height: 166px;
-}
-
-.infoPoster {
-  position: relative;
-  width: auto;
-}
-
-.posterContentTvMovie {
-  position: relative;
-  margin-top: -245px;
-  margin-left: 3.4716981132075%;
-  z-index: 2;
-  max-width: 265px;
-  padding: 0 !important;
-}
-
-.posterImgTvMovie {
-  position: relative;
-  max-width: 100%;
-}
-
-.contentTvMovieInfo {
-  position: relative;
-  top: -212px;
-  left: 265px;
-  margin-left: 3.4716981132075%;
-  margin-right: 3.4716981132075%;
-  z-index: 2;
-  width: auto !important;
-  float: left;
-  width: 60%;
-  margin-top: -225px;
-  padding-left: 3.267973856209%;
-}
-
-.titleTvMovie {
-  position: relative;
-  margin: 20px;
-  margin-left: 0px;
-  z-index: 3;
-}
-
-.detailTvMovie {
-  position: relative;
-  margin: 20px;
-  margin-left: 0px;
-  z-index: 2;
-}
-
-.detailTvMovie li {
-  display: inline;
-  float: left;
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-
-.popularityStar {
-  position: relative;
-  text-align: left;
-  width: 50px;
-}
-
-.castings {
-  position: relative;
-  margin-right: 40px;
-}
-
-.castBy {
-  float: left;
-  margin-right: 15px;
-}
-
-.castActor {
-  position: absolute;
-  left: 110px;
-  width: 163%;
-}
-
-.castByResult {
-  position: relative;
-  margin-left: 90px;
-}
-
-.userActionMovie {
-  position: absolute;
-  top: 590px;
-  left: 400px;
-  z-index: 2;
-  width: auto;
-}
-
-.favoriteAdd {
-  position: relative;
-  display: inline-block;
-}
-
-.reloadMovie {
-  display: inline-block;
-}
-
-.contentSynopsisTvMovie {
-  width: 75%;
-  margin: 25px;
-  background-color: #2D2D2D;
-  padding: 20px;
-}
-
-.synopsisFont {
-  margin-top: -15px;
-}
-
-.resumeTvMovie {
-  margin-bottom: 20px;
-}
-
-.seasonFont {
-  margin-top: 5px;
-  margin-left: 20px;
-  width: auto;
-  display: inline;
-}
-
-.seasonNumberFont {
-  position: relative;
-  height: 35px;
-  line-height: 35px;
-  text-align: center;
-  background-color: #fff;
-  margin: 10px 10px;
-  background: none;
-  border: none;
-  padding-bottom: 20px !important;
-  width: 20px;
-}
-
-.seasonNumberFont:hover {
-  background-color: #2d2d2d;
-}
-
-.separatorsSeason {
-  margin: 0;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  color: #deb90c;
-  border-color: #deb90c;
-  height: 2,5px;
-  width: 95%;
-}
-
-h3.user-name-profil {
-  font-family: "Roboto-Bold";
-  color: #FFF;
-  text-align: center;
-  font-size: 1em;
-  margin-top: 20px;
-}
-
-p.user-bio {
-  text-align: center;
-  color: #757575;
-  font-family: "Roboto";
-  font-weight: normal;
-  margin-top: 20px;
-  font-size: 0.8em;
-  padding-left: 20px;
-  padding-right: 20px;
-  line-height: 20px;
-}
-
-h1.title-details {
-  font-size: 1.8em;
-  font-family: "Roboto-Bold";
-  color: #FFF;
-  text-transform: uppercase;
-  float: left;
-}
-
-h2 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 1.5em;
-  color: #DEB90C;
-}
-
-h2.myTop-Flop {
-  font-family: "Roboto-Bold";
-  color: #DEB90C;
-  text-transform: uppercase;
-  margin-top: 10px;
-  padding-bottom: 10px;
-}
-
-h1.tab-top-flop {
-  font-size: 1.8em;
-  font-family: "Roboto-Bold";
-  text-transform: uppercase;
-  float: right;
-  color: #DEB90C;
-}
-
-h1.tab-top-flop::after {
-  width: 10px;
-  height: 10px;
-}
-
-@media only screen and (min-width: 1025px) {
-  /*  CSS Perso  */
-  @import url(http://fonts.googleapis.com/css?family=Roboto:400,700italic,700);
-  .sidebar {
-    width: 235px;
-    background-color: #2b2b2b;
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-  }
-
-  .user-pic {
-    width: 100px;
-    height: 100px;
-    background-color: #DEB90C;
-    border-radius: 100%;
-    border: 5px solid #FFF;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-  }
-
-  hr {
-    width: 50px;
-    height: 1px;
-    color: #FFF;
-    margin-top: 20px;
-  }
-
-  .social-content {
-    width: 100%;
-    height: 50px;
-    /*background-color: grey;*/
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-  }
-
-  .social-icon {
-    width: 30px;
-    height: 30px;
-    float: left;
-    margin-left: 23px;
-  }
-
-  .content {
-    padding-top: 50px;
-    position: absolute;
-    top: 0;
-    left: 245px;
-    bottom: 0;
-    right: 0;
-    overflow: scroll;
-    padding: 20px;
-    width: 715px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  hr.subtitle {
-    width: 100%;
-    height: 1px;
-    color: #757575;
-    margin-top: 50px;
-  }
-
-  .top {
-    width: 320px;
-    height: auto;
-    float: left;
-    margin-right: 10px;
-    margin-top: 20px;
-  }
-
-  .flop {
-    width: 380px;
-    height: auto;
-    float: left;
-    margin-top: 20px;
-    margin-bottom: 50px;
-  }
-
-  .picto-top {
-    width: 35px;
-    height: auto;
-    float: left;
-  }
-
-  .thumb {
-    width: 275px;
-    height: 130px;
-    background-color: grey;
-    margin-top: 20px;
-    margin-left: 35px;
-  }
-
-  .content-favoris {
-    height: 100px;
-    margin-left: 35px;
-  }
-
-  .favoris {
-    width: 100%;
-    max-width: 785px;
-    height: auto;
-    float: left;
-    margin-bottom: 20px;
-  }
-
-  .thumb-fav {
-    width: 230px;
-    height: 230px;
-    background-color: #DEB90C;
-    float: left;
-    margin-top: 20px;
-    margin-right: 20px;
-  }
-}
-@media only screen and (max-width: 1024px) {
-  .sidebar {
-    width: 100%;
-    background-color: #2b2b2b;
-    position: relative;
-    padding-top: 20px;
-  }
-
-  .user-pic {
-    width: 100px;
-    height: 100px;
-    background-color: #DEB90C;
-    border-radius: 100%;
-    border: 5px solid #FFF;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0px;
-  }
-
-  hr {
-    width: 50px;
-    height: 1px;
-    color: #FFF;
-    margin-top: 20px;
-  }
-
-  .social-content {
-    width: 300px;
-    height: 50px;
-    /*background-color: grey;*/
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-  }
-
-  .social-icon {
-    width: 30px;
-    height: 30px;
-    float: left;
-    margin-left: 35px;
-  }
-
-  .content {
-    padding-top: 50px;
-    top: 335px;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    overflow: scroll;
-    padding: 20px;
-  }
-
-  hr.subtitle {
-    width: 100%;
-    height: 1px;
-    color: #757575;
-    margin-top: 50px;
-  }
-
-  .top {
-    width: 320px;
-    height: auto;
-    float: left;
-    margin-right: 10px;
-    margin-top: 20px;
-  }
-
-  .flop {
-    width: 380px;
-    height: auto;
-    float: left;
-    margin-top: 20px;
-    margin-bottom: 50px;
-  }
-
-  .picto-top {
-    width: 35px;
-    height: auto;
-    float: left;
-  }
-
-  .thumb {
-    width: 275px;
-    height: 130px;
-    background-color: grey;
-    margin-top: 20px;
-    margin-left: 35px;
-  }
-
-  .content-favoris {
-    height: 100px;
-    margin-left: 35px;
-  }
-
-  .favoris {
-    width: 100%;
-    max-width: 785px;
-    height: auto;
-    float: left;
-    margin-bottom: 20px;
-  }
-
-  .thumb-fav {
-    width: 230px;
-    height: 230px;
-    background-color: #deb90c;
-    float: left;
-    margin-top: 20px;
-    margin-right: 20px;
-  }
-}
 section.player {
+
   position: absolute;
   top: 0px;
   left: 237px;
@@ -918,22 +7,28 @@ section.player {
   right: 0px;
   overflow: scroll;
   padding: 20px;
+
 }
 
 .video-js .vjs-tech {
-  top: 0px;
-  left: 0px;
-  width: 100%;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+
 }
 
 #video-ba {
+
   width: 100%;
   height: auto;
+
 }
 
 .filters {
-  width: auto;
+    width: auto;
 }
+
+
 
 /*!
 Video.js Default Styles (http://videojs.com)
@@ -950,19 +45,20 @@ e.g. <video class="video-js my-skin-name">
 .vjs-default-skin {
   color: #cccccc;
 }
-
 /* Custom Icon Font
 --------------------------------------------------------------------------------
 The control icons are from a custom font. Each icon corresponds to a character
 (e.g. "\e001"). Font icons allow for easy scaling and coloring of icons.
 */
+
 @font-face {
   font-family: 'VideoJS';
-  src: url("font/vjs.eot");
-  src: url("font/vjs.eot?#iefix") format("embedded-opentype"), url("font/vjs.woff") format("woff"), url("font/vjs.ttf") format("truetype"), url("font/vjs.svg#icomoon") format("svg");
+  src: url('font/vjs.eot');
+  src: url('font/vjs.eot?#iefix') format('embedded-opentype'), url('font/vjs.woff') format('woff'), url('font/vjs.ttf') format('truetype'), url('font/vjs.svg#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
+
 /* Base UI Component Classes
 --------------------------------------------------------------------------------
 */
@@ -977,21 +73,18 @@ The control icons are from a custom font. Each icon corresponds to a character
   background-color: #333333;
   background-color: rgba(51, 51, 51, 0.9);
 }
-
 .vjs-default-skin .vjs-slider:focus {
   /* box-shadow */
   -webkit-box-shadow: 0 0 2em #ffffff;
   -moz-box-shadow: 0 0 2em #ffffff;
   box-shadow: 0 0 2em #ffffff;
 }
-
 .vjs-default-skin .vjs-slider-handle {
   position: absolute;
   /* Needed for IE6 */
   left: 0;
   top: 0;
 }
-
 .vjs-default-skin .vjs-slider-handle:before {
   content: "\e009";
   font-family: VideoJS;
@@ -1010,7 +103,6 @@ The control icons are from a custom font. Each icon corresponds to a character
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-
 /* Control Bar
 --------------------------------------------------------------------------------
 The default control bar that is a container for most of the controls.
@@ -1031,11 +123,11 @@ The default control bar that is a container for most of the controls.
   background-color: #07141e;
   background-color: rgba(7, 20, 30, 0.7);
 }
-
 /* Show the control bar only once the video has started playing */
 .vjs-default-skin.vjs-has-started .vjs-control-bar {
   display: block;
   /* Visibility needed to make sure things hide in older browsers too. */
+
   visibility: visible;
   opacity: 1;
   /* transition */
@@ -1044,7 +136,6 @@ The default control bar that is a container for most of the controls.
   -o-transition: visibility 0.1s, opacity 0.1s;
   transition: visibility 0.1s, opacity 0.1s;
 }
-
 /* Hide the control bar when the video is playing and the user is inactive  */
 .vjs-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar {
   display: block;
@@ -1056,26 +147,21 @@ The default control bar that is a container for most of the controls.
   -o-transition: visibility 1s, opacity 1s;
   transition: visibility 1s, opacity 1s;
 }
-
 .vjs-default-skin.vjs-controls-disabled .vjs-control-bar {
   display: none;
 }
-
 .vjs-default-skin.vjs-using-native-controls .vjs-control-bar {
   display: none;
 }
-
 /* The control bar shouldn't show after an error */
 .vjs-default-skin.vjs-error .vjs-control-bar {
   display: none;
 }
-
 /* Don't hide the control bar if it's audio */
 .vjs-audio.vjs-default-skin.vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar {
   opacity: 1;
   visibility: visible;
 }
-
 /* IE8 is flakey with fonts, and you have to change the actual content to force
 fonts to show/hide properly.
   - "\9" IE8 hack didn't work for this
@@ -1097,7 +183,6 @@ fonts to show/hide properly.
   height: 3.0em;
   width: 4em;
 }
-
 /* Font button icons */
 .vjs-default-skin .vjs-control:before {
   font-family: VideoJS;
@@ -1111,19 +196,17 @@ fonts to show/hide properly.
   text-align: center;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
-
 /* Replacement for focus outline */
 .vjs-default-skin .vjs-control:focus:before,
 .vjs-default-skin .vjs-control:hover:before {
   text-shadow: 0em 0em 1em #ffffff;
 }
-
 .vjs-default-skin .vjs-control:focus {
   /*  outline: 0; */
   /* keyboard-only users cannot see the focus on several of the UI elements when
   this is set to 0 */
-}
 
+}
 /* Hide control text visually, but have it available for screenreaders */
 .vjs-default-skin .vjs-control-text {
   /* hide-visually */
@@ -1136,7 +219,6 @@ fonts to show/hide properly.
   position: absolute;
   width: 1px;
 }
-
 /* Play/Pause
 --------------------------------------------------------------------------------
 */
@@ -1144,15 +226,12 @@ fonts to show/hide properly.
   width: 5em;
   cursor: pointer;
 }
-
 .vjs-default-skin .vjs-play-control:before {
   content: "\e001";
 }
-
 .vjs-default-skin.vjs-playing .vjs-play-control:before {
   content: "\e002";
 }
-
 /* Playback toggle
 --------------------------------------------------------------------------------
 */
@@ -1167,13 +246,11 @@ fonts to show/hide properly.
   text-align: center;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
-
 .vjs-default-skin .vjs-playback-rate.vjs-menu-button .vjs-menu .vjs-menu-content {
   width: 4em;
   left: -2em;
   list-style: none;
 }
-
 /* Volume/Mute
 -------------------------------------------------------------------------------- */
 .vjs-default-skin .vjs-mute-control,
@@ -1181,57 +258,50 @@ fonts to show/hide properly.
   cursor: pointer;
   float: right;
 }
-
 .vjs-default-skin .vjs-mute-control:before,
 .vjs-default-skin .vjs-volume-menu-button:before {
   content: "\e006";
 }
-
 .vjs-default-skin .vjs-mute-control.vjs-vol-0:before,
 .vjs-default-skin .vjs-volume-menu-button.vjs-vol-0:before {
   content: "\e003";
 }
-
 .vjs-default-skin .vjs-mute-control.vjs-vol-1:before,
 .vjs-default-skin .vjs-volume-menu-button.vjs-vol-1:before {
   content: "\e004";
 }
-
 .vjs-default-skin .vjs-mute-control.vjs-vol-2:before,
 .vjs-default-skin .vjs-volume-menu-button.vjs-vol-2:before {
   content: "\e005";
 }
-
 .vjs-default-skin .vjs-volume-control {
   width: 5em;
   float: right;
 }
-
 .vjs-default-skin .vjs-volume-bar {
   width: 5em;
   height: 0.6em;
   margin: 1.1em auto 0;
 }
-
 .vjs-default-skin .vjs-volume-level {
   position: absolute;
   top: 0;
   left: 0;
   height: 0.5em;
   /* assuming volume starts at 1.0 */
+
   width: 100%;
   background: #DEB90C url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC) -50% 0 repeat;
 }
-
 .vjs-default-skin .vjs-volume-bar .vjs-volume-handle {
   width: 0.5em;
   height: 0.5em;
   /* Assumes volume starts at 1.0. If you change the size of the
      handle relative to the volume bar, you'll need to update this value
      too. */
+
   left: 4.5em;
 }
-
 .vjs-default-skin .vjs-volume-handle:before {
   font-size: 0.9em;
   top: -0.2em;
@@ -1239,7 +309,6 @@ fonts to show/hide properly.
   width: 1em;
   height: 1em;
 }
-
 /* The volume menu button is like menu buttons (captions/subtitles) but works
     a little differently. It needs to be possible to tab to the volume slider
     without hitting space bar on the menu button. To do this we're not using
@@ -1251,24 +320,21 @@ fonts to show/hide properly.
   height: 0;
   border-top-color: transparent;
 }
-
 .vjs-default-skin .vjs-volume-menu-button .vjs-menu .vjs-menu-content {
   height: 0;
   width: 0;
 }
-
 .vjs-default-skin .vjs-volume-menu-button:hover .vjs-menu,
 .vjs-default-skin .vjs-volume-menu-button .vjs-menu.vjs-lock-showing {
   border-top-color: rgba(7, 40, 50, 0.5);
   /* Same as ul background */
-}
 
+}
 .vjs-default-skin .vjs-volume-menu-button:hover .vjs-menu .vjs-menu-content,
 .vjs-default-skin .vjs-volume-menu-button .vjs-menu.vjs-lock-showing .vjs-menu-content {
   height: 2.9em;
   width: 10em;
 }
-
 /* Progress
 --------------------------------------------------------------------------------
 */
@@ -1288,7 +354,6 @@ fonts to show/hide properly.
   -o-transition: all 0.4s;
   transition: all 0.4s;
 }
-
 /* On hover, make the progress bar grow to something that's more clickable.
     This simply changes the overall font for the progress bar, and this
     updates both the em-based widths and heights, as wells as the icon font */
@@ -1296,18 +361,17 @@ fonts to show/hide properly.
   font-size: .9em;
   /* Even though we're not changing the top/height, we need to include them in
       the transition so they're handled correctly. */
+
   /* transition */
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
 }
-
 /* Box containing play and load progresses. Also acts as seek scrubber. */
 .vjs-default-skin .vjs-progress-holder {
   height: 100%;
 }
-
 /* Progress Bars */
 .vjs-default-skin .vjs-progress-holder .vjs-play-progress,
 .vjs-default-skin .vjs-progress-holder .vjs-load-progress,
@@ -1318,12 +382,12 @@ fonts to show/hide properly.
   margin: 0;
   padding: 0;
   /* updated by javascript during playback */
+
   width: 0;
   /* Needed for IE6 */
   left: 0;
   top: 0;
 }
-
 .vjs-default-skin .vjs-play-progress {
   /*
     Using a data URI to create the white diagonal lines with a transparent
@@ -1333,30 +397,26 @@ fonts to show/hide properly.
     Also using a paralax effect to make the lines move backwards.
       The -50% left position makes that happen.
   */
+
   background: #DEB90C url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC) -50% 0 repeat;
 }
-
 .vjs-default-skin .vjs-load-progress {
-  background: #646464;
+  background: #646464 /* IE8- Fallback */;
   background: rgba(255, 255, 255, 0.2);
 }
-
 /* there are child elements of the load progress bar that represent the
    specific time ranges that have been buffered */
 .vjs-default-skin .vjs-load-progress div {
-  background: #787878;
+  background: #787878 /* IE8- Fallback */;
   background: rgba(255, 255, 255, 0.1);
 }
-
 .vjs-default-skin .vjs-seek-handle {
   width: 1.5em;
   height: 100%;
 }
-
 .vjs-default-skin .vjs-seek-handle:before {
-  padding-top: 0.1em;
+  padding-top: 0.1em /* Minor adjustment */;
 }
-
 /* Live Mode
 --------------------------------------------------------------------------------
 */
@@ -1365,11 +425,9 @@ fonts to show/hide properly.
 .vjs-default-skin.vjs-live .vjs-progress-control {
   display: none;
 }
-
 .vjs-default-skin.vjs-live .vjs-live-display {
   display: block;
 }
-
 /* Live Display
 --------------------------------------------------------------------------------
 */
@@ -1378,7 +436,6 @@ fonts to show/hide properly.
   font-size: 1em;
   line-height: 3em;
 }
-
 /* Time Display
 --------------------------------------------------------------------------------
 */
@@ -1387,26 +444,21 @@ fonts to show/hide properly.
   /* Align vertically by making the line height the same as the control bar */
   line-height: 3em;
 }
-
 .vjs-default-skin .vjs-current-time {
   float: left;
 }
-
 .vjs-default-skin .vjs-duration {
   float: left;
 }
-
 /* Remaining time is in the HTML, but not included in default design */
 .vjs-default-skin .vjs-remaining-time {
   display: none;
   float: left;
 }
-
 .vjs-time-divider {
   float: left;
   line-height: 3em;
 }
-
 /* Fullscreen
 --------------------------------------------------------------------------------
 */
@@ -1415,16 +467,13 @@ fonts to show/hide properly.
   cursor: pointer;
   float: right;
 }
-
 .vjs-default-skin .vjs-fullscreen-control:before {
   content: "\e000";
 }
-
 /* Switch to the exit icon when the player is in fullscreen */
 .vjs-default-skin.vjs-fullscreen .vjs-fullscreen-control:before {
   content: "\e00b";
 }
-
 /* Big Play Button (play button at start)
 --------------------------------------------------------------------------------
 Positioning of the play button in the center or other corners can be done more
@@ -1462,7 +511,6 @@ easily in the skin designer. http://designer.videojs.com/
   -o-transition: all 0.4s;
   transition: all 0.4s;
 }
-
 /* Optionally center */
 .vjs-default-skin.vjs-big-play-centered .vjs-big-play-button {
   /* Center it horizontally */
@@ -1472,23 +520,19 @@ easily in the skin designer. http://designer.videojs.com/
   top: 50%;
   margin-top: -1.4000000000000001em;
 }
-
 /* Hide if controls are disabled */
 .vjs-default-skin.vjs-controls-disabled .vjs-big-play-button {
   display: none;
 }
-
 /* Hide when video starts playing */
 .vjs-default-skin.vjs-has-started .vjs-big-play-button {
   display: none;
 }
-
 /* Hide on mobile devices. Remove when we stop using native controls
     by default on mobile  */
 .vjs-default-skin.vjs-using-native-controls .vjs-big-play-button {
   display: none;
 }
-
 .vjs-default-skin:hover .vjs-big-play-button,
 .vjs-default-skin .vjs-big-play-button:focus {
   outline: 0;
@@ -1506,32 +550,29 @@ easily in the skin designer. http://designer.videojs.com/
   -o-transition: all 0s;
   transition: all 0s;
 }
-
 .vjs-default-skin .vjs-big-play-button:before {
   content: "\e001";
   font-family: VideoJS;
   /* In order to center the play icon vertically we need to set the line height
      to the same as the button height */
+
   line-height: 2.6em;
   text-shadow: 0.05em 0.05em 0.1em #000;
-  text-align: center;
+  text-align: center /* Needed for IE8 */;
   position: absolute;
   left: 0;
   width: 100%;
   height: 100%;
 }
-
 .vjs-error .vjs-big-play-button {
   display: none;
 }
-
 /* Error Display
 --------------------------------------------------------------------------------
 */
 .vjs-error-display {
   display: none;
 }
-
 .vjs-error .vjs-error-display {
   display: block;
   position: absolute;
@@ -1540,7 +581,6 @@ easily in the skin designer. http://designer.videojs.com/
   width: 100%;
   height: 100%;
 }
-
 .vjs-error .vjs-error-display:before {
   content: 'X';
   font-family: Arial;
@@ -1548,9 +588,10 @@ easily in the skin designer. http://designer.videojs.com/
   color: #666666;
   /* In order to center the play icon vertically we need to set the line height
      to the same as the button height */
+
   line-height: 1;
   text-shadow: 0.05em 0.05em 0.1em #000;
-  text-align: center;
+  text-align: center /* Needed for IE8 */;
   vertical-align: middle;
   position: absolute;
   left: 0;
@@ -1558,7 +599,6 @@ easily in the skin designer. http://designer.videojs.com/
   margin-top: -0.5em;
   width: 100%;
 }
-
 .vjs-error-display div {
   position: absolute;
   bottom: 1em;
@@ -1570,12 +610,10 @@ easily in the skin designer. http://designer.videojs.com/
   background: #000000;
   background: rgba(0, 0, 0, 0.5);
 }
-
 .vjs-error-display a,
 .vjs-error-display a:visited {
   color: #F4A460;
 }
-
 /* Loading Spinner
 --------------------------------------------------------------------------------
 */
@@ -1593,7 +631,6 @@ easily in the skin designer. http://designer.videojs.com/
   margin-top: -0.5em;
   opacity: 0.75;
 }
-
 /* Show the spinner when waiting for data and seeking to a new time */
 .vjs-waiting .vjs-loading-spinner,
 .vjs-seeking .vjs-loading-spinner {
@@ -1605,7 +642,6 @@ easily in the skin designer. http://designer.videojs.com/
   -o-animation: spin 1.5s infinite linear;
   animation: spin 1.5s infinite linear;
 }
-
 /* Errors are unrecoverable without user interaction so hide the spinner */
 .vjs-error .vjs-loading-spinner {
   display: none;
@@ -1616,7 +652,6 @@ easily in the skin designer. http://designer.videojs.com/
   -o-animation: none;
   animation: none;
 }
-
 .vjs-default-skin .vjs-loading-spinner:before {
   content: "\e01e";
   font-family: VideoJS;
@@ -1628,7 +663,6 @@ easily in the skin designer. http://designer.videojs.com/
   text-align: center;
   text-shadow: 0em 0em 0.1em #000;
 }
-
 @-moz-keyframes spin {
   0% {
     -moz-transform: rotate(0deg);
@@ -1668,13 +702,13 @@ easily in the skin designer. http://designer.videojs.com/
   float: right;
   cursor: pointer;
 }
-
 .vjs-default-skin .vjs-menu {
   display: none;
   position: absolute;
   bottom: 0;
   left: 0em;
   /* (Width of vjs-menu - width of button) / 2 */
+
   width: 0em;
   height: 0em;
   margin-bottom: 3em;
@@ -1682,10 +716,11 @@ easily in the skin designer. http://designer.videojs.com/
   border-right: 2em solid transparent;
   border-top: 1.55em solid #000000;
   /* Same width top as ul bottom */
+
   border-top-color: rgba(7, 40, 50, 0.5);
   /* Same as ul background */
-}
 
+}
 /* Button Pop-up Menu */
 .vjs-default-skin .vjs-menu-button .vjs-menu .vjs-menu-content {
   display: block;
@@ -1695,10 +730,12 @@ easily in the skin designer. http://designer.videojs.com/
   width: 10em;
   bottom: 1.5em;
   /* Same bottom as vjs-menu border-top */
+
   max-height: 15em;
   overflow: auto;
   left: -5em;
   /* Width of menu - width of button / 2 */
+
   /* background-color-with-alpha */
   background-color: #07141e;
   background-color: rgba(7, 20, 30, 0.7);
@@ -1707,17 +744,14 @@ easily in the skin designer. http://designer.videojs.com/
   -moz-box-shadow: -0.2em -0.2em 0.3em rgba(255, 255, 255, 0.2);
   box-shadow: -0.2em -0.2em 0.3em rgba(255, 255, 255, 0.2);
 }
-
 .vjs-default-skin .vjs-menu-button:hover .vjs-control-content .vjs-menu,
 .vjs-default-skin .vjs-control-content .vjs-menu.vjs-lock-showing {
   display: block;
 }
-
 /* prevent menus from opening while scrubbing (FF, IE) */
 .vjs-default-skin.vjs-scrubbing .vjs-menu-button:hover .vjs-control-content .vjs-menu {
   display: none;
 }
-
 .vjs-default-skin .vjs-menu-button ul li {
   list-style: none;
   margin: 0;
@@ -1727,11 +761,9 @@ easily in the skin designer. http://designer.videojs.com/
   text-align: center;
   text-transform: lowercase;
 }
-
 .vjs-default-skin .vjs-menu-button ul li.vjs-selected {
   background-color: #000;
 }
-
 .vjs-default-skin .vjs-menu-button ul li:focus,
 .vjs-default-skin .vjs-menu-button ul li:hover,
 .vjs-default-skin .vjs-menu-button ul li.vjs-selected:focus,
@@ -1746,7 +778,6 @@ easily in the skin designer. http://designer.videojs.com/
   -moz-box-shadow: 0 0 1em #ffffff;
   box-shadow: 0 0 1em #ffffff;
 }
-
 .vjs-default-skin .vjs-menu-button ul li.vjs-menu-title {
   text-align: center;
   text-transform: uppercase;
@@ -1757,27 +788,22 @@ easily in the skin designer. http://designer.videojs.com/
   font-weight: bold;
   cursor: default;
 }
-
 /* Subtitles Button */
 .vjs-default-skin .vjs-subtitles-button:before {
   content: "\e00c";
 }
-
 /* Captions Button */
 .vjs-default-skin .vjs-captions-button:before {
   content: "\e008";
 }
-
 /* Chapters Button */
 .vjs-default-skin .vjs-chapters-button:before {
   content: "\e00c";
 }
-
 .vjs-default-skin .vjs-chapters-button.vjs-menu-button .vjs-menu .vjs-menu-content {
   width: 24em;
   left: -12em;
 }
-
 /* Replacement for focus outline */
 .vjs-default-skin .vjs-captions-button:focus .vjs-control-content:before,
 .vjs-default-skin .vjs-captions-button:hover .vjs-control-content:before {
@@ -1786,7 +812,6 @@ easily in the skin designer. http://designer.videojs.com/
   -moz-box-shadow: 0 0 1em #ffffff;
   box-shadow: 0 0 1em #ffffff;
 }
-
 /*
 REQUIRED STYLES (be careful overriding)
 ================================================================================
@@ -1804,26 +829,31 @@ control positioning and full window mode. **
   padding: 0;
   /* Start with 10px for base font size so other dimensions can be em based and
      easily calculable. */
+
   font-size: 10px;
   /* Allow poster to be vertically aligned. */
+
   vertical-align: middle;
   /*  display: table-cell; */
   /*This works in Safari but not Firefox.*/
+
   /* Provide some basic defaults for fonts */
+
   font-weight: normal;
   font-style: normal;
   /* Avoiding helvetica: issue #376 */
+
   font-family: Arial, sans-serif;
   /* Turn off user selection (text highlighting) by default.
      The majority of player components will not be text blocks.
      Text areas will need to turn user selection back on. */
+
   /* user-select */
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-
 /* Playback technology elements expand to the width/height of the containing div
     <video> or <object> */
 .video-js .vjs-tech {
@@ -1833,13 +863,11 @@ control positioning and full window mode. **
   width: 100%;
   height: 100%;
 }
-
 /* Fix for Firefox 9 fullscreen (only if it is enabled). Not needed when
    checking fullScreenEnabled. */
 .video-js:-moz-full-screen {
   position: absolute;
 }
-
 /* Fullscreen Styles */
 body.vjs-full-window {
   padding: 0;
@@ -1848,7 +876,6 @@ body.vjs-full-window {
   /* Fix for IE6 full-window. http://www.cssplay.co.uk/layouts/fixed.html */
   overflow-y: auto;
 }
-
 .video-js.vjs-fullscreen {
   position: fixed;
   overflow: hidden;
@@ -1862,16 +889,13 @@ body.vjs-full-window {
   /* IE6 full-window (underscore hack) */
   _position: absolute;
 }
-
 .video-js:-webkit-full-screen {
   width: 100% !important;
   height: 100% !important;
 }
-
 .video-js.vjs-fullscreen.vjs-user-inactive {
   cursor: none;
 }
-
 /* Poster Styles */
 .vjs-poster {
   background-repeat: no-repeat;
@@ -1887,7 +911,6 @@ body.vjs-full-window {
   bottom: 0;
   left: 0;
 }
-
 .vjs-poster img {
   display: block;
   margin: 0 auto;
@@ -1895,28 +918,23 @@ body.vjs-full-window {
   padding: 0;
   width: 100%;
 }
-
 /* Hide the poster after the video has started playing */
 .video-js.vjs-has-started .vjs-poster {
   display: none;
 }
-
 /* Don't hide the poster if we're playing audio */
 .video-js.vjs-audio.vjs-has-started .vjs-poster {
   display: block;
 }
-
 /* Hide the poster when controls are disabled because it's clickable
     and the native poster can take over */
 .video-js.vjs-controls-disabled .vjs-poster {
   display: none;
 }
-
 /* Hide the poster when native controls are used otherwise it covers them */
 .video-js.vjs-using-native-controls .vjs-poster {
   display: none;
 }
-
 /* Text Track Styles */
 /* Overall track holder for both captions and subtitles */
 .video-js .vjs-text-track-display {
@@ -1927,7 +945,6 @@ body.vjs-full-window {
   right: 0;
   pointer-events: none;
 }
-
 /* Captions Settings Dialog */
 .vjs-caption-settings {
   position: relative;
@@ -1942,7 +959,6 @@ body.vjs-full-window {
   font-size: 12px;
   width: 40em;
 }
-
 .vjs-caption-settings .vjs-tracksettings {
   top: 0;
   bottom: 2em;
@@ -1951,72 +967,59 @@ body.vjs-full-window {
   position: absolute;
   overflow: auto;
 }
-
 .vjs-caption-settings .vjs-tracksettings-colors,
 .vjs-caption-settings .vjs-tracksettings-font {
   float: left;
 }
-
 .vjs-caption-settings .vjs-tracksettings-colors:after,
 .vjs-caption-settings .vjs-tracksettings-font:after,
 .vjs-caption-settings .vjs-tracksettings-controls:after {
   clear: both;
 }
-
 .vjs-caption-settings .vjs-tracksettings-controls {
   position: absolute;
   bottom: 1em;
   right: 1em;
 }
-
 .vjs-caption-settings .vjs-tracksetting {
   margin: 5px;
   padding: 3px;
   min-height: 40px;
 }
-
 .vjs-caption-settings .vjs-tracksetting label {
   display: block;
   width: 100px;
   margin-bottom: 5px;
 }
-
 .vjs-caption-settings .vjs-tracksetting span {
   display: inline;
   margin-left: 5px;
 }
-
 .vjs-caption-settings .vjs-tracksetting > div {
   margin-bottom: 5px;
   min-height: 20px;
 }
-
 .vjs-caption-settings .vjs-tracksetting > div:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
   min-height: 0;
 }
-
 .vjs-caption-settings label > input {
   margin-right: 10px;
 }
-
 .vjs-caption-settings input[type="button"] {
   width: 40px;
   height: 40px;
 }
-
 /* Hide disabled or unsupported controls */
 .vjs-hidden {
   display: none !important;
 }
-
 .vjs-lock-showing {
   display: block !important;
   opacity: 1;
   visibility: visible;
 }
-
 /*  In IE8 w/ no JavaScript (no HTML5 shim), the video tag doesn't register.
     The .video-js classname on the video tag also isn't considered.
     This optional paragraph inside the video tag can provide a message to users
@@ -2032,14 +1035,10 @@ body.vjs-full-window {
   height: 15em;
   margin: 0 auto;
 }
-
 .vjs-no-js a,
 .vjs-no-js a:visited {
   color: #F4A460;
 }
-
 /* -----------------------------------------------------------------------------
 The original source of this file lives at
 https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
-
-/*# sourceMappingURL=main.css.map */
