@@ -10,7 +10,7 @@ $password = 'secret';
 $bdd = new PDO('mysql:host='.$host.';dbname='.$dbname, $user,$password);
 
 
-$req = $bdd->prepare("SELECT * FROM users WHERE email= :pisa AND password= :crare");
+$req = $bdd->prepare("SELECT id, email, pseudo, birthday, gender FROM users WHERE email= :pisa AND password= :crare");
         $req->execute(array(
             "pisa" => $data['emaillg'], 
             "crare" => MD5($data['passwordlg'])

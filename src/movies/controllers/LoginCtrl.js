@@ -55,7 +55,13 @@ angular.module('netMediaApp')
 
 
   .controller('ProfilCtrl', function($scope, $http, $localStorage) {
-         $scope.user = $localStorage.user;
+         $scope.user = {
+            'name' : $localStorage.user[2],
+            'id' : $localStorage.user[0],
+            'email' : $localStorage.user[1],
+            'birthday' : $localStorage.user[3],
+            'gender' : $localStorage.user[4],
+          };
 
 
 });
