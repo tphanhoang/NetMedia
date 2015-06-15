@@ -1,23 +1,30 @@
 angular.module('netMediaApp')
-  .controller('loginCtrl', function($http, $scope, $auth, $window, $location) {
+  .controller('loginCtrl', function($http, $scope, $auth, $window, $location, $localStorage) {
 
     $scope.master = {};
 
     $scope.signUp = function(user) {
       data =JSON.stringify(user);
-      $http.post('/netmedia/scripts/signUp.php', data)
+      $http.post('/netmedia/scripts/signUp.php', data);
+         $location.path('/login?'); 
+
+        
+      
     };
 
     $scope.login = function(user) {
       data =JSON.stringify(user);
       $http.post('/netmedia/scripts/login.php', data).then(function(results) { 
         if (results.data.status == "success"){
+        // $localStorage.user = user;
+        $localStorage.user = results.data.user;
          $location.path('/profil'); 
         }
         if (results.data.status == "error"){
         alert('Vos informations de connexions sont erronées !')  
         }
-    })};
+    })
+    };
 
     $scope.reset = function() {
       $scope.user = angular.copy($scope.master);
@@ -38,7 +45,7 @@ angular.module('netMediaApp')
       $http.post('/netmedia/src/movies/controllers/test.php', $scope.languages).then(function(data) {
           $scope.msg = 'Data saved';
         });
-      $scope.msg = 'Data sent: '+ angular.toJson($scope.languages);
+      // $scope.msg = 'Data sent: '+ angular.toJson($scope.languages);
 
     };
 
@@ -47,10 +54,8 @@ angular.module('netMediaApp')
 
 
 
-  .controller('ProfilCtrl', function($scope, $http) {
-            $http.get('/netmedia/src/movies/controllers/test.json').then(function(data){
-       console.log(data)
-        });
+  .controller('ProfilCtrl', function($scope, $http, $localStorage) {
+         $scope.user = $localStorage.user;
 
 
 });

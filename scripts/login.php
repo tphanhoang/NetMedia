@@ -21,6 +21,7 @@ $rows = $req->fetch(PDO::FETCH_NUM);
 
 if($rows > 0){
 	$response_array['status'] = 'success';
+	$response_array['user'] = $rows;
 }else{
 	$response_array['status'] = 'error';
 }

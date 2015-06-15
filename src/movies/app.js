@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('netMediaApp', ['ngRoute','satellizer']).config(function ($routeProvider, $authProvider) {
+    angular.module('netMediaApp',['ngRoute','satellizer','ngStorage']).config(function ($routeProvider, $authProvider) {
 
     $authProvider.facebook({
         clientId: '375442245978064'
@@ -53,7 +53,7 @@
                 })
                 .when('/profil', {
                     templateUrl: 'src/movies/views/profil.html',
-                    controller:'LoginCtrl'
+                    controller:'ProfilCtrl'
                 })
                 .when('/movie/:id', {
                     templateUrl: 'src/movies/views/movie.html',
