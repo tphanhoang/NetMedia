@@ -1,0 +1,64 @@
+<head>
+
+  <script type="text/javascript">
+  document.createElement('video');document.createElement('audio');document.createElement('track');
+  </script>
+
+  <script src="http://vjs.zencdn.net/4.12/video.js"></script>
+
+</head>
+
+
+<!-- Début menu à gauche qui slide -->
+<nav class="cbp-spmenu cbp-spmenu-vertical" id="cbp-spmenu-s1">
+    <img src="images/logo-netmedia-ok.png" class="logo-accueil"/>
+    <div class="menu-navigation">
+        <a class="selected" href="#/films" style="color:#000">FILMS</a>
+        <a class="" href="#/series">SÉRIES</a>
+    </div>
+    <div class="filters filters-menu-left">
+        <label class="genre">Genre : </label>
+        <select class="form-control"
+                ng-change="genre(value)"
+                ng-model="value"
+                ng-options="genre.id as genre.name for genre in listGenre.genres"
+            >
+            <option value="">Tous</option>
+        </select><br/><br/><br/><br/>
+        <label class="genre">Trier par : </label>
+        <select
+                ng-change="category(value,1)"
+                ng-model="value"
+                ng-options="key as value for (key, value) in categories"
+            >
+            <option value="">Tous</option>
+        </select>
+    </div>
+    <br/><br/><br/>
+    <div class="search">
+        <input  class="btn" style="width:92%"
+            ng-change="search(searchValue)"
+            ng-model="searchValue" type="search">
+    </div>
+    <br/><br/><br/><br/>
+    <div class="user">
+        <a href="#/profil">
+            <img class="user-img" src="images/placeholder.png"/>
+            <div class="user-name">User Name</div>
+        </a>
+    </div>
+</nav>
+<!-- Fin menu à gauche qui slide -->
+<section class="player">
+
+  <video id="video-ba" class="video-js vjs-default-skin"
+    controls preload="auto" width="" height=""
+    poster="http://video-js.zencoder.com/oceans-clip.png"
+    data-setup='{"example_option":true}'>
+   <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+   <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+   <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+   <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+  </video>
+
+</section>

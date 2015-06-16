@@ -55,6 +55,10 @@
                     templateUrl: 'src/movies/views/profil.html',
                     controller:'ProfilCtrl'
                 })
+                .when('/player', {
+                    templateUrl: 'src/movies/views/player.html',
+                    controller:'PlayerCtrl'
+                })
                 .when('/movie/:id', {
                     templateUrl: 'src/movies/views/movie.html',
                     controller: 'MovieCtrl',
