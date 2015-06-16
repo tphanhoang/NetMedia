@@ -25,12 +25,12 @@
                     <div class="user-name">User Name</div>
                 </div>
 
-            
-            </nav>      
+
+            </nav>
 
         </div>
 
-    </div> 
+    </div>
 
     <div class="mainContentPageTvMovie">
 
@@ -38,15 +38,15 @@
 
 
             <div class="gradient"></div>
-    
-            <div class="backdropImg" style="background-image:url(http://image.tmdb.org/t/p/w1280{{serie.backdrop_path}})"></div>     
+
+            <div class="backdropImg" style="background-image:url(http://image.tmdb.org/t/p/w1280{{serie.backdrop_path}})"></div>
 
         </div>
 
         <div class="titleTvMovieContener">
-                
+
             <h2 class="titleTvMovies">{{serie.name}}</h2>
-                
+
         </div>
 
         <div class="infoTvMovie clearfix">
@@ -100,28 +100,28 @@
     <div class="bigContentPageTvMovie clearfix">
 
         <div class="contentSynopsisTvMovieMarge">
-            
+
         <div class="synopsisFont fontRegular">Synopsis</div>
 
 
             <p class="resumeTvMovieSerie fontRegular">{{serie.overview}}</p>
             <div class="seasonSelectBarSerie">
                 <hr align="center" class="separatorsSeason"/>
-            
+
                 <h4 class="seasonFont">Saison</h4>
 
 
                 <a href ng-repeat="(key, season) in serie.seasons"  ng-click="showSeason(season.season_number)"  class="seasonNumberFont regularFont">{{season.season_number}}</a>
-            
+
                 <hr align="center" class="separatorsSeason" />
             </div>
 
         </div>
 
-            
+
             <div class="contentEpisode">
-                
-                    
+
+
                     <div class="contentEpisodeMarge" ng-repeat="(key, episode) in serieSeason.episodes" >
 
                             <a href id="episodeFontTv " class="episodeFontTv" class="regularFont " ng-click="showDetails=! showDetails
@@ -131,19 +131,19 @@
                                 <span class="fontNameEpisode regularFontItalic">{{episode.name}}</span>
 
                             </a>
-                        
+
                             <div class="contentEpisodeOverview regularFontOverviewEpisode" ng-show="showDetails">
                                 {{episode.overview}}
                             </div>
 
                         <hr align="center" class="separatorsEpisode" />
-                    
+
                         </div>
-                
+
                 </div>
 
         </div>
-    
+
     </div>
 
 </div>

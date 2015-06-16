@@ -13,7 +13,7 @@
 
 .profil a {
   text-decoration: none;
-  color: #deb90c;
+  color: #DEB90C;
   transition: .5s ease;
 }
 .profil a:hover {
@@ -64,11 +64,11 @@
 }
 .profil .tab-group li a:hover {
   background: #c6a50b;
-  color: white;
+  color: #ffffff;
 }
 .profil .tab-group .active a {
-  background: #deb90c;
-  color: white;
+  background: #DEB90C;
+  color: #ffffff;
 }
 
 .tab-content > div:last-child {
@@ -77,7 +77,7 @@
 
 .profil h1 {
   text-align: center;
-  color: white;
+  color: #ffffff;
   font-weight: 300;
   margin: 0 0 40px;
 }
@@ -94,7 +94,7 @@
 }
 .profil label .req {
   margin: 2px;
-  color: #deb90c;
+  color: #DEB90C;
 }
 
 .profil label.active {
@@ -107,7 +107,7 @@
 }
 
 .profil label.highlight {
-  color: white;
+  color: #ffffff;
 }
 
 .profil input, textarea {
@@ -119,13 +119,13 @@
   background: none;
   background-image: none;
   border: 1px solid #a0b3b0;
-  color: white;
+  color: #ffffff;
   border-radius: 0;
   transition: border-color .25s ease, box-shadow .25s ease;
 }
 .profil input:focus, textarea:focus {
   outline: 0;
-  border-color: #deb90c;
+  border-color: #DEB90C;
 }
 
 .profil .profilRadio {
@@ -172,8 +172,8 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .1em;
-  background: #deb90c;
-  color: white;
+  background: #DEB90C;
+  color: #ffffff;
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
@@ -190,3 +190,5 @@
   margin-top: -20px;
   text-align: right;
 }
+
+/*# sourceMappingURL=login.css.map */
