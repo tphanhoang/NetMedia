@@ -1,64 +1,27 @@
 angular.module('netMediaApp')
-  .controller('loginCtrl', function($http, $scope, $auth, $window, $location, $localStorage) {
-
-    $scope.master = {};
+  .controller('LoginCtrl', function($http, $scope, $window, $location, $localStorage) {
 
     $scope.signUp = function(user) {
       data =JSON.stringify(user);
-      $http.post('/netmedia/scripts/signUp.php', data).then(function(results) {
-
-
+      $http.post('/netmedia/scripts/signUp.php', data).then(  function(results) {       
         alert('Vous pouvez dés à présent vous connecter');
-
-
-
-
-    })
+        })      
 
     };
 
     $scope.login = function(user) {
       data =JSON.stringify(user);
-      $http.post('/netmedia/scripts/login.php', data).then(function(results) {
-        if (results.data.status == "success"){
-        // $localStorage.user = user;
-        $localStorage.user = results.data.user;
-         $location.path('/profil');
-        }
-        if (results.data.status == "error"){
-        alert('Vos informations de connexions sont erronées !')
-        }
+      $http.post('/netmedia/scripts/login.php', data).then(function(results) { 
+          if (results.data.status == "success"){        
+            $localStorage.user = results.data.user;
+            $location.path('/profil'); 
+          }
+          if (results.data.status == "error"){
+            alert('Vos informations de connexions sont erronées !')  
+          }
+      })
+    };
     })
-    };
-
-    $scope.reset = function() {
-      $scope.user = angular.copy($scope.master);
-    };
-
-    $scope.reset();
-
-    $scope.languages =
-    [
-     {name:"1"},
-     {name:"2"},
-     {name:"3"},
-     {name:"4"},
-     {name:"5"},
-    ];
-    $scope.save = function() {
-
-      $http.post('/netmedia/src/movies/controllers/test.php', $scope.languages).then(function(data) {
-          $scope.msg = 'Data saved';
-        });
-      // $scope.msg = 'Data sent: '+ angular.toJson($scope.languages);
-
-    };
-
-  })
-
-
-
-
   .controller('ProfilCtrl', function($scope, $http, $localStorage, MovieFactory, SerieFactory) {
          $scope.user = ($scope.user == null)? '' :{
             'name' : $localStorage.user[2],
@@ -70,12 +33,9 @@ angular.module('netMediaApp')
 
           $scope.favorisserie = $localStorage.favorisserie;
           $scope.favorismovie = $localStorage.favorismovie;
-          //$scope.favorismovie = ['76757', '76732', '8767', '45673'];
-          // $scope.favorisserie = ['456'];
 
           $scope.movies = [];
           $scope.series = [];
-
 
           $scope.favorismovie.forEach(function(y){
               MovieFactory.getMovie(y).then(function(result){
@@ -86,14 +46,14 @@ angular.module('netMediaApp')
           });
 
 
-
+          if($scope.favorisserie != null){
           $scope.favorisserie.forEach(function(y){
               SerieFactory.getSerie(y).then(function(result){
                 $scope.series[y] = result ;
             }, function (result){
                 alert("Erreur : ça a planté ! pas de bras | pas data");
             });
-          })
+          })}
 
 
 

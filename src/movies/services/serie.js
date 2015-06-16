@@ -24,7 +24,7 @@
 
     function _getSerie(id){
         var defer = $q.defer();
-        $http.get("http://api.themoviedb.org/3/tv/"+id+"?api_key=cc9227d0368f24d2cbcd299743b4075c&append_to_response=account_states,alternative_titles,changes,content_ratings,credits,external_ids,images,keywords,rating,similar,translations,videos").then(function(response) {
+        $http.get("http://api.themoviedb.org/3/tv/"+id+"?api_key=cc9227d0368f24d2cbcd299743b4075c&append_to_response=videos").then(function(response) {
             defer.resolve(response.data);
         }, function(err) {
             defer.reject(err);

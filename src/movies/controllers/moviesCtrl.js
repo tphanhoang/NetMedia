@@ -2,16 +2,7 @@
     'use strict';
     angular.module('netMediaApp')
     .controller('MovieCtrl', MovieCtrl)
-    .controller('MoviesCtrl', MoviesCtrl)
-    .controller('MoviesGenreCtrl', MoviesGenreCtrl)
-    .controller('MoviesSearchCtrl', MoviesSearchCtrl)
-    .controller('LoginCtrl', function($scope, $auth) {
-
-    $scope.authenticate = function(provider) {
-      $auth.authenticate(provider);
-    };
-
-  });
+    .controller('MoviesCtrl', MoviesCtrl);
     
 
     function MovieCtrl($scope, $location, $routeParams, Movie, $localStorage) {
@@ -168,15 +159,5 @@
         });
     }   
    
-   function MoviesGenreCtrl($scope, $location, $routeParams, ListGenreMovies, Movies) {
-        $scope.movies = Movies;
-        $scope.listGenre = ListGenreMovies;
-        $scope.id = $routeParams;
-    }
-
-   function MoviesSearchCtrl($scope, $location, $routeParams, MoviesSearch){
-        $scope.movies = MoviesSearch;
-    }
-
 
 }());

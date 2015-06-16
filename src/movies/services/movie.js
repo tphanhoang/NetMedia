@@ -70,7 +70,7 @@
 
             var defer = $q.defer();
         
-            $http.get("http://api.themoviedb.org/3/movie/"+id+"?api_key=cc9227d0368f24d2cbcd299743b4075c&append_to_response=credits,account_states,alternative_titles,images,keywords,releases,videos,translations,similar,reviews,lists,changes,rating").then(function(response) {
+            $http.get("http://api.themoviedb.org/3/movie/"+id+"?api_key=cc9227d0368f24d2cbcd299743b4075c&append_to_response=credits,videos").then(function(response) {
 
                 var movie = defer.resolve(response.data);
                 if(movie !== false) {
