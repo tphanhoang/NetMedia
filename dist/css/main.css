@@ -748,7 +748,6 @@ h1.tab-top-flop::after {
     right: 0;
     overflow: scroll;
     padding: 20px;
-    width: 715px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -766,14 +765,12 @@ h1.tab-top-flop::after {
     height: auto;
     float: left;
     margin-right: 10px;
-    margin-top: 20px;
   }
 
   .flop {
     width: 380px;
     height: auto;
     float: left;
-    margin-top: 20px;
     margin-bottom: 50px;
   }
 
@@ -796,14 +793,20 @@ h1.tab-top-flop::after {
     margin-left: 35px;
   }
 
-  .favoris {
+  .favorisFilm {
     width: 100%;
     max-width: 785px;
     height: auto;
     float: left;
     margin-bottom: 20px;
   }
-
+  .favorisSerie {
+    width: 100%;
+    max-width: 785px;
+    height: auto;
+    float: right;
+    margin-bottom: 20px;
+  }
   .thumb-fav {
     width: 230px;
     height: 230px;
