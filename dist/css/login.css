@@ -1,34 +1,22 @@
-*, *:before, *:after {
+.profil *, *:before, *:after {
   box-sizing: border-box;
 }
 
-#loadMore {
-  width: 47%;
-  height: 130px;
-  background: #deb90c;
-  border-style: none;
-  border-radius: 2px;
-}
-
-#loadMore:hover {
-  background: #c6a50b;
-}
-
-html {
+.profil html {
   overflow-y: scroll;
 }
 
-body {
+.profil body {
   background: #17181b;
   font-family: 'Titillium Web', sans-serif;
 }
 
-a {
+.profil a {
   text-decoration: none;
   color: #deb90c;
   transition: .5s ease;
 }
-a:hover {
+.profil a:hover {
   color: #c6a50b;
 }
 
@@ -40,7 +28,7 @@ a:hover {
   overflow: hidden;
 }
 
-.form {
+.profil .form {
   background: rgba(43, 43, 43, 0.9);
   padding: 40px;
   max-width: 600px;
@@ -51,17 +39,17 @@ a:hover {
   box-shadow: 0 4px 10px 4px rgba(43, 43, 43, 0.3);
 }
 
-.tab-group {
+.profil .tab-group {
   list-style: none;
   padding: 0;
   margin: 0 0 40px 0;
 }
-.tab-group:after {
+.profil .tab-group:after {
   content: "";
   display: table;
   clear: both;
 }
-.tab-group li a {
+.profil .tab-group li a {
   display: block;
   text-decoration: none;
   padding: 15px;
@@ -74,11 +62,11 @@ a:hover {
   cursor: pointer;
   transition: .5s ease;
 }
-.tab-group li a:hover {
+.profil .tab-group li a:hover {
   background: #c6a50b;
   color: white;
 }
-.tab-group .active a {
+.profil .tab-group .active a {
   background: #deb90c;
   color: white;
 }
@@ -87,14 +75,14 @@ a:hover {
   display: none;
 }
 
-h1 {
+.profil h1 {
   text-align: center;
   color: white;
   font-weight: 300;
   margin: 0 0 40px;
 }
 
-label {
+.profil label {
   position: absolute;
   transform: translateY(6px);
   left: 13px;
@@ -104,21 +92,21 @@ label {
   pointer-events: none;
   font-size: 22px;
 }
-label .req {
+.profil label .req {
   margin: 2px;
   color: #deb90c;
 }
 
-label.active {
+.profil label.active {
   transform: translateY(50px);
   left: 2px;
   font-size: 14px;
 }
-label.active .req {
+.profil label.active .req {
   opacity: 0;
 }
 
-label.highlight {
+.profil label.highlight {
   color: white;
 }
 
@@ -151,7 +139,7 @@ label.highlight {
   margin-left: 33px;
 }
 
-textarea {
+.profil textarea {
   border: 2px solid #a0b3b0;
   resize: vertical;
 }
@@ -175,7 +163,7 @@ textarea {
   margin: 0;
 }
 
-.button {
+.profil button {
   border: 0;
   outline: none;
   border-radius: 0;
@@ -189,16 +177,16 @@ textarea {
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
-.button:hover, .button:focus {
+.profil button:hover, .profil button:focus {
   background: #c6a50b;
 }
 
-.button-block {
+.profil .button-block {
   display: block;
   width: 100%;
 }
 
-.forgot {
+.profil .forgot {
   margin-top: -20px;
   text-align: right;
 }
