@@ -1,8 +1,11 @@
+<div class="topbar-phone">
+    <img id="burger-menu" src="images/burger-menu.png" class="burger-menu"/>
+    <img src="images/logo-netmedia-ok.png" class="logo-phone"/>
+</div>
 <div class="panel panel-primary">
 
-    <div class="panel-heading">
+    <div class="panel-heading slidebox">
         <div class="cbp-spmenu-push">
-            <!-- Début menu à gauche qui slide -->
             <nav class="cbp-spmenu cbp-spmenu-vertical" id="cbp-spmenu-s1">
                 <img src="images/logo-netmedia-ok.png" class="logo-accueil"/>
                 <div class="menu-navigation">
@@ -42,27 +45,12 @@
 
     <div  ng-repeat="serie in series.results" class="movie-block">
         <div class="col-sm-6 col-md-4" >
-            <div class="pull-right" ng-switch on="movie.status">
-                <span ng-switch-when="0" class="label label-success">Disponible</span>
-                <span ng-switch-when="1" class="label label-warning">Occupé(e)</span>
-                <span ng-switch-when="2" class="label label-danger">Blessé(e)</span>
-            </div>
             <div class="thumbnail">
-                <img ng-if="serie.poster_path!=null" src="http://image.tmdb.org/t/p/w500{{serie.poster_path}}" class="image-thumbnail" ng-click="showSerie(serie.id)">
-                <img ng-if="serie.poster_path==null" src="http://image.eiga.k-img.com/images/buzz/29346/darthvader.jpg" class="image-thumbnail" ng-click="showSerie(serie.id)">
-
-                <!-- <img src="http://image.tmdb.org/t/p/w500{{serie.backdrop_path}}" class="image-thumbnail">   -->
+                <img ng-if="serie.poster_path!=null" src="http://image.tmdb.org/t/p/w500{{serie.poster_path}}" class="image-thumbnail" style="height:280px" ng-click="showSerie(serie.id)">
+                <img ng-if="serie.poster_path==null" src="http://image.eiga.k-img.com/images/buzz/29346/darthvader.jpg" class="image-thumbnail" style="height:280px" ng-click="showSerie(serie.id)">
                 <div class="caption">
                     <h2 class="title-home">{{serie.name | limitTo:20}}</h2>
-                    <!-- <p>original_name : {{serie.original_name}}</p>
-                    <p>id : {{serie.id}}</p>  -->
                     <h4 class"title-details">{{serie.first_air_date | limitTo:4}}</h4>
-                    <!-- <p>first_air_date : {{serie.first_air_date}}</p>
-                    <p>origin_country : {{serie.origin_country}}</p>
-                    <p>popularity : {{serie.popularity}}</p>
-                    <p>vote_average : {{serie.vote_average}}</p>
-                    <p>vote_count : {{serie.vote_count}}</p> -->
-                    <!-- <button class="btn btn-primary" ng-click="showSerie(serie.id)">Regarder</button> -->
                 </div>
             </div>
         </div>
@@ -71,27 +59,13 @@
     <div ng-repeat="series in series.more">
         <div  ng-repeat="serie in series" class="movie-block">
             <div class="col-sm-6 col-md-4" >
-                <div class="pull-right" ng-switch on="movie.status">
-                    <span ng-switch-when="0" class="label label-success">Disponible</span>
-                    <span ng-switch-when="1" class="label label-warning">Occupé(e)</span>
-                    <span ng-switch-when="2" class="label label-danger">Blessé(e)</span>
-                </div>
             <div class="thumbnail">
-              <img ng-if="serie.poster_path!=null" src="http://image.tmdb.org/t/p/w500{{serie.poster_path}}" class="image-thumbnail" ng-click="showSerie(serie.id)">
-              <img ng-if="serie.poster_path==null" src="http://image.eiga.k-img.com/images/buzz/29346/darthvader.jpg" class="image-thumbnail" ng-click="showSerie(serie.id)">
+              <img ng-if="serie.poster_path!=null" src="http://image.tmdb.org/t/p/w500{{serie.poster_path}}" class="image-thumbnail" style="height:280px" ng-click="showSerie(serie.id)">
+              <img ng-if="serie.poster_path==null" src="http://image.eiga.k-img.com/images/buzz/29346/darthvader.jpg" class="image-thumbnail" style="height:280px" ng-click="showSerie(serie.id)">
 
                 <div class="caption">
                    <h2 class="title-home">{{serie.name | limitTo:20}}</h2>
-                    <!-- <h3>name : {{serie.name}}</h3>
-                    <p>original_name : {{serie.original_name}}</p>
-                    <p>id : {{serie.id}}</p>   -->
                     <h4 class"title-details">{{serie.first_air_date | limitTo:4}}</h4>
-                    <!-- <p>first_air_date : {{serie.first_air_date}}</p>
-                    <p>origin_country : {{serie.origin_country}}</p>
-                    <p>popularity : {{serie.popularity}}</p>
-                    <p>vote_average : {{serie.vote_average}}</p>
-                    <p>vote_count : {{serie.vote_count}}</p> -->
-                    <!-- <button class="btn btn-primary" ng-click="showSerie(serie.id)">Regarder</button> -->
                 </div>
             </div>
             </div>
@@ -106,7 +80,12 @@
           $(window).scroll(function() {
              if($(window).scrollTop() + $(window).height() > $(document).height() -50) {
                $( "#loadMore" ).trigger( "click" );      }
-          });</script>
+          });
+
+          $("#burger-menu").click(function () {
+   $('.slidebox').slideToggle();
+});
+          </script>
           <button ng-if="series.total_pages>=page"  class="btn btn-primary" id="loadMore" ng-click="showMoreSeries(page)" style="margin:0 auto"> Voir plus de séries ! </button>
             </p>
         </div>

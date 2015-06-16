@@ -1,6 +1,11 @@
+<div class="topbar-phone">
+    <img id="burger-menu" src="images/burger-menu.png" class="burger-menu"/>
+    <img src="images/logo-netmedia-ok.png" class="logo-phone"/>
+</div>
+
 <div class="contentBigTvMovie">
 
-    <div class="panel-heading">
+    <div class="panel-heading slidebox">
 
         <div class="cbp-spmenu-push">
 
@@ -86,14 +91,24 @@
         </div>
             <div class="userActionMovie clearfix">
                     <a href = ""><div class="favoriteAdd fontRegular" ng-click="addFavoris(movie.id.id)">Ajouter aux favoris</div></a>
-                    <a href = "#"><div class="reloadMovie fontRegular">Reprendre la lecture</div></a>
-                </div>
+                    <!-- <a href=""><div class="reloadMovie fontRegular">Reprendre la lecture</div></a> -->
+            </div>
 
 
-         <div class="contentSynopsisTvMovie clearfix">
+        <div class="contentSynopsisTvMovie clearfix">
             <div class="synopsisFont fontRegular">Synopsis</div>
             <p class="resumeTvMovie fontRegular">{{movie.overview}}</p>
-            </div>
         </div>
 
+    <div ng-repeat="(key, result) in movie.videos.results" class="video-youtube">
+        <youtube  code='result.key'>{{result.key}}</youtube>
+    </div>
+
+    </div>
 </div>
+<script type="text/javascript">
+
+$("#burger-menu").click(function () {
+   $('.slidebox').slideToggle();
+});
+</script>
