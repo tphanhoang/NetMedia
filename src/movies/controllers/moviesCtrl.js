@@ -14,20 +14,51 @@
   });
     
 
-    function MovieCtrl($scope, $location, $routeParams, Movie) {
+    function MovieCtrl($scope, $location, $routeParams, Movie, $localStorage) {
         
         $scope.movie = Movie;
         $scope.movie.id = $routeParams;
+        
+
+        $scope.addFavoris = function(id){
+            $localStorage.favorismovie = ($localStorage.favorismovie == null)? [] : $localStorage.favorismovie;
+            $localStorage.favorismovie.push(id);
+        } ;
+
+        $scope.user = {
+            'name' : $localStorage.user[2],
+            'id' : $localStorage.user[0],
+            'email' : $localStorage.user[1],
+            'birthday' : $localStorage.user[3],
+            'gender' : $localStorage.user[4],
+          };
+
         
         $scope.back = function() {
             $location.path('/movies');
         }
     }
 
-    function MoviesCtrl($scope, $location, Movies, ListGenreMovies, MovieFactory) {
+    function MoviesCtrl($scope, $location, Movies, ListGenreMovies, MovieFactory, $localStorage) {
         $scope.listGenre = ListGenreMovies;
         
         $scope.genreList = {};
+
+
+        $scope.addFavoris = function(id){
+            $localStorage.favorismovie = ($localStorage.favorismovie == null)? [] : $localStorage.favorismovie;
+            $localStorage.favorismovie.push(id);
+        } ;
+
+
+        $scope.user = {
+            'name' : $localStorage.user[2],
+            'id' : $localStorage.user[0],
+            'email' : $localStorage.user[1],
+            'birthday' : $localStorage.user[3],
+            'gender' : $localStorage.user[4],
+          };
+
 
         $scope.categories = {
             'upcoming':"À venir",

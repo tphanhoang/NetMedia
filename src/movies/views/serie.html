@@ -22,7 +22,7 @@
 
                 <div class="user">
                     <img class="user-img" src="images/placeholder.png"/>
-                    <div class="user-name">User Name</div>
+                    <div class="user-name">{{user}}</div>
                 </div>
 
             
@@ -74,7 +74,7 @@
 
             </div>
 
-            <div class=" regularFont"><label class="castBy">Nombre de vues :</label>{{serie.popularity}}
+            <div class=" regularFont"><label class="castBy">Note :</label>{{serie.popularity}}
             </div>
 
             <div class="castings">
@@ -88,7 +88,7 @@
 
             </div>
             <div class="actionInternaute">
-                    <a href = "#"><div class="favoriteAdd fontRegular">Ajouter aux favoris</div></a>
+                    <a href = ""><div class="favoriteAdd fontRegular" ng-click="addFavoris(serie.id)">Ajouter aux favoris</div></a>
                     <a href = "#"><div class="reloadMovie fontRegular">Reprendre la lecture</div></a>
             </div>
         </div>

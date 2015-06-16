@@ -36,7 +36,7 @@
                 <div class="user">
                     <a href="#/profil">
                         <img class="user-img" src="images/placeholder.png"/>
-                        <div class="user-name">User Name</div>
+                        <div class="user-name">{{user.name}}</div>
                     </a>
                 </div>
             </nav>
@@ -191,7 +191,7 @@
                         <p>genre_ids : <ul><li ng-repeat="(key, genre) in movie.genre_ids">{{genre}} (traité TpH : {{ genreList[genre] }} )</li></ul></p>
                         <p>vote_average : {{movie.vote_average}}</p>
                         <p>original_language : {{movie.original_language}}</p> -->
-                        <div class="favoriteAdd fontRegular coeurNote"></div><h4 class"title-details">{{movie.release_date | limitTo:4}}</h4>
+                        <div class="favoriteAdd fontRegular coeurNote" ng-click="addFavoris(movie.id)" style="cursor:pointer;"></div><h4 class"title-details">{{movie.release_date | limitTo:4}}</h4>
                         
                        <!--  <p>overview : {{movie.overview}}</p>
                         <p>popularity : {{movie.popularity}}</p>

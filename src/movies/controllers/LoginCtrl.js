@@ -59,7 +59,7 @@ angular.module('netMediaApp')
 
 
 
-  .controller('ProfilCtrl', function($scope, $http, $localStorage) {
+  .controller('ProfilCtrl', function($scope, $http, $localStorage, MovieFactory, SerieFactory) {
          $scope.user = {
             'name' : $localStorage.user[2],
             'id' : $localStorage.user[0],
@@ -67,6 +67,32 @@ angular.module('netMediaApp')
             'birthday' : $localStorage.user[3],
             'gender' : $localStorage.user[4],
           };
+
+          $scope.favorisserie = $localStorage.favorisserie;  
+          $scope.favorismovie = $localStorage.favorismovie;  
+
+          $scope.movies = [];
+          $scope.series = [];
+
+
+          $scope.favorismovie.forEach(function(y){
+              MovieFactory.getMovie(y).then(function(result){
+                $scope.movies[y] = result ;  
+            }, function (result){
+                alert("Erreur : ça a planté ! pas de bras | pas data");
+            });
+          });
+
+
+
+          $scope.favorisserie.forEach(function(y){
+              SerieFactory.getSerie(y).then(function(result){
+                $scope.series[y] = result ;  
+            }, function (result){
+                alert("Erreur : ça a planté ! pas de bras | pas data");
+            });
+          })
+      
 
 
 });

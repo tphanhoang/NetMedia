@@ -3,11 +3,10 @@
 		<div class="menu-navigation">
 			<div class="user-pic"></div>
 
-			<h3 class="user-name-profil">{{user}}</h3>
+			<h3 class="user-name-profil"></h3>
 				<a class="selected" href="#/films" style="color:#000">FILMS</a>
 				<a class="" href="#/series">SÉRIES</a>
 		</div>
-
 		</div>
 </nav>
 
@@ -21,15 +20,11 @@
 
 						<div class="content-favoris">
 
-							<div class="thumb-fav"></div>
-							<div class="thumb-fav"></div>
-							<div class="thumb-fav"></div>
-							<div class="thumb-fav"></div>
-							<div class="thumb-fav"></div>
-							<div class="thumb-fav"></div>
-							<div class="thumb-fav"></div>
-							<div class="thumb-fav"></div>
-							<div class="thumb-fav"></div>
+							<div class="thumb-fav" ng-repeat="movie in favorismovie">
+
+								<a href="#/movie/{{movie}}">{{movies[movie].title}}
+								<img src="http://image.tmdb.org/t/p/w185{{movies[movie].poster_path}}"></a>
+							</div>
 
 						</div>
 
@@ -47,15 +42,11 @@
 
 									<div class="content-favoris">
 
-										<div class="thumb-fav"></div>
-										<div class="thumb-fav"></div>
-										<div class="thumb-fav"></div>
-										<div class="thumb-fav"></div>
-										<div class="thumb-fav"></div>
-										<div class="thumb-fav"></div>
-										<div class="thumb-fav"></div>
-										<div class="thumb-fav"></div>
-										<div class="thumb-fav"></div>
+										<div class="thumb-fav" ng-repeat="serie in favorisserie">
+
+								<a href="#/serie/{{serie}}">{{series[serie].name}}
+								<img src="http://image.tmdb.org/t/p/w185{{series[serie].poster_path}}"></a>
+							</div>
 
 									</div>
 

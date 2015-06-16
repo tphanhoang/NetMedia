@@ -8,7 +8,7 @@
         .controller('SeriesSearchCtrl', SeriesSearchCtrl);
 
 
-    function SerieCtrl($scope, $location, $routeParams, Serie, SerieSeason, SerieFactory) {
+    function SerieCtrl($scope, $location, $routeParams, Serie, SerieSeason, SerieFactory, $localStorage) {
 
         $scope.serie = Serie;
         $scope.serie_id = $routeParams.id;
@@ -16,6 +16,20 @@
         $scope.serieSeason.season_number = 1;
         $scope.serieEpisode = 't';
 
+
+        $scope.user = {
+            'name' : $localStorage.user[2],
+            'id' : $localStorage.user[0],
+            'email' : $localStorage.user[1],
+            'birthday' : $localStorage.user[3],
+            'gender' : $localStorage.user[4],
+          };
+        
+        $scope.addFavoris = function(id){
+            $localStorage.favorisserie = ($localStorage.favorisserie == null)? [] : $localStorage.favorisserie;
+            $localStorage.favorisserie.push(id);
+        } ;
+        
         $scope.back = function() {
             $location.path('/series');
         };
@@ -66,7 +80,7 @@
         };
     }
     
-    function SeriesCtrl($scope, $location, Series, SerieFactory) {
+    function SeriesCtrl($scope, $location, Series, SerieFactory, $localStorage) {
 
         $scope.series = Series;
         $scope.seriesDefault = Series;
@@ -79,6 +93,21 @@
             'top_rated':"Les mieux notés",
             'popular':"Les plus populaires"
             };
+
+        
+        $scope.addFavoris = function(id){
+            $localStorage.favorisserie = ($localStorage.favorisserie == null)? [] : $localStorage.favorisserie;
+            $localStorage.favorisserie.push(id);
+        } ;
+
+
+        $scope.user = {
+            'name' : $localStorage.user[2],
+            'id' : $localStorage.user[0],
+            'email' : $localStorage.user[1],
+            'birthday' : $localStorage.user[3],
+            'gender' : $localStorage.user[4],
+          };
 
         $scope.changeOrder = function($scope,filter) {
             $scope.query.order = filter;
