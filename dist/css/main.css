@@ -224,7 +224,7 @@ body {
 
 .image-thumbnail {
   width: 100%;
-  
+
 }
 
 .image-thumbnail:hover {
@@ -791,7 +791,6 @@ h1.tab-top-flop::after {
 
   .favorisFilm {
     width: 100%;
-    max-width: 785px;
     height: auto;
     float: left;
     margin-bottom: 20px;
@@ -800,7 +799,8 @@ h1.tab-top-flop::after {
     width: 100%;
     max-width: 785px;
     height: auto;
-    float: right;
+    float: left;
+    margin-top:20px;
     margin-bottom: 20px;
   }
   .thumb-fav {
