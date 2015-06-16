@@ -73,12 +73,6 @@
         $scope.movies.more=[];
 
         $scope.showMoreMovies = function(page){
-            // MovieFactory.getMovies($scope.categoryValue,page).then(function(result){
-            //     $scope.movies.more[page-2] = result.results;
-            // }, function (result){
-            //     alert("Erreur : ça a planté ! pas de bras | pas data");
-            // });
-            // $scope.page ++;
             if($scope.searchTest){
             MovieFactory.getMoviesSearch($scope.SearchTestValue, page).then(function(result){
                 $scope.movies.more[page-2] = result.results;
@@ -108,11 +102,12 @@
             Movies.page  = page<Movies.total_pages? $scope.page ++ : $scope.page;
             }
         }
-        $scope.search = function(value){
+        $scope.search = function(value,page){
             if(value!='' ){
                 MovieFactory.getMoviesSearch(value, page).then(function(result){  
                     $scope.page = 2;                  
-                    $scope.movies = result;  
+                    $scope.movies = result; 
+                    $scope.series.more=[]; 
                              
                     $scope.searchTest = true;                    
                     $scope.SearchTestValue = value;                  
@@ -124,7 +119,7 @@
                 $scope.movies = $scope.moviesDefault;
                 $scope.searchTest = false;
                 $scope.page = 2;
-                $scope.series.more=[];      
+                $scope.movies.more=[];      
             }  
         }
         $scope.genre = function(value){
