@@ -14,20 +14,20 @@ $normal: 400;
 $bold: 600;
 $br: 4px;
 
-*, *:before, *:after {
+.profil *, *:before, *:after {
   box-sizing: border-box;
 }
 
-html {
+.profil html {
 	overflow-y: scroll;
 }
 
-body {
+.profil body {
   background:$body-bg;
   font-family: 'Titillium Web', sans-serif;
 }
 
-a {
+.profil a {
   text-decoration:none;
   color:$main;
   transition:.5s ease;
@@ -46,7 +46,7 @@ a {
 
 }
 
-.form {
+.profil .form {
   background:rgba($form-bg,.9);
   padding: 40px;
   max-width:600px;
@@ -57,7 +57,7 @@ a {
   box-shadow:0 4px 10px 4px rgba($form-bg,.3);
 }
 
-.tab-group {
+.profil .tab-group {
   list-style:none;
   padding:0;
   margin:0 0 40px 0;
@@ -94,14 +94,14 @@ a {
 }
 
 
-h1 {
+.profil h1 {
   text-align:center;
   color:$white;
   font-weight:$thin;
   margin:0 0 40px;
 }
 
-label {
+.profil label {
   position:absolute;
   transform:translateY(6px);
   left:13px;
@@ -116,7 +116,7 @@ label {
   }
 }
 
-label.active {
+.profil label.active {
   transform:translateY(50px);
   left:2px;
   font-size:14px;
@@ -125,7 +125,7 @@ label.active {
   }
 }
 
-label.highlight {
+.profil label.highlight {
 	color:$white;
 }
 
@@ -158,7 +158,7 @@ label.highlight {
 
 
 }
-textarea {
+.profil textarea {
   border:2px solid $gray-light;
   resize: vertical;
 }
@@ -185,7 +185,7 @@ textarea {
   }
 }
 
-.button {
+.profil button {
   border:0;
   outline:none;
   border-radius:0;
@@ -203,12 +203,12 @@ textarea {
   }
 }
 
-.button-block {
+.profil .button-block {
   display:block;
   width:100%;
 }
 
-.forgot {
+.profil .forgot {
   margin-top:-20px;
   text-align:right;
 }
