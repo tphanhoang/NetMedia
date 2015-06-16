@@ -1,8 +1,30 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:700italic,300,700,500italic,400);
+a:link {
+  text-decoration: none; }
+
 body {
   background-color: #17181b; }
 
 .regularFont {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.3em;
+  color: #fff; }
+
+.regularFontScndColor {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: #deb90c; }
+
+.regularFontItalic {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  font-style: italic;
+  color: #fff; }
+
+.regularFontOverviewEpisode {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 1em;
@@ -18,7 +40,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   color: #fff;
-  font-size: 1.1em; }
+  font-size: 1.2em; }
 
 .synopsisFont {
   font-family: 'Roboto', sans-serif;
@@ -48,6 +70,12 @@ h4 {
 
 .seasonNumberFont {
   font-size: 1.3em; }
+
+.fontEpisodeTvSerie a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.9em; }
 
 .gradient {
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */

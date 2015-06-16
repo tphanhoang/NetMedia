@@ -700,7 +700,7 @@ h1.tab-top-flop::after {
     margin-top: 50px;
   }
 
-  hr {
+  .sub-profil-bio {
     width: 50px;
     height: 1px;
     color: white;
@@ -728,7 +728,7 @@ h1.tab-top-flop::after {
   }
 
   .menu-navigation-profil > a {
-    color: white;
+    color: #FFF;
     padding: 10px 38px 10px;
     text-decoration: none;
     font-family: "Roboto-Bold";
@@ -748,12 +748,13 @@ h1.tab-top-flop::after {
     right: 0;
     overflow: scroll;
     padding: 20px;
+    width: 715px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
   }
 
-  hr.subtitle {
+  .sub-line-profil {
     width: 100%;
     height: 1px;
     color: #757575;
@@ -823,7 +824,7 @@ h1.tab-top-flop::after {
   }
 
   .menu-navigation-profil > a {
-    color: white;
+    color: #FFF;
     padding: 10px 38px 10px;
     text-decoration: none;
     font-family: "Roboto-Bold";
@@ -854,7 +855,7 @@ h1.tab-top-flop::after {
     margin-top: 0px;
   }
 
-  hr {
+  .sub-profil-bio {
     width: 50px;
     height: 1px;
     color: white;
@@ -887,7 +888,7 @@ h1.tab-top-flop::after {
     padding: 20px;
   }
 
-  hr.subtitle {
+  .sub-line-profil {
     width: 100%;
     height: 1px;
     color: #757575;
@@ -2265,3 +2266,4 @@ body.vjs-full-window {
 /* -----------------------------------------------------------------------------
 The original source of this file lives at
 https://github.com/videojs/video.js/blob/master/src/css/video-js.less */
+
