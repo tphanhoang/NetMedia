@@ -44,9 +44,20 @@
    color:$primary-color;
 }
 
+
+[type="search"]:focus {
+
+	background-color: #DEB90C;
+	color: #000;
+	width: 200px;
+	transition: all 0.3s ease 0s;
+	font-family: 'Roboto', sans-serif;
+
+}
+
 .user{
 	margin-top:-24px;
-	margin-left:10%;
+	// margin-left:10%;
 }
 
 .user-img{
