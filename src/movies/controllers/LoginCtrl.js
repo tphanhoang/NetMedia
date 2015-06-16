@@ -5,10 +5,15 @@ angular.module('netMediaApp')
 
     $scope.signUp = function(user) {
       data =JSON.stringify(user);
-      $http.post('/netmedia/scripts/signUp.php', data);
-         $location.path('/login?'); 
-
+      $http.post('/netmedia/scripts/signUp.php', data).then(function(results) { 
         
+
+        alert('Vous pouvez dés à présent vous connecter');
+
+
+
+
+    })
       
     };
 

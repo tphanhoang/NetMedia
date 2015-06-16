@@ -10,7 +10,7 @@
                 </div>
                 <div class="filters filters-menu-left">
                     <label class="genre">Genre : </label>
-                    <select class="form-control" 
+                    <select class="form-control"
                             ng-change="genre(value)"
                             ng-model="value"
                             ng-options="genre.id as genre.name for genre in listGenre.genres"
@@ -19,7 +19,7 @@
                     </select><br/><br/><br/><br/>
                     <label class="genre">Trier par : </label>
                     <select
-                            ng-change="category(value,1)" 
+                            ng-change="category(value,1)"
                             ng-model="value"
                             ng-options="key as value for (key, value) in categories"
                         >
@@ -84,13 +84,13 @@
                                         <div class="user-name">User Name</div>
                                     </div>
                                 </div>
-                            </form> 
-                        </header> 
+                            </form>
+                        </header>
                     </section>
                 </div>
             </div> -->
         </div>
-    </div> 
+    </div>
     <!-- <h3 class="panel-title panel-title title--inline">Liste des Films Populaires | <a href="#/films">Films</a> | <a href="#/series">Series</a> </h3> -->
      <!-- <div id="page">
             <div class="header Fixed">
@@ -104,9 +104,9 @@
                     <li><a href="#/films">FILMS</a></li>
                     <li><a href="#/series">SÉRIES</a></li>
 
-                </ul>            
+                </ul>
             </div>
-           
+
             <nav id="menu">
                 <ul>
                     <li><a href="#content">Introduction</a></li>
@@ -115,7 +115,7 @@
                     <li><a href="#third">Third section</a></li>
                 </ul>
             </nav>
-        </div>  --> 
+        </div>  -->
     <!--  <form style="width:370px" class="filters-search-user">
         <div class="filters-search-user">
         <div class="filters">
@@ -149,11 +149,11 @@
     </div>
     </form>  -->
 
-    <!-- 
+    <!--
     tibo navbar
     <form style="width:450px;margin:5px;padding:15px;border:solid 1px black;background-color:#68228B">
         <label style="color:white">Tri par genre : </label>
-        <select class="form-control" 
+        <select class="form-control"
                 ng-change="genre(value)"
                 ng-model="value"
                 ng-options="genre.id as genre.name for genre in listGenre.genres"
@@ -179,7 +179,9 @@
                     <span ng-switch-when="2" class="label label-danger">Blessé(e)</span>
                 </div>
                 <div class="thumbnail">
-                    <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="image-thumbnail" ng-click="showMovie(movie.id)"> 
+                  <img ng-if="movie.poster_path!=null" src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="image-thumbnail" ng-click="showMovie(movie.id)">
+                  <img ng-if="movie.poster_path==null" src="http://image.eiga.k-img.com/images/buzz/29346/darthvader.jpg" class="image-thumbnail" ng-click="showMovie(movie.id)">
+
                     <!-- <img src="http://image.tmdb.org/t/p/w500{{movie.backdrop_path}}" class="image-thumbnail">  -->
                     <div class="caption">
                         <!-- <p>adult : {{movie.adult}}</p> -->
@@ -210,7 +212,8 @@
                     <span ng-switch-when="2" class="label label-danger">Blessé(e)</span>
                 </div>
                 <div class="thumbnail">
-                    <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="image-thumbnail" ng-click="showMovie(movie.id)"> 
+                  <img ng-if="movie.poster_path!=null" src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="image-thumbnail" ng-click="showMovie(movie.id)">
+                  <img ng-if="movie.poster_path==null" src="http://image.eiga.k-img.com/images/buzz/29346/darthvader.jpg" class="image-thumbnail" ng-click="showMovie(movie.id)">
                     <!-- <img src="http://image.tmdb.org/t/p/w500{{movie.backdrop_path}}" class="image-thumbnail">  -->
                     <div class="caption">
                         <!-- <p>adult : {{movie.adult}}</p> -->
@@ -232,9 +235,8 @@
             </div>
         </div>
     </div>
-  
+
 <button class="btn btn-primary" ng-click="showMoreMovies(page)" style="margin:0 auto"> Voir plus de films ! </button>
     </div>
 
 </div>
-  

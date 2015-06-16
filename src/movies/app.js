@@ -5,7 +5,7 @@
     $authProvider.facebook({
         clientId: '375442245978064'
     });
-    
+
     $authProvider.google({
         url: 'auth/google',
         clientId: '215811154628-p7dhsd30jkhike6cnm55qtc2ojdvcdob.apps.googleusercontent.com'
@@ -135,8 +135,7 @@
                     templateUrl: 'src/movies/views/login.html',
                     controller: 'loginCtrl'
                 })
-             
+
                 .otherwise('/movies');
         });
 }());
-
