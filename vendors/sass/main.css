@@ -224,8 +224,7 @@ body {
 
 .image-thumbnail {
   width: 100%;
-  height: 280px;
-}
+  }
 
 .image-thumbnail:hover {
   outline: 3px solid white;

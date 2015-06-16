@@ -1,6 +1,11 @@
+<div class="topbar-phone">
+    <img id="burger-menu" src="images/burger-menu.png" class="burger-menu"/>
+    <img src="images/logo-netmedia-ok.png" class="logo-phone"/>
+</div>
+
 <div class="contentBigTvMovie container page-header">
 
-    <div class="panel-heading">
+    <div class="panel-heading slidebox">
 
         <div class="cbp-spmenu-push">
 
@@ -13,8 +18,8 @@
 
                 <div class="menu-navigation">
 
-                    <a class="selected" href="#/films" style="color:#000">FILMS</a>
-                    <a class="" href="#/series">SÉRIES</a>
+                    <a class="" href="#/films">FILMS</a>
+                    <a class="selected" href="#/series" style="color:#000">SÉRIES</a>
 
                 </div>
 
@@ -89,7 +94,7 @@
             </div>
             <div class="actionInternaute">
                     <a href = ""><div class="favoriteAdd fontRegular" ng-click="addFavoris(serie.id)">Ajouter aux favoris</div></a>
-                    <a href = "#"><div class="reloadMovie fontRegular">Reprendre la lecture</div></a>
+                   <!--  <a href = "#"><div class="reloadMovie fontRegular">Reprendre la lecture</div></a> -->
             </div>
         </div>
 
@@ -99,7 +104,7 @@
 
     <div class="bigContentPageTvMovie clearfix">
 
-        <div class="contentSynopsisTvMovieMarge">
+        <div class="contentSynopsisTvMovieMarge contentSynopsisTvMovie">
             
         <div class="synopsisFont fontRegular">Synopsis</div>
 
@@ -142,8 +147,18 @@
                 
                 </div>
 
+                  <div ng-repeat="(key, result) in serie.videos.results" class="video-youtube">
+        <youtube  code='result.key'>{{result.key}}</youtube>
+    </div>
+
         </div>
     
     </div>
 
 </div>
+<script type="text/javascript">
+
+$("#burger-menu").click(function () {
+   $('.slidebox').slideToggle();
+});
+</script>
