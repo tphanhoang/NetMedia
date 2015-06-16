@@ -179,8 +179,8 @@
                     <span ng-switch-when="2" class="label label-danger">Blessé(e)</span>
                 </div>
                 <div class="thumbnail">
-                    <img ng-if="movie.poster_path" == null src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="image-thumbnail" ng-click="showMovie(movie.id)">
-                    <img ng-if="notNull" src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="image-thumbnail" ng-click="showMovie(movie.id)">
+                  <img ng-if="movie.poster_path!=null" src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="image-thumbnail" ng-click="showMovie(movie.id)">
+                  <img ng-if="movie.poster_path==null" src="http://image.eiga.k-img.com/images/buzz/29346/darthvader.jpg" class="image-thumbnail" ng-click="showMovie(movie.id)">
 
                     <!-- <img src="http://image.tmdb.org/t/p/w500{{movie.backdrop_path}}" class="image-thumbnail">  -->
                     <div class="caption">
@@ -212,7 +212,8 @@
                     <span ng-switch-when="2" class="label label-danger">Blessé(e)</span>
                 </div>
                 <div class="thumbnail">
-                    <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="image-thumbnail" ng-click="showMovie(movie.id)">
+                  <img ng-if="movie.poster_path!=null" src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="image-thumbnail" ng-click="showMovie(movie.id)">
+                  <img ng-if="movie.poster_path==null" src="http://image.eiga.k-img.com/images/buzz/29346/darthvader.jpg" class="image-thumbnail" ng-click="showMovie(movie.id)">
                     <!-- <img src="http://image.tmdb.org/t/p/w500{{movie.backdrop_path}}" class="image-thumbnail">  -->
                     <div class="caption">
                         <!-- <p>adult : {{movie.adult}}</p> -->

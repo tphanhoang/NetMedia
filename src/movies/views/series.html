@@ -77,8 +77,9 @@
                     <span ng-switch-when="2" class="label label-danger">Blessé(e)</span>
                 </div>
             <div class="thumbnail">
-                <img src="http://image.tmdb.org/t/p/w500{{serie.poster_path}}" class="image-thumbnail" ng-click="showSerie(serie.id)">
-                <!-- <img src="http://image.tmdb.org/t/p/w500{{serie.backdrop_path}}" class="image-thumbnail">   -->
+              <img ng-if="serie.poster_path!=null" src="http://image.tmdb.org/t/p/w500{{serie.poster_path}}" class="image-thumbnail" ng-click="showSerie(serie.id)">
+              <img ng-if="serie.poster_path==null" src="http://image.eiga.k-img.com/images/buzz/29346/darthvader.jpg" class="image-thumbnail" ng-click="showSerie(serie.id)">
+
                 <div class="caption">
                    <h2 class="title-home">{{serie.name | limitTo:20}}</h2>
                     <!-- <h3>name : {{serie.name}}</h3>

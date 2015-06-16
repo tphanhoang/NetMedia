@@ -3,9 +3,9 @@
     <div class="panel-heading">
 
         <div class="cbp-spmenu-push">
-        
+
             <nav class="cbp-spmenu cbp-spmenu-vertical" id="cbp-spmenu-s1" >
-                
+
                 <img id="showLeft" src="images/burger-menu.png"/ class="burger-menu"/>
 
                 <img src="images/logo-netmedia-ok.png" class="logo-accueil"/>
@@ -23,59 +23,60 @@
                     <img class="user-img" src="images/placeholder.png"/>
                     <div class="user-name">User Name</div>
                 </div>
-            
-            </nav>                        
-                        
+
+            </nav>
+
 
 
 
 
     </div>
 
-</div> 
+</div>
 
 <div class="mainContentPageTvMovie">
 
     <div class="headerContent">
 
         <div class="gradient"></div>
-    
-        <div class="backdropImg" style="background-image:url(http://image.tmdb.org/t/p/w1280{{serie.backdrop_path}})"></div>     
 
+        <div class="backdropImg" ng-if="serie.backdrop_path!=null" style="background-image:url(http://image.tmdb.org/t/p/w1280{{serie.backdrop_path}})"></div>
+        <div class="backdropImg" ng-if="serie.backdrop_path!=null" style="background-image:url(http://www.hdwallpapers.in/walls/fantasy_space-wide.jpg)"></div>
     </div>
 
     <div class="titleTvMovieContener">
-                
+
                 <h2 class="titleTvMovies">{{serie.name}}</h2>
-                
+
     </div>
 
     <div class="infoTvMovie">
 
         <div class="posterContentTvMovie">
 
-            <img class="posterImgTvMovie" ng-src="http://image.tmdb.org/t/p/w342{{serie.poster_path}}"/>
+          <img ng-if="serie.poster_path!=null" src="http://image.tmdb.org/t/p/w500{{serie.backdrop_path}}" class="image-thumbnail" ng-click="showSerie(serie.id)">
+          <img ng-if="serie.poster_path==null" src="http://image.eiga.k-img.com/images/buzz/29346/darthvader.jpg" class="image-thumbnail" ng-click="showSerie(serie.id)">
 
         </div>
-            
+
         <div class="contentTvMovieInfo">
-            
+
             <div class="detailTvMovie regularFont">
-                
+
                 <span>
-                    <label class="castBy">Date de sortie :</label>{{serie.first_air_date}} 
+                    <label class="castBy">Date de sortie :</label>{{serie.first_air_date}}
                 </span>
                 <br/><br/><br/>
                 <label class="castBy">Genres :</label>
                 <span ng-repeat="(key, genre) in serie.genres | limitTo:3"> {{genre.name}} </span>
                 <span>
-                    {{serie.runtime}} 
+                    {{serie.runtime}}
                 </span>
             </div>
 
             <div class=" regularFont"><label class="castBy">Nombre de vues :</label>{{serie.popularity}}
             </div>
-            
+
             <div class="castings">
                 <label class="castBy">Réalisé par :</label>
                 <span class="fontRegular" ng-repeat="real in serie.created_by" >{{real.name}}, </span><br /><br /><br />
@@ -92,9 +93,9 @@
                 <a href = "#"><div class="favoriteAdd fontRegular">Ajouter aux favoris</div></a>
                 <a href = "#"><div class="reloadMovie fontRegular">Reprendre la lecture</div></a>
     </div>
-    
+
     <div class="contentSynopsisTvMovie clearfix">
-        
+
         <div class="synopsisFont fontRegular">Synopsis</div>
 
         <p class="resumeTvMovie fontRegular">{{serie.overview}}</p>
@@ -109,7 +110,7 @@
         episode séléctionné : {{serieEpisode.episode_number}}<br>
 
     </div>
-       
+
 
        <!--  <div class="panel panel-primary">
             <div class="panel-heading">
@@ -117,12 +118,12 @@
             </div>
 
             <ul>
-           
+
             <li><label>name : </label> {{serie.name}}</li>
-            <li><label>backdrop_path : </label> 
+            <li><label>backdrop_path : </label>
 
             <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{serie.backdrop_path}}" /> </li>
-            <li><label>created_by : </label> 
+            <li><label>created_by : </label>
                  <ul ng-repeat="(key, creat) in serie.created_by">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>id :</label> {{creat.id}}</li>
@@ -132,7 +133,7 @@
             </li>
             <li><label>episode_run_time : </label> {{serie.episode_run_time}}</li>
             <li><label>first_air_date : </label> {{serie.first_air_date}}</li>
-            <li><label>genres : </label> 
+            <li><label>genres : </label>
                  <ul ng-repeat="(key, genre) in serie.genres">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>id :</label> {{genre.id}}</li>
@@ -151,9 +152,9 @@
             <li><label>original_title : </label> {{serie.original_title}}</li>
             <li><label>overview : </label> {{serie.overview}}</li>
             <li><label>popularity : </label> {{serie.popularity}}</li>
-            <li><label>poster_path : </label> 
+            <li><label>poster_path : </label>
             <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{serie.poster_path}}" /></li>
-            <li><label>networks : </label>                 
+            <li><label>networks : </label>
                  <ul ng-repeat="(key, network) in serie.networks">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>id :</label> {{network.id}}</li>
@@ -177,10 +178,10 @@
             </li>
             <li><label>status : </label> {{serie.status}}</li>
             <li><label>type : </label> {{serie.type}}</li>
-            
+
             <li><label>production_companies : </label> {{production_companies}}
             </li>
-            <li><label>status : </label> {{serie.status}}</li>            
+            <li><label>status : </label> {{serie.status}}</li>
             <li><label>vote_average : </label> {{serie.vote_average}}</li>
             <li><label>vote_count : </label> {{serie.vote_count}}</li>
 
@@ -195,7 +196,7 @@
                 <ul ng-repeat="(key, result) in serie.similar.results">
                     <li><label>array :</label> {{key}}<ul>
                         <li><label>id :</label> {{result.id}}</li>
-                        <li><label>backdrop_path :</label> 
+                        <li><label>backdrop_path :</label>
                         <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{result.backdrop_path}}" />
                         </li>
                         <li><label>first_air_date :</label> {{result.first_air_date}}</li>
@@ -208,7 +209,7 @@
                 </ul>
             </li>
         </ul>
-        
+
 
          <div class="panel-heading">
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [serie/id/alternative_titles] (TPH)</h3>
@@ -220,7 +221,7 @@
                 <ul ng-repeat="(key, result) in serie.alternative_titles.results">
                     <li><label>cast (array) :</label> {{key}}<ul>
                         <li><label>title :</label> {{result.title}}</li>
-                        <li><label>iso_3166_1 :</label> {{result.iso_3166_1}}</li>                    
+                        <li><label>iso_3166_1 :</label> {{result.iso_3166_1}}</li>
                         </ul></li>
                 </ul>
             </li>
@@ -234,7 +235,7 @@
                 <ul ng-repeat="(key, result) in serie.changes.results">
                     <li><label>cast (array) :</label> {{key}}<ul>
                         <li><label>iso_3166_1 :</label> {{result.iso_3166_1}}</li>
-                        <li><label>rating :</label> {{result.rating}}</li>                    
+                        <li><label>rating :</label> {{result.rating}}</li>
                         </ul></li>
                 </ul>
             </li>
@@ -272,7 +273,7 @@
                 </ul>
             </li>
         </ul>
-        
+
          <div class="panel-heading">
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [serie/id/external_ids] (TPH)</h3>
         </div>
@@ -290,13 +291,13 @@
             <h3 class="panel-title panel-title title--inline">Infos de l'Api [serie/id/images] (TPH)</h3>
         </div>
 
- 
+
      <ul>
             <li><label>id :</label> {{serie.images.id}}</li><li>
                 <ul ng-repeat="(key, backdrop) in serie.images.backdrops">
                     <li><label>Backdrop (array) :</label> {{key}}<ul>
                         <li><label>aspect_ratio :</label> {{backdrop.aspect_ratio}}</li>
-                        <li><label>file_path :</label> 
+                        <li><label>file_path :</label>
                         <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{backdrop.file_path}}" /></li>
                         <li><label>height :</label> {{backdrop.height}}</li>
                         <li><label>width :</label> {{backdrop.width}}</li>
@@ -306,7 +307,7 @@
                         </ul></li><li>
                 <ul ng-repeat="(key, poster) in serie.images.posters">
                     <li><label>Poster (array) :</label> {{key}}<ul>
-                    
+
                         <li><label>aspect_ratio :</label> {{poster.aspect_ratio}}</li>
                         <li><label>file_path :</label> <img class="thumbnail thumbnail--inline" ng-src="http://image.tmdb.org/t/p/w500{{poster.file_path}}" /> </li>
                         <li><label>height :</label> {{poster.height}}</li>
@@ -338,7 +339,7 @@
             <li><label>id :</label> {{serie.translations.id}}</li>
             <li><ul ng-repeat="(key, translation) in serie.translations.translations">
                 <li><label>iso_639_1 :</label> {{translation.iso_639_1}}</li>
-                
+
             <li><label>name :</label> {{translation.name}}</li>
             <li><label>english_name :</label> {{translation.english_name}}</li>
             </ul></li>
@@ -350,7 +351,7 @@
         <ul>
             <li><label>id :</label> {{serie.videos.id}}</li>
             <li> array : <ul ng-repeat="(key, result) in serie.videos.results">
-                
+
                 <li><label>iso_639_1 :</label> {{result.iso_639_1}}</li>
                 <li><label>id :</label> {{result.id}}</li>
                 <li><label>key :</label> <youtube code='result.key'>{{result.key}} </youtube></li>

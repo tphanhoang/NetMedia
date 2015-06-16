@@ -1,15 +1,15 @@
 <div class="contentBigTvMovie">
-    
+
     <div class="panel-heading">
-        
+
         <div class="cbp-spmenu-push">
 
             <nav class="cbp-spmenu cbp-spmenu-vertical" id="cbp-spmenu-s1" >
-                
+
                 <img src="images/logo-netmedia-ok.png" class="logo-accueil"/>
-                
+
                 <div class="menu-navigation">
-                    
+
                     <a class="selected" href="#/films" style="color:#000">FILMS</a>
                     <a class="" href="#/series">SÉRIES</a>
 
@@ -20,37 +20,38 @@
                     <img class="user-img" src="images/placeholder.png"/>
                     <div class="user-name">User Name</div>
                 </div>
-            
+
             </nav>
 
         </div>
 
-    </div> 
-        
+    </div>
+
     <div class="mainContentPageTvMovie">
-         
+
          <div class="headerContent">
-            
+
             <div class="gradient"></div>
-            
-            <div class="backdropImg" style="background-image:url(http://image.tmdb.org/t/p/w1280{{movie.backdrop_path}})"></div>
+
+            <div class="backdropImg" ng-if="movie.backdrop_path!=null" style="background-image:url(http://image.tmdb.org/t/p/w1280{{movie.backdrop_path}})"></div>
+            <div class="backdropImg" ng-if="movie.backdrop_path!=null" style="background-image:url(http://www.hdwallpapers.in/walls/fantasy_space-wide.jpg)"></div>
 
         </div>
 
         <div class="titleTvMovieContener">
-                
-                <h2 class="titleTvMovies">{{movie.title}}</h2>
-                
-        </div>
 
+                <h2 class="titleTvMovies">{{movie.title}}</h2>
+
+        </div>
         <div class="infoTvMovie">
 
             <div class="posterContentTvMovie">
-                
-                <img class="posterImgTvMovie" ng-src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}"/>
-            
+
+              <img ng-if="movie.poster_path!=null" src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="image-thumbnail" ng-click="showMovie(movie.id)">
+              <img ng-if="movie.poster_path==null" src="http://image.eiga.k-img.com/images/buzz/29346/darthvader.jpg" class="image-thumbnail" ng-click="showMovie(movie.id)">
+
             </div>
-   
+
             <div class="contentTvMovieInfo">
 
                 <div class="detailTvMovie regularFont">
@@ -61,12 +62,12 @@
                     <br/><br/><br/>
                     <label class="castBy">Genres :</label>
                     <span ng-repeat="(key, genre) in movie.genres | limitTo:3"> {{genre.name}} </span><br/><br/><br/>
-                    <span> 
+                    <span>
                         <label class="castBy">Durée :</label> {{movie.runtime}} min
                     </span>
 
                 </div>
-                
+
                 <div class="regularFont"> <label class="castBy">Nombre de vues :</label>{{movie.popularity}}
                 </div>
                 <div class="castings">
