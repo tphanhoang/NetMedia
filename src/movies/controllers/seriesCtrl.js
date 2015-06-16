@@ -17,7 +17,7 @@
         $scope.serieEpisode = 't';
 
 
-        $scope.user = {
+        $scope.user = ($localStorage.user==null)? '':{
             'name' : $localStorage.user[2],
             'id' : $localStorage.user[0],
             'email' : $localStorage.user[1],
@@ -101,7 +101,7 @@
         } ;
 
 
-        $scope.user = {
+        $scope.user = ($localStorage.user==null)? '':{
             'name' : $localStorage.user[2],
             'id' : $localStorage.user[0],
             'email' : $localStorage.user[1],
