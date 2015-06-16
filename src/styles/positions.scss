@@ -51,7 +51,7 @@
 
 .contentTvMovieInfo {
     position:absolute;
-    top: 0;
+    top:0px;
     left: 400px;
     z-index: 2;
     width:auto;
@@ -107,21 +107,22 @@
     margin-left : 90px;
 }
 
-.userActionMovie {
-    position:absolute;
-    top: 590px  ;
-    left:400px;
-    z-index: 2;
-    width:auto;
+.actionInternaute {
+    padding-top: 50px;
+    position:relative;
+    width: 100%;
 }
 
 .favoriteAdd {
     position:relative;
+    float:left;
     display: inline-block;
 }
 
 .reloadMovie {
     display:inline-block;
+    position: relative;
+    float: left;
 }
 
 .contentTvMovie {
@@ -130,13 +131,35 @@
     padding-left: 95px;
     padding-right:95px;
 }
-.synopsisFont {
-    margin-top: 25px;
-    margin-bottom: 25px;
+
+.contentSynopsisTvMovieMarge {
+    position:relative;
+    width: 80%;
+
 }
 
-.resumeTvMovie {
+.bigContentPageTvMovie{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.synopsisFont {
+    float:left;
+    position: absolute;
+    top: -50px;
+    margin-left: 65px ;
+    left: 0;
+}
+
+.seasonSelectBarSerie {
+    margin-left: 65px;
+}
+
+.resumeTvMovieSerie {
     margin-bottom:20px;
+    width:90%;
+    margin-left: 65px;
+    float:left;
 }
 
 .seasonFont {
@@ -144,6 +167,11 @@
     margin-left: 20px;
     width:auto;
     display:inline;
+}
+
+.seasonFont a{
+ text-decoration:none; 
+
 }
 
 .seasonNumberFont{
@@ -170,5 +198,53 @@
     color: $secondaryColor;
     border-color: $secondaryColor;
     height:2,5px;
+}
 
+.separatorEpisode {
+    margin: 0;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    color: $thirdColor;
+    border-color: $thirdColor;
+    height:2,5px;
+    width:100%;
+}
+
+.contentEpisode {
+    width:80%;
+    padding-top:35px;
+}
+
+.episodeNumeroFont {
+    width: 200px;
+}
+
+.contentEpisodeOverview {
+    position:relative;
+    height: auto;
+    padding-top:25px;
+    padding-bottom:25px;
+    margin-left: 75px;
+    width:70%;
+}
+
+.fontEpisodeTvSerie{
+    color: $secondaryColor;
+}
+
+.fontNameEpisode {
+    padding-left:20px;
+}
+
+.episodeFontTv  {
+    margin-bottom:50px;
+}
+
+.contentEpisodeMarge {
+    margin-left: 65px;
+    margin-right:65px;
+}
+
+.clearfix {
+    clear:both;
 }
