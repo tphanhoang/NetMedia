@@ -808,8 +808,8 @@ h1.tab-top-flop::after {
     margin-bottom: 20px;
   }
   .thumb-fav {
-    width: 230px;
-    height: 230px;
+    width: 185px;
+    /* height: 230px; */
     background-color: #deb90c;
     float: left;
     margin-top: 20px;

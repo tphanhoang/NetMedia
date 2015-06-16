@@ -5,8 +5,8 @@ angular.module('netMediaApp')
 
     $scope.signUp = function(user) {
       data =JSON.stringify(user);
-      $http.post('/netmedia/scripts/signUp.php', data).then(function(results) { 
-        
+      $http.post('/netmedia/scripts/signUp.php', data).then(function(results) {
+
 
         alert('Vous pouvez dés à présent vous connecter');
 
@@ -14,19 +14,19 @@ angular.module('netMediaApp')
 
 
     })
-      
+
     };
 
     $scope.login = function(user) {
       data =JSON.stringify(user);
-      $http.post('/netmedia/scripts/login.php', data).then(function(results) { 
+      $http.post('/netmedia/scripts/login.php', data).then(function(results) {
         if (results.data.status == "success"){
         // $localStorage.user = user;
         $localStorage.user = results.data.user;
-         $location.path('/profil'); 
+         $location.path('/profil');
         }
         if (results.data.status == "error"){
-        alert('Vos informations de connexions sont erronées !')  
+        alert('Vos informations de connexions sont erronées !')
         }
     })
     };
@@ -60,7 +60,7 @@ angular.module('netMediaApp')
 
 
   .controller('ProfilCtrl', function($scope, $http, $localStorage, MovieFactory, SerieFactory) {
-         $scope.user = {
+         $scope.user = ($scope.user == null)? '' :{
             'name' : $localStorage.user[2],
             'id' : $localStorage.user[0],
             'email' : $localStorage.user[1],
@@ -68,8 +68,10 @@ angular.module('netMediaApp')
             'gender' : $localStorage.user[4],
           };
 
-          $scope.favorisserie = $localStorage.favorisserie;  
-          $scope.favorismovie = $localStorage.favorismovie;  
+          // $scope.favorisserie = $localStorage.favorisserie;
+          // $scope.favorismovie = $localStorage.favorismovie;
+          $scope.favorismovie = ['76757', '76732', '8767', '45673'];
+          $scope.favorisserie = ['456'];
 
           $scope.movies = [];
           $scope.series = [];
@@ -77,7 +79,7 @@ angular.module('netMediaApp')
 
           $scope.favorismovie.forEach(function(y){
               MovieFactory.getMovie(y).then(function(result){
-                $scope.movies[y] = result ;  
+                $scope.movies[y] = result ;
             }, function (result){
                 alert("Erreur : ça a planté ! pas de bras | pas data");
             });
@@ -87,12 +89,12 @@ angular.module('netMediaApp')
 
           $scope.favorisserie.forEach(function(y){
               SerieFactory.getSerie(y).then(function(result){
-                $scope.series[y] = result ;  
+                $scope.series[y] = result ;
             }, function (result){
                 alert("Erreur : ça a planté ! pas de bras | pas data");
             });
           })
-      
+
 
 
 });
