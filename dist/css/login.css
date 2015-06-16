@@ -2,6 +2,18 @@
   box-sizing: border-box;
 }
 
+#loadMore {
+  width: 47%;
+  height: 130px;
+  background: #deb90c;
+  border-style: none;
+  border-radius: 2px;
+}
+
+#loadMore:hover {
+  background: #c6a50b;
+}
+
 html {
   overflow-y: scroll;
 }

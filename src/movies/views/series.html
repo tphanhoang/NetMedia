@@ -100,7 +100,14 @@
 
          <div class="panel-heading">
             <p>
-                <button ng-if="series.total_pages>=page"  class="btn btn-primary" ng-click="showMoreSeries(page)"> Voir plus de séries ! </button>
+
+          <script>
+
+          $(window).scroll(function() {
+             if($(window).scrollTop() + $(window).height() > $(document).height() -50) {
+               $( "#loadMore" ).trigger( "click" );      }
+          });</script>
+          <button ng-if="series.total_pages>=page"  class="btn btn-primary" id="loadMore" ng-click="showMoreSeries(page)" style="margin:0 auto"> Voir plus de séries ! </button>
             </p>
         </div>
 
