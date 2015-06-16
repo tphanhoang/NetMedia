@@ -235,8 +235,13 @@
             </div>
         </div>
     </div>
+<script>
 
-<button class="btn btn-primary" ng-click="showMoreMovies(page)" style="margin:0 auto"> Voir plus de films ! </button>
+$(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() > $(document).height() -50) {
+     $( "#loadMore" ).trigger( "click" );      }
+});</script>
+<button class="btn btn-primary" id="loadMore" ng-click="showMoreMovies(page)" style="margin:0 auto"> Voir plus de films ! </button>
     </div>
 
 </div>
