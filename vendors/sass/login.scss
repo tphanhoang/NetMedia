@@ -18,6 +18,18 @@ $br: 4px;
   box-sizing: border-box;
 }
 
+#loadMore{
+	width: 47%;
+	height: 130px;
+  background:$main;
+  border-style: none;
+  border-radius: 2px;
+
+}
+#loadMore:hover{
+  background:$main-dark;
+
+}
 html {
 	overflow-y: scroll;
 }
