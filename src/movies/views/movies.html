@@ -34,10 +34,10 @@
                 </div>
                 <br/><br/><br/><br/>
                 <div class="user">
-                    <a href="#/profil">
-                        <img class="user-img" src="images/placeholder.png"/>
-                        <div class="user-name">{{user.name}}</div>
-                    </a>
+                        <div ng-if="user!= ''" class="user-name">
+                        <img class="user-img" src="images/placeholder.png"/>{{user.name}}</div>
+                        <div ng-if="user == ''" class="user-name"><a href="#/login">Sign in / Log in</a></div>
+
                 </div>
             </nav>
             <!-- Fin menu à gauche qui slide -->
@@ -193,7 +193,7 @@
                         <p>original_language : {{movie.original_language}}</p> -->
 
                         <div class="favoriteAdd fontRegular coeurNote" ng-click="addFavoris(movie.id)" style="cursor:pointer;"></div><h4 class"title-details">{{movie.release_date | limitTo:4}}</h4>
-                        
+
                        <!--  <p>overview : {{movie.overview}}</p>
                         <p>popularity : {{movie.popularity}}</p>
                         <p>video : {{movie.video}}</p>

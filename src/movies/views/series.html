@@ -27,8 +27,10 @@
                 </div>
                 <br/><br/><br/><br/>
                 <div class="user">
-                    <img class="user-img" src="images/placeholder.png"/>
-                    <div class="user-name">{{user}}</div>
+                        <div ng-if="user!= ''" class="user-name">
+                        <img class="user-img" src="images/placeholder.png"/>{{user.name}}</div>
+                        <div ng-if="user == ''" class="user-name"><a href="#/login">Sign in / Log in</a></div>
+
                 </div>
             </nav>
         </div>

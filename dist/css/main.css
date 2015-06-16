@@ -307,10 +307,7 @@ a.selected {
   color: white;
 }
 
-.user {
-  margin-top: -24px;
-  margin-left: 10%;
-}
+
 
 .user-img {
   width: 40px;
@@ -323,8 +320,7 @@ a.selected {
 .user-name {
   color: #deb90c;
   font-family: "Roboto";
-  margin-top: -31px;
-  margin-left: 72px;
+
 }
 
 body {

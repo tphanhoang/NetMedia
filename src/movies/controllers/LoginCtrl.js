@@ -68,10 +68,10 @@ angular.module('netMediaApp')
             'gender' : $localStorage.user[4],
           };
 
-          // $scope.favorisserie = $localStorage.favorisserie;
-          // $scope.favorismovie = $localStorage.favorismovie;
-          $scope.favorismovie = ['76757', '76732', '8767', '45673'];
-          $scope.favorisserie = ['456'];
+          $scope.favorisserie = $localStorage.favorisserie;
+          $scope.favorismovie = $localStorage.favorismovie;
+          //$scope.favorismovie = ['76757', '76732', '8767', '45673'];
+          // $scope.favorisserie = ['456'];
 
           $scope.movies = [];
           $scope.series = [];
